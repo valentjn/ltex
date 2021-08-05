@@ -174,7 +174,7 @@ It is possible to map a keyboard shortcut to the `Use '...'` quick fix of LTeX. 
 
 ```json
 {
-  "key": "ctrl+shift+p",
+  "key": "ctrl+alt+p",
   "command": "editor.action.codeAction",
   "args": {
     "kind": "quickfix.ltex.acceptSuggestions"
@@ -182,7 +182,7 @@ It is possible to map a keyboard shortcut to the `Use '...'` quick fix of LTeX. 
 }
 ```
 
-Now, you can press `Ctrl+Shift+P` at an underlined word to run the `Use '...'` quick fix (without having to press `Ctrl+.` first). If there is only one suggestion, VS Code will use it without any further keystrokes. If there are multiple suggestions, a context menu will open that only contains the `Use '...'` quick fixes.
+Now, you can press `Ctrl+Alt+P` at an underlined word to run the `Use '...'` quick fix (without having to press `Ctrl+.` first). If there is only one suggestion, VS Code will use it without any further keystrokes. If there are multiple suggestions, a context menu will open that only contains the `Use '...'` quick fixes.
 
 <!-- ltex-client-specific-end -->
 
