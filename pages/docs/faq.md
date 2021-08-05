@@ -55,6 +55,10 @@ Some settings, such as when you add a word to the dictionary or when you hide a 
 
 <!-- ltex-client-specific-end -->
 
+## Why does LTeX check in a different language than expected?
+
+[`ltex.language`](settings.html#ltexlanguage) is not the only source that LTeX uses to decide in which language to check a document. If your document is a LaTeX document, then it might contain a command of the babel package, [which is interpreted by LTeX](advanced-usage.html#multilingual-latex-documents-with-the-babel-package) (note that LTeX is not a LaTeX compiler, e.g., it won't detect if the babel command is inside a `\newcommand` definition). The other possibility, which holds for all supported languages, is that you have a [magic comment](advanced-usage.html#magic-comments) somewhere in your document.
+
 ## How can I check multiple languages at once?
 
 This depends on whether the multiple languages only occur in different files (i.e., every file is written in a single language), or whether multiple languages occur in one file.
