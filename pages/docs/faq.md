@@ -24,10 +24,6 @@ In the case of LTeX, the “language” is not a single natural language, but al
 
 When talking about LTeX, we usually mean the combination of vscode-ltex and ltex-ls.
 
-## What happened to the Language Support Extensions?
-
-The language support extension were only necessary for LTeX 4.x. Starting with LTeX 5.x, all languages supported by LanguageTool are included in ltex-ls, which is downloaded automatically by LTeX. Therefore, the language support extensions are not available anymore on the Visual Studio Marketplace. If you have LTeX 5.x installed and there are no problems after the upgrade, you should remove any installed language support extensions.
-
 ## How can I prevent LTeX from redownloading ltex-ls and Java after every update?
 
 <!-- ltex-client-specific-begin -->
