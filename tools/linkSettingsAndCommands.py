@@ -10,14 +10,16 @@ import argparse
 import functools
 import json
 import os
+import pathlib
 import re
 from typing import Dict, Sequence
 
 
 
-def replaceSettingsCommandsMatch(markdownPath: str, pagesDirPath: str, markdown: str,
-      settingNames: Sequence[str], commandNames: Dict[str, str], match: re.Match[str]) -> str:
-  markdownName = os.path.basename(markdownPath)
+def replaceSettingsCommandsMatch(markdownPath: pathlib.Path, pagesDirPath: pathlib.Path,
+      markdown: str, settingNames: Sequence[str], commandNames: Dict[str, str],
+      match: re.Match[str]) -> str:
+  markdownName = markdownPath.name
   pageNameMatch = re.match(r"^.*-([a-z]{2})\.md$", markdownName)
   pageNameSuffix = (f"-{pageNameMatch.group(1)}" if pageNameMatch is not None else "")
 
@@ -32,14 +34,12 @@ def replaceSettingsCommandsMatch(markdownPath: str, pagesDirPath: str, markdown:
     key = text
 
   if key in settingNames:
-    url = "{}#{}".format(os.path.relpath(
-        os.path.join(pagesDirPath, "docs", f"settings{pageNameSuffix}.html"),
-        os.path.dirname(markdownPath)), getSlug(key))
+    url = "{}#{}".format(pagesDirPath.joinpath(
+        "docs", f"settings{pageNameSuffix}.html").relative_to(markdownPath.parent), getSlug(key))
     return f"[`{text}`]({url})"
   elif key in commandNames:
-    url = "{}#{}".format(os.path.relpath(
-        os.path.join(pagesDirPath, "docs", f"commands{pageNameSuffix}.html"),
-        os.path.dirname(markdownPath)), getSlug(key))
+    url = "{}#{}".format(pagesDirPath.joinpath(
+        "docs", f"commands{pageNameSuffix}.html").relative_to(markdownPath.parent), getSlug(key))
     return f"[`{text}`]({url})"
   else:
     return f"`{text}`"
@@ -56,15 +56,16 @@ def formatTitle(description: str, packageNlsJson: Dict[str, str]) -> str:
   return re.sub(r"%([A-Za-z0-9\-_\.]+)%", functools.partial(replaceNlsKey, packageNlsJson),
       description)
 
-def linkSettingsAndCommands(markdownPath: str, pagesDirPath: str, ltexRepoDirPath: str) -> None:
-  markdownName = os.path.basename(markdownPath)
+def linkSettingsAndCommands(markdownPath: pathlib.Path, pagesDirPath: pathlib.Path,
+      ltexRepoDirPath: pathlib.Path) -> None:
+  markdownName = markdownPath.name
   pageNameMatch = re.match(r"^.*-([a-z]{2})\.md$", markdownName)
   packageNlsJsonSuffix = (f".{pageNameMatch.group(1)}" if pageNameMatch is not None else "")
 
-  packageJsonPath = os.path.join(ltexRepoDirPath, "package.json")
+  packageJsonPath = ltexRepoDirPath.joinpath("package.json")
   with open(packageJsonPath, "r") as f: packageJson = json.load(f)
 
-  packageNlsJsonPath = os.path.join(ltexRepoDirPath, f"package.nls{packageNlsJsonSuffix}.json")
+  packageNlsJsonPath = ltexRepoDirPath.joinpath(f"package.nls{packageNlsJsonSuffix}.json")
   with open(packageNlsJsonPath, "r") as f: packageNlsJson = json.load(f)
 
   settingsJson = packageJson["contributes"]["configuration"]["properties"]
@@ -85,11 +86,11 @@ def linkSettingsAndCommands(markdownPath: str, pagesDirPath: str, ltexRepoDirPat
 def main() -> None:
   parser = argparse.ArgumentParser(description="link settings in all pages")
   parser.add_argument("--ltex-repo",
-      default=os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "vscode-ltex")),
+      default=pathlib.Path(__file__).parent.parent.parent.joinpath("vscode-ltex"),
       help="path to main repo")
   args = parser.parse_args()
 
-  pagesDirPath = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "pages"))
+  pagesDirPath = pathlib.Path(__file__).parent.parent.joinpath("pages")
   ltexRepoDirPath = args.ltex_repo
 
   for root, dirNames, fileNames in os.walk(pagesDirPath):
@@ -97,7 +98,8 @@ def main() -> None:
 
     for fileName in fileNames:
       if fileName.endswith(".md"):
-        linkSettingsAndCommands(os.path.join(root, fileName), pagesDirPath, ltexRepoDirPath)
+        linkSettingsAndCommands(
+            pathlib.Path(root).joinpath(fileName), pagesDirPath, ltexRepoDirPath)
 
 if __name__ == "__main__":
   main()

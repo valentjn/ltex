@@ -8,7 +8,7 @@
 
 import datetime
 import json
-import os
+import pathlib
 import traceback
 from typing import Any, Callable, Dict, List, Optional, Tuple
 
@@ -23,7 +23,7 @@ import numpy as np
 
 
 
-repoDirPath = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+repoDirPath = pathlib.Path(__file__).parent.parent
 
 if hasattr(datetime.date, "fromisoformat"):
   fromisoformat = datetime.date.fromisoformat
@@ -44,13 +44,13 @@ def formatInt(x: int) -> str:
 
 
 def writeToSummaryYaml(data: Dict[str, str]) -> None:
-  yamlPath = os.path.join(repoDirPath, "_data", "stats", "summary.yml")
+  yamlPath = repoDirPath.joinpath("_data", "stats", "summary.yml")
   with open(yamlPath, "w") as f: json.dump(data, f)
 
 
 
 def plotStats() -> None:
-  statsPath = os.path.join(repoDirPath, "_data", "stats", "stats.json")
+  statsPath = repoDirPath.joinpath("_data", "stats", "stats.json")
   with open(statsPath, "r") as f: stats = json.load(f)
 
   getUpdateCount: Callable[[datetime.datetime], int] = (
@@ -147,7 +147,7 @@ def plotStats() -> None:
     script, divs = bokeh.embed.components(figure,
         theme=bokeh.themes.built_in_themes["dark_minimal"])
     html = script + divs
-    htmlPath = os.path.join(repoDirPath, "_includes", "stats", "{}.html".format(name[1]))
+    htmlPath = repoDirPath.joinpath("_includes", "stats", "{}.html".format(name[1]))
     with open(htmlPath, "w") as f: f.write(html)
 
   lastStatEntry = list(stats["statistics"].values())[-1]
@@ -176,7 +176,7 @@ def plotStats() -> None:
 
 
 def plotMap() -> None:
-  mapPath = os.path.join(repoDirPath, "_data", "stats", "map.json")
+  mapPath = repoDirPath.joinpath("_data", "stats", "map.json")
   with open(mapPath, "r") as f: map_ = json.load(f)
 
   fig = plt.figure(figsize=(14, 7))
@@ -202,7 +202,7 @@ def plotMap() -> None:
   ax.set_facecolor("none")
 
   try:
-    plt.savefig(os.path.join(repoDirPath, "images", "stats", "map.png"),
+    plt.savefig(repoDirPath.joinpath("images", "stats", "map.png"),
         facecolor="none", bbox_inches="tight")
   except Exception:
     print("Could not save map, because the following exception occurred:")
