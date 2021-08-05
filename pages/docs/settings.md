@@ -16,9 +16,9 @@ Change language of this page: [English](settings.html), [German](settings-de.htm
 
 Controls whether the extension is enabled. Allows disabling LanguageTool on specific workspaces or for specific code language modes (i.e., file types).
 
-Either supply a Boolean value stating whether LTeX is enabled for all supported code language modes or disabled for all of them, or supply a list of [code language identifiers](https://code.visualstudio.com/docs/languages/identifiers) for which LTeX should be enabled (note that extensions can define additional code language identifiers).
+Either supply a Boolean value stating whether LTeX is enabled for all supported markup languages or disabled for all of them, or supply a list of [code language identifiers](https://code.visualstudio.com/docs/languages/identifiers) for which LTeX should be enabled (note that extensions can define additional code language identifiers).
 
-All supported code language modes are listed in the default value of this setting. If you add an unsupported code language mode (i.e., a code language mode that is not listed in the default value), LTeX will check corresponding files as plain text without any parsing.
+All supported markup languages are listed in the default value of this setting. In addition, LTeX can check comments in many popular programming languages like C++ or Java, if you add the corresponding code language identifiers to this setting. If you add an unsupported code language mode, LTeX will check corresponding files as plain text without any parsing.
 
 <!-- ltex-client-specific-begin -->
 
@@ -75,6 +75,7 @@ The language (e.g., `"en-US"`) LanguageTool should check against. Use a specific
 - `"en-ZA"`: English (South African)
 - `"eo"`: Esperanto
 - `"es"`: Spanish
+- `"es-AR"`: Spanish (voseo)
 - `"fa"`: Persian
 - `"fr"`: French
 - `"ga-IE"`: Irish
@@ -236,6 +237,11 @@ Object with the following properties:
 
   - Scalar of type `string`
 - `"es"`: List of additional `es` (Spanish) words that should not be counted as spelling errors.
+
+  Array where each entry has the following type:
+
+  - Scalar of type `string`
+- `"es-AR"`: List of additional `es-AR` (Spanish (voseo)) words that should not be counted as spelling errors.
 
   Array where each entry has the following type:
 
@@ -501,6 +507,11 @@ Object with the following properties:
   Array where each entry has the following type:
 
   - Scalar of type `string`
+- `"es-AR"`: List of additional `es-AR` (Spanish (voseo)) rules that should be disabled (if enabled by default by LanguageTool).
+
+  Array where each entry has the following type:
+
+  - Scalar of type `string`
 - `"fa"`: List of additional `fa` (Persian) rules that should be disabled (if enabled by default by LanguageTool).
 
   Array where each entry has the following type:
@@ -762,6 +773,11 @@ Object with the following properties:
   Array where each entry has the following type:
 
   - Scalar of type `string`
+- `"es-AR"`: List of additional `es-AR` (Spanish (voseo)) rules that should be enabled (if disabled by default by LanguageTool).
+
+  Array where each entry has the following type:
+
+  - Scalar of type `string`
 - `"fa"`: List of additional `fa` (Persian) rules that should be enabled (if disabled by default by LanguageTool).
 
   Array where each entry has the following type:
@@ -887,7 +903,7 @@ Object with the following properties:
 
 ## `ltex.hiddenFalsePositives`
 
-Lists of false-positive diagnostics to hide (by hiding all diagnostics of a specific rule will in a specific sentence).
+Lists of false-positive diagnostics to hide (by hiding all diagnostics of a specific rule within a specific sentence).
 
 This setting is language-specific, so use an object of the format `{"<LANGUAGE1>": ["<JSON1>", "<JSON2>", ...], "<LANGUAGE2>": ["<JSON1>", "<JSON2>", ...], ...}`, where `<LANGUAGE>` denotes the language code in [`ltex.language`](settings.html#ltexlanguage) and `<JSON>` is a JSON string containing information about the rule and sentence.
 
@@ -1023,6 +1039,11 @@ Object with the following properties:
 
   - Scalar of type `string`
 - `"es"`: List of `es` (Spanish) false-positive diagnostics to hide.
+
+  Array where each entry has the following type:
+
+  - Scalar of type `string`
+- `"es-AR"`: List of `es-AR` (Spanish (voseo)) false-positive diagnostics to hide.
 
   Array where each entry has the following type:
 
@@ -1190,7 +1211,7 @@ Many common commands are already handled by default, even if you set this settin
 
 *Type:* `object`
 
-*Example:* `{"\\ref{}": "ignore", "\\documentclass[]{}": "ignore", "\\cite{}": "dummy", "\\cite[]{}": "dummy"}`
+*Example:* `{"\\label{}": "ignore", "\\documentclass[]{}": "ignore", "\\cite{}": "dummy", "\\cite[]{}": "dummy"}`
 
 *Default:* `{}`
 
@@ -1353,6 +1374,7 @@ If set, additional rules will be checked to detect false friends. Picky rules ma
 - `"en-ZA"`: English (South African)
 - `"eo"`: Esperanto
 - `"es"`: Spanish
+- `"es-AR"`: Spanish (voseo)
 - `"fa"`: Persian
 - `"fr"`: French
 - `"ga-IE"`: Irish

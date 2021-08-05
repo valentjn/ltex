@@ -16,9 +16,9 @@ Change language of this page: [English](settings.html), [German](settings-de.htm
 
 Steuert, ob die Erweiterung aktiviert ist. Erlaubt die Deaktivierung von LanguageTool für bestimmte Arbeitsbereiche oder für bestimmte Code-Sprachmodi (d. h. Dateitypen).
 
-Sie können entweder einen Boolean-Wert angeben, der bestimmt, ob LTeX für alle unterstützten Code-Sprachmodi aktiviert oder für alle Sprachmodi deaktiviert wird, oder eine Liste von [Code-Sprachbezeichnern](https://code.visualstudio.com/docs/languages/identifiers), für die LTeX aktiviert werden soll (beachten Sie, dass Erweiterungen zusätzliche Code-Sprachbezeichner definieren können).
+Sie können entweder einen Boolean-Wert angeben, der bestimmt, ob LTeX für alle unterstützten Auszeichnungssprachen aktiviert oder für alle deaktiviert wird, oder eine Liste von [Code-Sprachbezeichnern](https://code.visualstudio.com/docs/languages/identifiers), für die LTeX aktiviert werden soll (beachten Sie, dass Erweiterungen zusätzliche Code-Sprachbezeichner definieren können).
 
-Alle unterstützten Code-Sprachmodi sind in der Voreinstellung dieser Einstellung aufgelistet. Wenn Sie einen nicht-unterstützten Code-Sprachmodus hinzufügen (also einen Code-Sprachmodus, der nicht in der Voreinstellung enthalten ist), dann wird LTeX entsprechende Dateien als reinen Text ohne Parsen überprüfen.
+Alle unterstützten Auszeichnungssprachen sind in der Voreinstellung dieser Einstellung aufgelistet. Zusätzlich kann LTeX Kommentare in vielen populären Programmiersprachen wie C++ oder Java überprüfen, wenn Sie die entsprechenden Code-Sprachbezeichner zu dieser Einstellung hinzufügen. Wenn Sie einen nicht-unterstützten Code-Sprachmodus hinzufügen, dann wird LTeX entsprechende Dateien als reinen Text ohne Parsen überprüfen.
 
 <!-- ltex-client-specific-de-begin -->
 
@@ -75,6 +75,7 @@ Die Sprache (z. B. `"en-US"`), mit der LanguageTool auf Fehler suchen soll. Benu
 - `"en-ZA"`: English (South African)
 - `"eo"`: Esperanto
 - `"es"`: Spanish
+- `"es-AR"`: Spanish (voseo)
 - `"fa"`: Persian
 - `"fr"`: French
 - `"ga-IE"`: Irish
@@ -236,6 +237,11 @@ Objekt mit folgenden Eigenschaften:
 
   - Skalar vom Typ `string`
 - `"es"`: Liste von zusätzlichen Wörtern der Sprache `es` (Spanish), die nicht als Schreibfehler gewertet werden sollen.
+
+  Array, bei dem jeder Eintrag folgenden Typ hat:
+
+  - Skalar vom Typ `string`
+- `"es-AR"`: Liste von zusätzlichen Wörtern der Sprache `es-AR` (Spanish (voseo)), die nicht als Schreibfehler gewertet werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
@@ -501,6 +507,11 @@ Objekt mit folgenden Eigenschaften:
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
+- `"es-AR"`: Liste von zusätzlichen Regeln der Sprache `es-AR` (Spanish (voseo)), die deaktiviert werden sollen (falls standardmäßig durch LanguageTool aktiviert).
+
+  Array, bei dem jeder Eintrag folgenden Typ hat:
+
+  - Skalar vom Typ `string`
 - `"fa"`: Liste von zusätzlichen Regeln der Sprache `fa` (Persian), die deaktiviert werden sollen (falls standardmäßig durch LanguageTool aktiviert).
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
@@ -758,6 +769,11 @@ Objekt mit folgenden Eigenschaften:
 
   - Skalar vom Typ `string`
 - `"es"`: Liste von zusätzlichen Regeln der Sprache `es` (Spanish), die aktiviert werden sollen (falls standardmäßig durch LanguageTool deaktiviert).
+
+  Array, bei dem jeder Eintrag folgenden Typ hat:
+
+  - Skalar vom Typ `string`
+- `"es-AR"`: Liste von zusätzlichen Regeln der Sprache `es-AR` (Spanish (voseo)), die aktiviert werden sollen (falls standardmäßig durch LanguageTool deaktiviert).
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
@@ -1027,6 +1043,11 @@ Objekt mit folgenden Eigenschaften:
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
+- `"es-AR"`: Liste von falschen Fehlern der Sprache `es-AR` (Spanish (voseo)), die verborgen werden sollen .
+
+  Array, bei dem jeder Eintrag folgenden Typ hat:
+
+  - Skalar vom Typ `string`
 - `"fa"`: Liste von falschen Fehlern der Sprache `fa` (Persian), die verborgen werden sollen .
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
@@ -1190,7 +1211,7 @@ Viele gebräuchliche Befehle werden standardmäßig bereits gesondert behandelt,
 
 *Typ:* `object`
 
-*Beispiel:* `{"\\ref{}": "ignore", "\\documentclass[]{}": "ignore", "\\cite{}": "dummy", "\\cite[]{}": "dummy"}`
+*Beispiel:* `{"\\label{}": "ignore", "\\documentclass[]{}": "ignore", "\\cite{}": "dummy", "\\cite[]{}": "dummy"}`
 
 *Voreinstellung:* `{}`
 
@@ -1353,6 +1374,7 @@ Falls diese Einstellung gesetzt ist, werden zusätzliche Regeln verwendet, um fa
 - `"en-ZA"`: English (South African)
 - `"eo"`: Esperanto
 - `"es"`: Spanish
+- `"es-AR"`: Spanish (voseo)
 - `"fa"`: Persian
 - `"fr"`: French
 - `"ga-IE"`: Irish

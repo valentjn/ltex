@@ -58,7 +58,7 @@ If you like LTeX, but are not able to contribute in any of these ways, there are
 
 ## How to Contribute Code
 
-[As explained in the FAQ](faq.html#whats-the-difference-between-vscode-ltex-ltex-ls-and-languagetool), LTeX consists of two components: [vscode-ltex](https://github.com/valentjn/vscode-ltex) and [ltex-ls](https://github.com/valentjn/ltex-ls). vscode-ltex is written in TypeScript and consists mostly of boilerplate code to find, download, and extract ltex-ls and Java. ltex-ls is written in Java and is the actual interface to the LanguageTool backend.
+[As explained in the FAQ](faq.html#whats-the-difference-between-vscode-ltex-ltex-ls-and-languagetool), LTeX consists of two components: [vscode-ltex](https://github.com/valentjn/vscode-ltex) and [ltex-ls](https://github.com/valentjn/ltex-ls). vscode-ltex is written in TypeScript and consists mostly of boilerplate code to find, download, and extract ltex-ls and Java. ltex-ls is written in Kotlin and is the actual interface to the LanguageTool backend.
 
 ### Branches & Pull Requests
 
@@ -106,7 +106,7 @@ If you want to test a pre-release of vscode-ltex, [download the `*.vsix` file fr
 
 Sometimes, only a pre-release (especially when there are no major changes) of ltex-ls is available. In this case, you can test the pre-release of ltex-ls by [downloading the ltex-ls archive from GitHub](https://github.com/valentjn/ltex-ls/releases), extracting it, and pointing [`ltex.ltex-ls.path`](settings.html#ltexltex-lspath) to the extracted directory.
 
-Be sure to check the list of current changes in the [changelog on the `develop` branch](https://github.com/valentjn/vscode-ltex/blob/develop/CHANGELOG.md) to know what to look for when testing.
+Be sure to check the list of current changes in the [changelog on the `develop` branch](https://github.com/valentjn/vscode-ltex/blob/develop/changelog.xml) to know what to look for when testing.
 
 ### Documentation
 
@@ -120,7 +120,7 @@ At the bottom of each page, you'll find an “Edit me” button that takes you d
 | ---- | ------- |
 | [Settings](settings.html) | [`package.json`](https://github.com/valentjn/vscode-ltex/blob/develop/package.json), [`package.nls.json`](https://github.com/valentjn/vscode-ltex/blob/develop/package.nls.json) |
 | [Commands](commands.html) | [`package.json`](https://github.com/valentjn/vscode-ltex/blob/develop/package.json), [`package.nls.json`](https://github.com/valentjn/vscode-ltex/blob/develop/package.nls.json) |
-| [Changelog](changelog.html) | [`CHANGELOG.md`](https://github.com/valentjn/vscode-ltex/blob/develop/CHANGELOG.md) |
+| [Changelog](changelog.html) | [`changelog.xml`](https://github.com/valentjn/vscode-ltex/blob/develop/changelog.xml) |
 | [Contributing Code/Issues](contributing-code-issues.html) | [`CONTRIBUTING.md`](https://github.com/valentjn/vscode-ltex/blob/develop/CONTRIBUTING.md) |
 | [Code of Conduct](code-of-conduct.html) | [`CODE_OF_CONDUCT.md`](https://github.com/valentjn/vscode-ltex/blob/develop/CODE_OF_CONDUCT.md) |
 | [Acknowledgments](acknowledgments.html) | [`ACKNOWLEDGMENTS.md`](https://github.com/valentjn/vscode-ltex/blob/develop/ACKNOWLEDGMENTS.md) |
