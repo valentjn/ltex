@@ -166,6 +166,26 @@ Hiding false positives with [`ltex.hiddenFalsePositives`](settings.html#ltexhidd
 - Checking whether a match returned by LanguageTool is a false positive happens after the document has been converted from LaTeX, Markdown, etc. to plain text by LTeX. LanguageTool only returns the plain text sentence, but not the corresponding sentence in the original code. Therefore, the regular expression is matched against the plain text, not the original code. For instance, it's not possible to have a regular expression that matches all sentences that contain a specific LaTeX command.
 - Checking whether a match returned by LanguageTool is a false positive happens after the document has been split into sentences. Therefore, it's not possible to have regular expressions that span multiple sentences.
 
+## Keyboard Shortcuts for Quick Fixes
+
+<!-- ltex-client-specific-begin -->
+
+It is possible to map a keyboard shortcut to the `Use '...'` quick fix of LTeX. To do this, execute the command `Preferences: Open Keyboard Shortcuts (JSON)` from the Command Palette (`Ctrl+Shift+P`) and add the following JSON object to the file that opens:
+
+```json
+{
+  "key": "ctrl+shift+p",
+  "command": "editor.action.codeAction",
+  "args": {
+    "kind": "quickfix.ltex.acceptSuggestions"
+  }
+}
+```
+
+Now, you can press `Ctrl+Shift+P` at an underlined word to run the `Use '...'` quick fix (without having to press `Ctrl+.` first). If there is only one suggestion, VS Code will use it without any further keystrokes. If there are multiple suggestions, a context menu will open that only contains the `Use '...'` quick fixes.
+
+<!-- ltex-client-specific-end -->
+
 ## LanguageTool HTTP Servers
 
 Although LTeX ships with its own version of LanguageTool (LT), it's possible to run LT independently of LTeX and have LTeX communicate with [LT via HTTP](https://dev.languagetool.org/http-server). There are multiple scenarios in which this might be useful:
