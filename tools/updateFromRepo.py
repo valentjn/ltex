@@ -12,10 +12,13 @@ import json
 import pathlib
 import re
 import sys
-from typing import Any, Callable, Dict, Optional, Sequence, Tuple
+from typing import Any, Callable, Dict, Optional, Sequence, Tuple, Union
 
 sys.path.append(str(pathlib.Path(__file__).parent))
 from linkSettingsAndCommands import linkSettingsAndCommands
+
+sys.path.append(str(pathlib.Path(__file__).parent.parent.parent.joinpath("vscode-ltex", "tools")))
+import convertChangelog
 
 
 
@@ -329,9 +332,13 @@ Change language of this page: {}
 
 
 
-def copyMarkdown(srcPath: pathlib.Path, dstPath: pathlib.Path, metaData: str,
+def copyMarkdown(srcPathOrMarkdown: Union[pathlib.Path, str], dstPath: pathlib.Path, metaData: str,
       ltexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
-  with open(srcPath, "r") as f: markdown = f.read()
+  if isinstance(srcPathOrMarkdown, str):
+    markdown = srcPathOrMarkdown
+  else:
+    with open(srcPathOrMarkdown, "r") as f: markdown = f.read()
+
   lines = markdown.split("\n")
   i = next(i for i, line in enumerate(lines) if line.startswith("#"))
   markdown = metaData + "\n".join(lines[i+1:])
@@ -344,7 +351,10 @@ def copyMarkdown(srcPath: pathlib.Path, dstPath: pathlib.Path, metaData: str,
 
 
 def updateChangelog(ltexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
-  copyMarkdown(ltexRepoDirPath.joinpath("CHANGELOG.md"),
+  changelogFilePath = ltexRepoDirPath.joinpath("changelog.xml")
+  markdown = convertChangelog.convertChangelogFromXmlToMarkdown(changelogFilePath)
+
+  copyMarkdown(markdown,
       pagesRepoDirPath.joinpath("pages", "docs", "changelog.md"), """---{}
 title: "Changelog"
 permalink: "/docs/changelog.html"

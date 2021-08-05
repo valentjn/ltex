@@ -1,6 +1,10 @@
 // Place your settings in this file to overwrite default and user settings.
 {
   "files.associations": {
-    "*.html": "liquid"
-  }
+    "*.html": "liquid",
+  },
+  "python.analysis.extraPaths": [
+    "tools",
+    "../vscode-ltex/tools",
+  ],
 }
