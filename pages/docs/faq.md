@@ -19,7 +19,7 @@ The LSP solves this by separating the language support from the editor support. 
 In the case of LTeX, the “language” is not a single natural language, but all natural languages supported by LanguageTool.
 
 - [vscode-ltex](https://github.com/valentjn/vscode-ltex) is an extension for Visual Studio Code that implements a language client. When a LaTeX or Markdown document should be checked, it is passed to ltex-ls.
-- [ltex-ls](https://github.com/valentjn/ltex-ls) is an editor-independent language server (although it has only been tested with VS Code) written in Java. Incoming LaTeX or Markdown code is parsed, converted to plaintext, and passed to LanguageTool.
+- [ltex-ls](https://github.com/valentjn/ltex-ls) is an editor-independent language server (although it has only been tested with VS Code) written in Kotlin. Incoming LaTeX or Markdown code is parsed, converted to plaintext, and passed to LanguageTool.
 - [LanguageTool](https://github.com/languagetool-org/languagetool) is a grammar and spell checker written in Java. It can be used via its Java API or standalone. LanguageTool is responsible for the actual checking.
 
 When talking about LTeX, we usually mean the combination of vscode-ltex and ltex-ls.
