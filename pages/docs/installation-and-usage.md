@@ -42,7 +42,7 @@ This page is specific to vscode-ltex. It does not apply if you use a different L
 
 The key component of LTeX, the LTeX Language Server (ltex-ls), which also includes LanguageTool itself, cannot be included in the LTeX version distributed on the Visual Studio Marketplace due to file size restrictions. In addition, ltex-ls requires Java due to its LanguageTool dependency.
 
-When activated for the first time, LTeX will automatically download and use a hardcoded ltex-ls release from GitHub and, in case no existing installation of Java has been found, a portable Java distribution ([AdoptOpenJDK](https://adoptopenjdk.net/)). Both will be stored in the extension folder. Note that after this initial installation, no connection to the Internet is necessary. Checking your documents is completely offline.
+When activated for the first time, LTeX will automatically download and use a hard-coded ltex-ls release from GitHub and, in case no existing installation of Java has been found, a portable Java distribution ([AdoptOpenJDK](https://adoptopenjdk.net/)). Both will be stored in the extension folder. Note that after this initial installation, no connection to the Internet is necessary. Checking your documents is completely offline.
 
 If you don't have an Internet connection, or if you simply don't want this, there are two alternatives.
 
@@ -67,4 +67,4 @@ If you download Java, you can also decide to install it system-wide. In this cas
 
 Reload the Visual Studio Code window after installing ltex-ls and/or Java.
 
-If ltex-ls fails to start for whatever reason after you downloaded ltex-ls and/or Java (and after you set [`ltex.ltex-ls.path`](settings.html#ltexltex-lspath) and/or [`ltex.java.path`](settings.html#ltexjavapath)), LTeX will fallback to downloading the respective dependency.
+If ltex-ls fails to start for whatever reason after you downloaded ltex-ls and/or Java (and after you set [`ltex.ltex-ls.path`](settings.html#ltexltex-lspath) and/or [`ltex.java.path`](settings.html#ltexjavapath)), LTeX will fall back to downloading the respective dependency.
