@@ -55,10 +55,6 @@ Some settings, such as when you add a word to the dictionary or when you hide a 
 
 <!-- ltex-client-specific-end -->
 
-## Why does LTeX check in a different language than expected?
-
-[`ltex.language`](settings.html#ltexlanguage) is not the only source that LTeX uses to decide in which language to check a document. If your document is a LaTeX document, then it might contain a command of the babel package, [which is interpreted by LTeX](advanced-usage.html#multilingual-latex-documents-with-the-babel-package) (note that LTeX is not a LaTeX compiler, e.g., it won't detect if the babel command is inside a `\newcommand` definition). The other possibility, which holds for all supported languages, is that you have a [magic comment](advanced-usage.html#magic-comments) somewhere in your document.
-
 ## How can I check multiple languages at once?
 
 This depends on whether the multiple languages only occur in different files (i.e., every file is written in a single language), or whether multiple languages occur in one file.
@@ -66,6 +62,10 @@ This depends on whether the multiple languages only occur in different files (i.
 - If you are using LaTeX, you can use the [babel package](advanced-usage.html#multilingual-latex-documents-with-the-babel-package) to indicate the languages used. This allows LTeX to switch the checking language mid-file.
 - Another way, which also works for Markdown, is using [magic comments](advanced-usage.html#magic-comments).
 - If each file is written in a single language, it is possible to use [multi-root workspaces](https://code.visualstudio.com/docs/editor/multi-root-workspaces#_settings). This enables you to have one `settings.json` per folder, and allows you to set [`ltex.language`](settings.html#ltexlanguage) just for that folder.
+
+## Why does LTeX check in a different language than expected?
+
+[`ltex.language`](settings.html#ltexlanguage) is not the only source that LTeX uses to decide in which language to check a document. If your document is a LaTeX document, then it might contain a command of the babel package, [which is interpreted by LTeX](advanced-usage.html#multilingual-latex-documents-with-the-babel-package) (note that LTeX is not a LaTeX compiler, e.g., it won't detect if the babel command is inside a `\newcommand` definition). The other possibility, which holds for all supported languages, is that you have a [magic comment](advanced-usage.html#magic-comments) somewhere in your document.
 
 ## How can I fix multiple spelling errors at the same time?
 
