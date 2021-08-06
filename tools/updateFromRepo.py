@@ -258,6 +258,14 @@ def getNlsLanguages(ltexRepoDirPath: pathlib.Path) -> Sequence[Tuple[str, str, p
 
 
 
+def getLtLanguageCode(languageCode: str) -> str:
+  return {
+        "en" : "en-US",
+        "de" : "de-DE",
+      }[languageCode]
+
+
+
 def updateSupportedLanguages(ltexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
   packageNlsJsonPath = ltexRepoDirPath.joinpath("package.nls.json")
   with open(packageNlsJsonPath, "r") as f: packageNlsJson = json.load(f)
@@ -310,7 +318,9 @@ sidebar: "sidebar"
 
 Change language of this page: {}
 
-""".format(licenseHeader, pageNameSuffix, languageLinks)
+<!-- ltex: language={} -->
+
+""".format(licenseHeader, pageNameSuffix, languageLinks, getLtLanguageCode(languageCode))
     markdown += "\n".join(x for x in settingsMarkdown if x is not None)
     markdown = re.sub("\n\n+", "\n\n", markdown)
     markdown = markdown.replace("https://valentjn.github.io/vscode-ltex/docs/", "")
@@ -346,9 +356,12 @@ sidebar: "sidebar"
 
 Change language of this page: {}
 
+<!-- ltex: language={} -->
+
 {}
 
-""".format(licenseHeader, pageNameSuffix, languageLinks, packageNlsJson["commandIntroduction"])
+""".format(licenseHeader, pageNameSuffix, languageLinks, getLtLanguageCode(languageCode),
+        packageNlsJson["commandIntroduction"],)
     markdown += "\n".join(x for x in commandsMarkdown if x is not None)
     markdown = re.sub("\n\n+", "\n\n", markdown)
     markdown = markdown.replace("https://valentjn.github.io/vscode-ltex/docs/", "")

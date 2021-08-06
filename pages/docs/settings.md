@@ -12,6 +12,8 @@ sidebar: "sidebar"
 
 Change language of this page: [English](settings.html), [German](settings-de.html)
 
+<!-- ltex: language=en-US -->
+
 ## `ltex.enabled`
 
 Controls whether the extension is enabled. Allows disabling LanguageTool on specific workspaces or for specific code language modes (i.e., file types).
