@@ -258,6 +258,33 @@ def getNlsLanguages(ltexRepoDirPath: pathlib.Path) -> Sequence[Tuple[str, str, p
 
 
 
+def updateSupportedLanguages(ltexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
+  packageNlsJsonPath = ltexRepoDirPath.joinpath("package.nls.json")
+  with open(packageNlsJsonPath, "r") as f: packageNlsJson = json.load(f)
+  languages: Dict[str, str] = {}
+
+  for key in packageNlsJson:
+    regexMatch = re.match(
+        "^ltex\.i18n\.configuration\.ltex\.language\.([^.]+?)\.markdownEnumDescription$", key)
+    if regexMatch is None: continue
+    languages[regexMatch.group(1)] = packageNlsJson[key]
+
+  languages = {x: y for x, y in sorted(languages.items(), key=lambda z: z[1])}
+  languagesMarkdown = ("<!-- ltex-natural-languages-begin -->\n\n"
+      "{}\n\n<!-- ltex-natural-languages-end -->".format(
+        ", ".join(f"{y}&nbsp;(`{x}`)" for x, y in languages.items())))
+
+  dstPath = pagesRepoDirPath.joinpath("pages", "docs", "supported-languages.md")
+  with open(dstPath, "r") as f: markdown = f.read()
+
+  markdown = re.sub(
+      r"<!-- ltex-natural-languages-begin -->(.|\n)*?<!-- ltex-natural-languages-end -->",
+      languagesMarkdown, markdown)
+
+  with open(dstPath, "w") as f: f.write(markdown)
+
+
+
 def updateSettings(ltexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
   packageJsonPath = ltexRepoDirPath.joinpath("package.json")
   with open(packageJsonPath, "r") as f: packageJson = json.load(f)
@@ -409,6 +436,7 @@ def main() -> None:
 
   ltexRepoDirPath = args.ltex_repo
   pagesRepoDirPath = pathlib.Path(__file__).parent.parent
+  updateSupportedLanguages(ltexRepoDirPath, pagesRepoDirPath)
   updateSettings(ltexRepoDirPath, pagesRepoDirPath)
   updateCommands(ltexRepoDirPath, pagesRepoDirPath)
   updateChangelog(ltexRepoDirPath, pagesRepoDirPath)
