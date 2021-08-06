@@ -17,12 +17,15 @@ This is the changelog of vscode-ltex. If you use a different LTeX plugin for an 
 
 - &#x1f527; *Change:* Migrate LTeX LS from Java to Kotlin
 - &#x2728; *New:* Add support for checking comments in many popular programming languages &#x2014; [#350](https://github.com/valentjn/vscode-ltex/issues/350)
+- &#x2728; *New:* Add support for vowel dummies in LaTeX (`"vowelDummy"` in [`ltex.latex.commands`](settings.html#ltexlatexcommands)) and Markdown (`"vowelDummy"` in [`ltex.markdown.nodes`](settings.html#ltexmarkdownnodes)) &#x2014; [#366](https://github.com/valentjn/vscode-ltex/issues/366)
 - &#x2728; *New:* Add support for more LaTeX commands (`\mathop`, `\overline`, `\tilde`, `\alpha`, etc.) for automatic vowel detection in formulas in LaTeX &#x2014; [ltex-ls#92](https://github.com/valentjn/ltex-ls/issues/92), [Shuhao Cao (@scaomath)](https://github.com/scaomath)
 - &#x2728; *New:* Add support for `\counterwithin`, `\counterwithout`, and `\numberwithin` in LaTeX &#x2014; [ltex-ls#87](https://github.com/valentjn/ltex-ls/issues/87), [Alexander Zeilmann (@AlexanderZeilmann)](https://github.com/AlexanderZeilmann)
 - &#x2728; *New:* Add missing support for Argentine Spanish (`es-AR`)
+- &#x1f41b; *Bug fix:* Don't ignore second argument of `\setkomavar` in LaTeX &#x2014; [#373](https://github.com/valentjn/vscode-ltex/issues/373)
 - &#x1f5d1; *Removal:* Remove support for magic comments in XHTML
+- &#x1f41b; *Bug fix:* Validate keys of [`ltex.dictionary`](settings.html#ltexdictionary), [`ltex.disabledRules`](settings.html#ltexdisabledrules), [`ltex.enabledRules`](settings.html#ltexenabledrules), and [`ltex.hiddenFalsePositives`](settings.html#ltexhiddenfalsepositives) &#x2014; [#381](https://github.com/valentjn/vscode-ltex/issues/381)
 - &#x1f527; *Change:* Change format of changelog
-- &#x1f527; *Change:* Update LTeX LS to 12.4.0
+- &#x1f527; *Change:* Update LTeX LS to 13.0.0
 
 ## 10.5.0 &#x2014; &#x201c;The XHTML Calculation&#x201d; (July 12, 2021)
 

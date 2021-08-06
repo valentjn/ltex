@@ -935,237 +935,237 @@ Die Leistung kann darunter leiden, falls diese Liste sehr lang ist.
 
 Objekt mit folgenden Eigenschaften:
 
-- `"ar"`: Liste von falschen Fehlern der Sprache `ar` (Arabic), die verborgen werden sollen .
+- `"ar"`: Liste von falschen Fehlern der Sprache `ar` (Arabic), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"ast-ES"`: Liste von falschen Fehlern der Sprache `ast-ES` (Asturian), die verborgen werden sollen .
+- `"ast-ES"`: Liste von falschen Fehlern der Sprache `ast-ES` (Asturian), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"be-BY"`: Liste von falschen Fehlern der Sprache `be-BY` (Belarusian), die verborgen werden sollen .
+- `"be-BY"`: Liste von falschen Fehlern der Sprache `be-BY` (Belarusian), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"br-FR"`: Liste von falschen Fehlern der Sprache `br-FR` (Breton), die verborgen werden sollen .
+- `"br-FR"`: Liste von falschen Fehlern der Sprache `br-FR` (Breton), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"ca-ES"`: Liste von falschen Fehlern der Sprache `ca-ES` (Catalan), die verborgen werden sollen .
+- `"ca-ES"`: Liste von falschen Fehlern der Sprache `ca-ES` (Catalan), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"ca-ES-valencia"`: Liste von falschen Fehlern der Sprache `ca-ES-valencia` (Catalan (Valencian)), die verborgen werden sollen .
+- `"ca-ES-valencia"`: Liste von falschen Fehlern der Sprache `ca-ES-valencia` (Catalan (Valencian)), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"da-DK"`: Liste von falschen Fehlern der Sprache `da-DK` (Danish), die verborgen werden sollen .
+- `"da-DK"`: Liste von falschen Fehlern der Sprache `da-DK` (Danish), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"de"`: Liste von falschen Fehlern der Sprache `de` (German), die verborgen werden sollen .
+- `"de"`: Liste von falschen Fehlern der Sprache `de` (German), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"de-AT"`: Liste von falschen Fehlern der Sprache `de-AT` (German (Austria)), die verborgen werden sollen .
+- `"de-AT"`: Liste von falschen Fehlern der Sprache `de-AT` (German (Austria)), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"de-CH"`: Liste von falschen Fehlern der Sprache `de-CH` (German (Swiss)), die verborgen werden sollen .
+- `"de-CH"`: Liste von falschen Fehlern der Sprache `de-CH` (German (Swiss)), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"de-DE"`: Liste von falschen Fehlern der Sprache `de-DE` (German (Germany)), die verborgen werden sollen .
+- `"de-DE"`: Liste von falschen Fehlern der Sprache `de-DE` (German (Germany)), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"de-DE-x-simple-language"`: Liste von falschen Fehlern der Sprache `de-DE-x-simple-language` (Simple German), die verborgen werden sollen .
+- `"de-DE-x-simple-language"`: Liste von falschen Fehlern der Sprache `de-DE-x-simple-language` (Simple German), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"el-GR"`: Liste von falschen Fehlern der Sprache `el-GR` (Greek), die verborgen werden sollen .
+- `"el-GR"`: Liste von falschen Fehlern der Sprache `el-GR` (Greek), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"en"`: Liste von falschen Fehlern der Sprache `en` (English), die verborgen werden sollen .
+- `"en"`: Liste von falschen Fehlern der Sprache `en` (English), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"en-AU"`: Liste von falschen Fehlern der Sprache `en-AU` (English (Australian)), die verborgen werden sollen .
+- `"en-AU"`: Liste von falschen Fehlern der Sprache `en-AU` (English (Australian)), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"en-CA"`: Liste von falschen Fehlern der Sprache `en-CA` (English (Canadian)), die verborgen werden sollen .
+- `"en-CA"`: Liste von falschen Fehlern der Sprache `en-CA` (English (Canadian)), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"en-GB"`: Liste von falschen Fehlern der Sprache `en-GB` (English (GB)), die verborgen werden sollen .
+- `"en-GB"`: Liste von falschen Fehlern der Sprache `en-GB` (English (GB)), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"en-NZ"`: Liste von falschen Fehlern der Sprache `en-NZ` (English (New Zealand)), die verborgen werden sollen .
+- `"en-NZ"`: Liste von falschen Fehlern der Sprache `en-NZ` (English (New Zealand)), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"en-US"`: Liste von falschen Fehlern der Sprache `en-US` (English (US)), die verborgen werden sollen .
+- `"en-US"`: Liste von falschen Fehlern der Sprache `en-US` (English (US)), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"en-ZA"`: Liste von falschen Fehlern der Sprache `en-ZA` (English (South African)), die verborgen werden sollen .
+- `"en-ZA"`: Liste von falschen Fehlern der Sprache `en-ZA` (English (South African)), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"eo"`: Liste von falschen Fehlern der Sprache `eo` (Esperanto), die verborgen werden sollen .
+- `"eo"`: Liste von falschen Fehlern der Sprache `eo` (Esperanto), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"es"`: Liste von falschen Fehlern der Sprache `es` (Spanish), die verborgen werden sollen .
+- `"es"`: Liste von falschen Fehlern der Sprache `es` (Spanish), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"es-AR"`: Liste von falschen Fehlern der Sprache `es-AR` (Spanish (voseo)), die verborgen werden sollen .
+- `"es-AR"`: Liste von falschen Fehlern der Sprache `es-AR` (Spanish (voseo)), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"fa"`: Liste von falschen Fehlern der Sprache `fa` (Persian), die verborgen werden sollen .
+- `"fa"`: Liste von falschen Fehlern der Sprache `fa` (Persian), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"fr"`: Liste von falschen Fehlern der Sprache `fr` (French), die verborgen werden sollen .
+- `"fr"`: Liste von falschen Fehlern der Sprache `fr` (French), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"ga-IE"`: Liste von falschen Fehlern der Sprache `ga-IE` (Irish), die verborgen werden sollen .
+- `"ga-IE"`: Liste von falschen Fehlern der Sprache `ga-IE` (Irish), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"gl-ES"`: Liste von falschen Fehlern der Sprache `gl-ES` (Galician), die verborgen werden sollen .
+- `"gl-ES"`: Liste von falschen Fehlern der Sprache `gl-ES` (Galician), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"it"`: Liste von falschen Fehlern der Sprache `it` (Italian), die verborgen werden sollen .
+- `"it"`: Liste von falschen Fehlern der Sprache `it` (Italian), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"ja-JP"`: Liste von falschen Fehlern der Sprache `ja-JP` (Japanese), die verborgen werden sollen .
+- `"ja-JP"`: Liste von falschen Fehlern der Sprache `ja-JP` (Japanese), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"km-KH"`: Liste von falschen Fehlern der Sprache `km-KH` (Khmer), die verborgen werden sollen .
+- `"km-KH"`: Liste von falschen Fehlern der Sprache `km-KH` (Khmer), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"nl"`: Liste von falschen Fehlern der Sprache `nl` (Dutch), die verborgen werden sollen .
+- `"nl"`: Liste von falschen Fehlern der Sprache `nl` (Dutch), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"nl-BE"`: Liste von falschen Fehlern der Sprache `nl-BE` (Dutch (Belgium)), die verborgen werden sollen .
+- `"nl-BE"`: Liste von falschen Fehlern der Sprache `nl-BE` (Dutch (Belgium)), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"pl-PL"`: Liste von falschen Fehlern der Sprache `pl-PL` (Polish), die verborgen werden sollen .
+- `"pl-PL"`: Liste von falschen Fehlern der Sprache `pl-PL` (Polish), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"pt"`: Liste von falschen Fehlern der Sprache `pt` (Portuguese), die verborgen werden sollen .
+- `"pt"`: Liste von falschen Fehlern der Sprache `pt` (Portuguese), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"pt-AO"`: Liste von falschen Fehlern der Sprache `pt-AO` (Portuguese (Angola preAO)), die verborgen werden sollen .
+- `"pt-AO"`: Liste von falschen Fehlern der Sprache `pt-AO` (Portuguese (Angola preAO)), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"pt-BR"`: Liste von falschen Fehlern der Sprache `pt-BR` (Portuguese (Brazil)), die verborgen werden sollen .
+- `"pt-BR"`: Liste von falschen Fehlern der Sprache `pt-BR` (Portuguese (Brazil)), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"pt-MZ"`: Liste von falschen Fehlern der Sprache `pt-MZ` (Portuguese (Moçambique preAO)), die verborgen werden sollen .
+- `"pt-MZ"`: Liste von falschen Fehlern der Sprache `pt-MZ` (Portuguese (Moçambique preAO)), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"pt-PT"`: Liste von falschen Fehlern der Sprache `pt-PT` (Portuguese (Portugal)), die verborgen werden sollen .
+- `"pt-PT"`: Liste von falschen Fehlern der Sprache `pt-PT` (Portuguese (Portugal)), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"ro-RO"`: Liste von falschen Fehlern der Sprache `ro-RO` (Romanian), die verborgen werden sollen .
+- `"ro-RO"`: Liste von falschen Fehlern der Sprache `ro-RO` (Romanian), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"ru-RU"`: Liste von falschen Fehlern der Sprache `ru-RU` (Russian), die verborgen werden sollen .
+- `"ru-RU"`: Liste von falschen Fehlern der Sprache `ru-RU` (Russian), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"sk-SK"`: Liste von falschen Fehlern der Sprache `sk-SK` (Slovak), die verborgen werden sollen .
+- `"sk-SK"`: Liste von falschen Fehlern der Sprache `sk-SK` (Slovak), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"sl-SI"`: Liste von falschen Fehlern der Sprache `sl-SI` (Slovenian), die verborgen werden sollen .
+- `"sl-SI"`: Liste von falschen Fehlern der Sprache `sl-SI` (Slovenian), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"sv"`: Liste von falschen Fehlern der Sprache `sv` (Swedish), die verborgen werden sollen .
+- `"sv"`: Liste von falschen Fehlern der Sprache `sv` (Swedish), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"ta-IN"`: Liste von falschen Fehlern der Sprache `ta-IN` (Tamil), die verborgen werden sollen .
+- `"ta-IN"`: Liste von falschen Fehlern der Sprache `ta-IN` (Tamil), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"tl-PH"`: Liste von falschen Fehlern der Sprache `tl-PH` (Tagalog), die verborgen werden sollen .
+- `"tl-PH"`: Liste von falschen Fehlern der Sprache `tl-PH` (Tagalog), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"uk-UA"`: Liste von falschen Fehlern der Sprache `uk-UA` (Ukrainian), die verborgen werden sollen .
+- `"uk-UA"`: Liste von falschen Fehlern der Sprache `uk-UA` (Ukrainian), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
   - Skalar vom Typ `string`
-- `"zh-CN"`: Liste von falschen Fehlern der Sprache `zh-CN` (Chinese), die verborgen werden sollen .
+- `"zh-CN"`: Liste von falschen Fehlern der Sprache `zh-CN` (Chinese), die verborgen werden sollen.
 
   Array, bei dem jeder Eintrag folgenden Typ hat:
 
@@ -1177,7 +1177,7 @@ Objekt mit folgenden Eigenschaften:
 
 Liste von BibTeX-Feldern, deren Werte in BibTeX-Dateien auf Fehler überprüft werden sollen.
 
-Diese Einstellung ist ein Objekt mit den Namen der Felder als Schlüssel und Booleans als Werte, wobei `true` heißt, dass der Wert der Feldes überprüft werden soll, und `false` heißt, dass der Wert des Feldes ignoriert werden soll.
+Diese Einstellung ist ein Objekt mit den Namen der Felder als Schlüssel und Booleans als Werte, wobei `true` heißt, dass der Wert des Feldes überprüft werden soll, und `false` heißt, dass der Wert des Feldes ignoriert werden soll.
 
 Einige gebräuchliche Felder werden bereits ignoriert, selbst, wenn Sie diese Einstellung auf ein leeres Objekt setzen.
 
@@ -1228,7 +1228,8 @@ Objekt mit beliebigen Eigenschaftsnamen, wobei die Werte jeder Eigenschaft folge
   - `"default"`: Der Befehl wird so behandelt, wie unbekannte Befehle standardmäßig behandelt werden: Der Befehlsname an sich wird ignoriert, aber die Befehlsargumente werden nicht ignoriert.
   - `"ignore"`: Der ganze Befehl zusammen mit seinen Argumenten wird ignoriert.
   - `"dummy"`: Der ganze Befehl zusammen mit seinen Argumenten wird durch ein Dummy-Wort ersetzt (d. h. `Dummy0`, `Dummy1` usw.). LTeX nutzt diesen Mechanismus intern für Gleichungen, Literaturverweise, Referenzen und ähnliche Konstrukte, die Teil der Satzstruktur sind und für die LanguageTool einen Fehler anzeigen würde, wenn man sie einfach im überprüften Text weglassen würde.
-  - `"pluralDummy"`: Der ganze Befehl zusammen mit seinen Argumenten wird durch ein Plural-Dummy-Wort ersetzt (d. h. `Dummies`). LTeX nutzt diesen Mechanismus intern für Gleichungen, Literaturverweise, Referenzen und ähnliche Konstrukte, die Teil der Satzstruktur sind und für die LanguageTool einen Fehler anzeigen würde, wenn man sie einfach im überprüften Text weglassen würde.
+  - `"pluralDummy"`: Der ganze Befehl zusammen mit seinen Argumenten wird durch ein Plural-Dummy-Wort ersetzt (d. h. `Dummies`). Siehe die Beschreibung von `"dummy"`.
+  - `"vowelDummy"`: Der ganze Befehl zusammen mit seinen Argumenten wird durch ein Vokal-Dummy-Wort ersetzt (d. h. `Ina`). Siehe die Beschreibung von `"dummy"`.
 
 </div>
 
@@ -1286,7 +1287,8 @@ Objekt mit beliebigen Eigenschaftsnamen, wobei die Werte jeder Eigenschaft folge
   - `"default"`: Der Knoten wird nicht gesondert behandelt.
   - `"ignore"`: Der ganze Knoten zusammen mit seinen `Text`-Blättern wird ignoriert.
   - `"dummy"`: Der ganze Knoten zusammen mit seinen `Text`-Blättern wird durch ein Dummy-Wort ersetzt (d. h. `Dummy0`, `Dummy1` usw.). LTeX nutzt diesen Mechanismus intern für Gleichungen, Literaturverweise, Referenzen und ähnliche Konstrukte, die Teil der Satzstruktur sind und für die LanguageTool einen Fehler anzeigen würde, wenn man sie einfach im überprüften Text weglassen würde.
-  - `"pluralDummy"`: Der ganze Knoten zusammen mit seinen `Text`-Blättern wird durch ein Plural-Dummy-Wort ersetzt (d. h. `Dummies`). LTeX nutzt diesen Mechanismus intern für Gleichungen, Literaturverweise, Referenzen und ähnliche Konstrukte, die Teil der Satzstruktur sind und für die LanguageTool einen Fehler anzeigen würde, wenn man sie einfach im überprüften Text weglassen würde.
+  - `"pluralDummy"`: Der ganze Knoten zusammen mit seinen `Text`-Blättern wird durch ein Plural-Dummy-Wort ersetzt (d. h. `Dummies`). Siehe die Beschreibung von `"dummy"`.
+  - `"vowelDummy"`: Der ganze Knoten zusammen mit seinen `Text`-Blättern wird durch ein Vokal-Dummy-Wort ersetzt (d. h. `Ina`). Siehe die Beschreibung von `"dummy"`.
 
 </div>
 
@@ -1432,7 +1434,7 @@ Optionaler Pfad zu einem Verzeichnis mit Regeln eines word2vec-Sprachmodells.
 
 <!-- ltex-client-specific-de-begin -->
 
-Falls dies auf eine leere Zeichenfolge gesetzt ist, dann lädt LTeX automatisch [ltex-ls von GitHub](https://github.com/valentjn/ltex-ls/releases) herunter, speichert es im Erweiterungsordner, und benutzt es für die Textüberprüfung. Sie können diese Einstellung auf den Ort eines ltex-ls-Release setzen, das Sie selbst heruntergeladen haben.
+Falls dies auf eine leere Zeichenfolge gesetzt ist, dann lädt LTeX automatisch [ltex-ls von GitHub](https://github.com/valentjn/ltex-ls/releases) herunter, speichert es im Erweiterungsordner, und benutzt es für die Textüberprüfung. Sie können diese Einstellung auf den Ort eines ltex-ls-Releases setzen, das Sie selbst heruntergeladen haben.
 
 Benutzen Sie dafür den Pfad zum Hauptverzeichnis von ltex-ls (dieses enthält die Unterverzeichnisse `bin` und `lib`).
 
@@ -1460,7 +1462,7 @@ Beachten Sie, dass in diesem Modus die Einstellungen [`ltex.dictionary`](setting
 
 Protokollierungslevel (Ausführlichkeit) des Server-Protokolls von ltex-ls, das unter `Anzeigen` › `Ausgabe` › `LTeX Language Server` verfügbar ist.
 
-Die Levels sind in absteigender Reihenfolge `"severe"`, `"warning"`, `"info"`, `"config"`, `"fine"`, `"finer"`, und `"finest"`. Alle Meldungen, die den angegebene Level oder einen höheren Level haben, werden protokolliert.
+Die Levels sind in absteigender Reihenfolge `"severe"`, `"warning"`, `"info"`, `"config"`, `"fine"`, `"finer"`, und `"finest"`. Alle Meldungen, die den angegebenen Level oder einen höheren Level haben, werden protokolliert.
 
 ltex-ls benutzt nicht alle Protokollierungslevel.
 
@@ -1473,7 +1475,7 @@ ltex-ls benutzt nicht alle Protokollierungslevel.
 - `"info"`: Niedrige Ausführlichkeit. Protokolliere zusätzlich Start- und Beendingungsmeldungen.
 - `"config"`: Mittlere Ausführlichkeit. Protokolliere zusätzlich Konfigurationsmeldungen.
 - `"fine"`: Mittlere bis hohe Ausführlichkeit (Standard). Protokolliere zusätzlich, wenn LanguageTool aufgerufen wird oder wenn LanguageTool aufgrund geänderter Einstellungen neu initialisiert werden muss.
-- `"finer"`: Hohe Ausführlichkeit.Protokolliere zusätzliche Debugging-Informationen wie ganze Texte, die überprüft werden.
+- `"finer"`: Hohe Ausführlichkeit. Protokolliere zusätzliche Debugging-Informationen wie ganze Texte, die überprüft werden.
 - `"finest"`: Maximale Ausführlichkeit. Protokolliere alle verfügbaren Debugging-Informationen.
 
 *Voreinstellung:* `"fine"`
@@ -1500,7 +1502,7 @@ Nach Änderungen muss das Fenster von Visual Studio Code erneut geladen werden.
 
 Falls dies auf `true` gesetzt ist, dann versucht LTeX immer zunächst eine systemweite Java-Installation zu benutzen, bevor LTeX versucht, eine automatisch heruntergeladene Java-Distribution zu benutzen.
 
-Dies ist das Standardverhalten auf allen Plattformen außer Mac (d. h., diese Einstellung hat keine Auswirkung auf diesen Plattformen). Auf Mac-Systemen kann der Versuch, eine systemweite Java-Installation zu benutzen, obwohl Java nicht installiert ist, ein Popup-Dialog verursachen, der dazu auffordert, Java zu installieren. Daher benutzt LTeX standardmäßig keine systemweite Java-Installation auf Mac-Systemen.
+Dies ist das Standardverhalten auf allen Plattformen außer Mac (d. h., diese Einstellung hat keine Auswirkung auf diesen Plattformen). Auf Mac-Systemen kann der Versuch, eine systemweite Java-Installation zu benutzen, obwohl Java nicht installiert ist, einen Popup-Dialog verursachen, der dazu auffordert, Java zu installieren. Daher benutzt LTeX standardmäßig keine systemweite Java-Installation auf Mac-Systemen.
 
 Nach Änderungen muss das Fenster von Visual Studio Code erneut geladen werden.
 
@@ -1548,7 +1550,7 @@ Größe des LanguageTool-Zwischenspeichers `ResultCache` in Sätzen (muss eine p
 
 Falls nur ein kleiner Teil des Textes geändert wird (z. B. ein einziger Tastendruck im Editor), dann benutzt LanguageTool den Zwischenspeicher, um zu vermeiden, dass der komplette Text nochmals überprüft werden muss. LanguageTool teilt den Text intern in Sätze auf; Sätze, die bereits überprüft worden sind, werden übersprungen.
 
-Eine Verkleinerung kann dazu führen, dass der Java-Prozess weniger RAM-Speicher benötigt. Wenn Sie diese Einstellung auf einen zu kleinen Wert sätzen, dann kann sich die Zeit, die LanguageTool zur Überprüfung benötigt, deutlich erhöhen.
+Eine Verkleinerung kann dazu führen, dass der Java-Prozess weniger RAM-Speicher benötigt. Wenn Sie diese Einstellung auf einen zu kleinen Wert setzen, dann kann sich die Zeit, die LanguageTool zur Überprüfung benötigt, deutlich erhöhen.
 
 Nach Änderungen muss das Fenster von Visual Studio Code erneut geladen werden.
 

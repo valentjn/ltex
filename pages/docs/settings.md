@@ -1228,7 +1228,8 @@ Object with arbitrary property names, where the value of each property has the f
   - `"default"`: The command is treated like unknown commands are treated by default: The command name itself is ignored, but the arguments are not ignored.
   - `"ignore"`: The whole command together with its arguments is ignored.
   - `"dummy"`: The whole command together with its arguments is replaced with a dummy word (i.e., `Dummy0`, `Dummy1`, etc.). LTeX internally uses this mechanism for equations, citations, references, and similar constructs that are part of the sentence structure and for which LanguageTool would throw an error if simply omitted from the checked text.
-  - `"pluralDummy"`: The whole command together with its arguments is replaced with a plural dummy word (i.e., `Dummies`). LTeX internally uses this mechanism for equations, citations, references, and similar constructs that are part of the sentence structure and for which LanguageTool would throw an error if simply omitted from the checked text.
+  - `"pluralDummy"`: The whole command together with its arguments is replaced with a plural dummy word (i.e., `Dummies`). See description for `"dummy"`.
+  - `"vowelDummy"`: The whole command together with its arguments is replaced with a vowel dummy word (i.e., `Ina`). See description for `"dummy"`.
 
 </div>
 
@@ -1286,7 +1287,8 @@ Object with arbitrary property names, where the value of each property has the f
   - `"default"`: The node is not treated specially.
   - `"ignore"`: The whole node together with its `Text` leaves is ignored.
   - `"dummy"`: The whole node together with its `Text` leaves is replaced with a dummy word (i.e., `Dummy0`, `Dummy1`, etc.). LTeX internally uses this mechanism for example for inline code (inside backticks) that is part of the sentence structure and for which LanguageTool would throw an error if simply omitted from the checked text.
-  - `"pluralDummy"`: The whole node together with its `Text` leaves is replaced with a plural dummy word (i.e., `Dummies`). LTeX internally uses this mechanism for example for inline code (inside backticks) that is part of the sentence structure and for which LanguageTool would throw an error if simply omitted from the checked text.
+  - `"pluralDummy"`: The whole node together with its `Text` leaves is replaced with a plural dummy word (i.e., `Dummies`). See description for `"dummy"`.
+  - `"vowelDummy"`: The whole node together with its `Text` leaves is replaced with a vowel dummy word (i.e., `Ina`). See description for `"dummy"`.
 
 </div>
 
@@ -1470,9 +1472,9 @@ ltex-ls does not use all log levels.
 
 - `"severe"`: Minimum verbosity. Only log severe errors.
 - `"warning"`: Very low verbosity. Only log severe errors and warnings.
-- `"info"`: Low verbosity. Additionally log startup and shutdown messages.
-- `"config"`: Medium verbosity. Additionally log configuration messages.
-- `"fine"`: Medium to high verbosity (default). Additionally log when LanguageTool is called or LanguageTool has to be reinitialized due to changed settings.
+- `"info"`: Low verbosity. Additionally, log startup and shutdown messages.
+- `"config"`: Medium verbosity. Additionally, log configuration messages.
+- `"fine"`: Medium to high verbosity (default). Additionally, log when LanguageTool is called or LanguageTool has to be reinitialized due to changed settings.
 - `"finer"`: High verbosity. Log additional debugging information such as full texts to be checked.
 - `"finest"`: Maximum verbosity. Log all available debugging information.
 
@@ -1560,7 +1562,7 @@ Changes require reloading the Visual Studio Code window to take effect.
 
 Severity of the diagnostics corresponding to the grammar and spelling errors.
 
-Allows to control how and where the diagnostics appear in Visual Studio Code. One of `"error"`, `"warning"`, `"information"`, and `"hint"`.
+Controls how and where the diagnostics appear in Visual Studio Code. One of `"error"`, `"warning"`, `"information"`, and `"hint"`.
 
 *Type:* `string`
 
