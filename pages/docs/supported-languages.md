@@ -30,7 +30,11 @@ LTeX supports can check grammar and spelling in the following markup languages. 
 
 ### Programming Languages
 
-In addition to markup languages, LTeX can also check comments in many popular programming languages. This is disabled by default, as LTeX is currently not able to reliably detect if a comment is source code that has been commented out. To enable checking for programming languages, add the respective code language identifier to [`ltex.enabled`](settings.html#ltexenabled). Currently, LTeX assumes comments are written in Markdown.
+In addition to markup languages, LTeX can also check comments in many popular programming languages. This is disabled by default, as LTeX is currently not able to reliably detect if a comment is source code that has been commented out. To enable checking for programming languages, add the respective code language identifier to [`ltex.enabled`](settings.html#ltexenabled).
+
+A line comment is only checked if its start delimiter is only preceded by whitespace on the same line and followed by a whitespace character. A block comment is only checked if its start delimiter is only preceded by whitespace on the same line and followed by a whitespace character, and its end delimiter is preceded by a whitespace character and only followed by whitespace on the same line. These rules try to minimize the amount of false positives, accounting for both comment delimiters inside code (e.g., strings) and commented out code. If you comment out code that should not be checked by LTeX, don't insert whitespace after the start delimiter.
+
+LTeX assumes comments are written in Markdown, except for Python, where reStructuredText is used.
 
 There is a list of all supported programming languages below. Again, an asterisk (∗) indicates that the language is not supported by VS Code out-of-the-box, and an additional extension that adds support for the language has to be installed in order for LTeX to work (e.g., [MATLAB Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=Gimly81.matlab) for MATLAB).
 
