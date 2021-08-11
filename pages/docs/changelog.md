@@ -13,7 +13,7 @@ toc: false
 
 This is the changelog of vscode-ltex. If you use a different LTeX plugin for an editor other than VS Code, check the [changelog of LTeX LS](https://github.com/valentjn/ltex-ls/blob/release/CHANGELOG.md) (look up which version of LTeX LS your LTeX plugin uses).
 
-## 11.0.0 (upcoming)
+## 11.0.0 &#x2014; &#x201c;The Kotlin Conundrum&#x201d; (August 11, 2021)
 
 - &#x1f527; *Change:* Migrate LTeX LS from Java to Kotlin
 - &#x2728; *New:* Add support for checking comments in many popular programming languages &#x2014; [#350](https://github.com/valentjn/vscode-ltex/issues/350)
