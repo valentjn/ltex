@@ -32,6 +32,12 @@ Nach Änderungen muss das Fenster von Visual Studio Code erneut geladen werden.
 
 *Typ:* `boolean` oder `array`
 
+*Beispiele:*
+
+- `true`
+- `false`
+- `["latex", "markdown"]`
+
 *Voreinstellung:* `["bibtex", "html", "latex", "markdown", "org", "restructuredtext", "rsweave"]`
 
 *Vollständige Beschreibung des Typs:* <button class='expandable-button btn btn-default'>Klick zum Zeigen/Verbergen</button>
@@ -1562,18 +1568,41 @@ Nach Änderungen muss das Fenster von Visual Studio Code erneut geladen werden.
 
 Schwere, mit der Schreibfehler angezeigt werden.
 
-Erlaubt die Steuerung, wie und wo die Fehler in Visual Studio Code erscheinen. Eines von `"error"`, `"warning"`, `"information"` und `"hint"`.
+Erlaubt die Steuerung, wie und wo die Fehler in Visual Studio Code erscheinen. Die möglichen Schweren sind `"error"`, `"warning"`, `"information"` und `"hint"`.
 
-*Typ:* `string`
+Diese Einstellung kann entweder ein String mit der Schwere sein, die für alle Schreibfehler benutzt werden soll, oder ein Objekt mit regelabhängigen Schweren. Falls ein Objekt verwendet wird, ist jeder Schlüssel die ID einer LanguageTool-Regel und jeder Wert einer der möglichen Schweren. In diesem Fall muss die Schwere anderer Regeln, die nicht zu einer der Schlüssel passen, mit dem besonderen Schlüssel `"default"` angegeben werden.
 
-*Mögliche Werte:*
+*Typ:* `string` oder `object`
 
-- `"error"`: Fehler mit der Schwere `error` sind üblicherweise mit einer roten geschlängelten Linie unterstrichen und erscheinen im Editor, in der Minimap, im Probleme-Reiter und im Explorer.
-- `"warning"`: Fehler mit der Schwere `warning` sind üblicherweise mit einer gelben geschlängelten Linie unterstrichen und erscheinen im Editor, in der Minimap, im Probleme-Reiter und im Explorer.
-- `"information"`: Fehler mit der Schwere `information` sind üblicherweise mit einer blauen geschlängelten Linie unterstrichen und erscheinen im Editor, in der Minimap und im Probleme-Reiter, aber nicht im Explorer.
-- `"hint"`: Fehler mit der Schwere `hint` sind nicht unterstrichen (nur unauffällig markiert) und erscheinen nur im Editor, aber nicht in der Minimap, im Probleme-Reiter oder im Explorer.
+*Beispiele:*
+
+- `"information"`
+- `{"PASSIVE_VOICE": "hint", "default": "information"}`
 
 *Voreinstellung:* `"information"`
+
+*Vollständige Beschreibung des Typs:* <button class='expandable-button btn btn-default'>Klick zum Zeigen/Verbergen</button>
+
+<div markdown='1' style='display:none;'>
+
+Einer der folgenden Typen:
+
+- Einer der folgenden Werte:
+
+  - `"error"`: Fehler mit der Schwere `error` sind üblicherweise mit einer roten geschlängelten Linie unterstrichen und erscheinen im Editor, in der Minimap, im Probleme-Reiter und im Explorer.
+  - `"warning"`: Fehler mit der Schwere `warning` sind üblicherweise mit einer gelben geschlängelten Linie unterstrichen und erscheinen im Editor, in der Minimap, im Probleme-Reiter und im Explorer.
+  - `"information"`: Fehler mit der Schwere `information` sind üblicherweise mit einer blauen geschlängelten Linie unterstrichen und erscheinen im Editor, in der Minimap und im Probleme-Reiter, aber nicht im Explorer.
+  - `"hint"`: Fehler mit der Schwere `hint` sind nicht unterstrichen (nur unauffällig markiert) und erscheinen nur im Editor, aber nicht in der Minimap, im Probleme-Reiter oder im Explorer.
+- Objekt mit beliebigen Eigenschaftsnamen, wobei die Werte jeder Eigenschaft folgenden Typ hat:
+
+  - Einer der folgenden Werte:
+
+    - `"error"`: Fehler mit der Schwere `error` sind üblicherweise mit einer roten geschlängelten Linie unterstrichen und erscheinen im Editor, in der Minimap, im Probleme-Reiter und im Explorer.
+    - `"warning"`: Fehler mit der Schwere `warning` sind üblicherweise mit einer gelben geschlängelten Linie unterstrichen und erscheinen im Editor, in der Minimap, im Probleme-Reiter und im Explorer.
+    - `"information"`: Fehler mit der Schwere `information` sind üblicherweise mit einer blauen geschlängelten Linie unterstrichen und erscheinen im Editor, in der Minimap und im Probleme-Reiter, aber nicht im Explorer.
+    - `"hint"`: Fehler mit der Schwere `hint` sind nicht unterstrichen (nur unauffällig markiert) und erscheinen nur im Editor, aber nicht in der Minimap, im Probleme-Reiter oder im Explorer.
+
+</div>
 
 ## `ltex.checkFrequency`
 

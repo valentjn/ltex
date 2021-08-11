@@ -32,6 +32,12 @@ Changes require reloading the Visual Studio Code window to take effect.
 
 *Type:* `boolean` or `array`
 
+*Examples:*
+
+- `true`
+- `false`
+- `["latex", "markdown"]`
+
 *Default:* `["bibtex", "html", "latex", "markdown", "org", "restructuredtext", "rsweave"]`
 
 *Full type description:* <button class='expandable-button btn btn-default'>Click to show/hide</button>
@@ -911,7 +917,7 @@ This setting is language-specific, so use an object of the format `{"<LANGUAGE1>
 
 Although it is possible to manually edit this setting, the intended way is the `Hide false positive` quick fix.
 
-The JSON string currently has the form `{"rule": "<RULE>", "sentence": "<SENTENCE>"}`, where `<RULE>` is the identifier of the LanguageTool rule and `<SENTENCE>` is a Java-compatible regular expression. All occurrences of the given rule are hidden in sentences (as determined by the LanguageTool tokenizer) that match the regular expression. [See the documentation for details.](advanced-usage.html#hiding-false-positives-with-regular-expressions)
+The JSON string currently has the form `{"rule": "<RULE>", "sentence": "<SENTENCE>"}`, where `<RULE>` is the ID of the LanguageTool rule and `<SENTENCE>` is a Java-compatible regular expression. All occurrences of the given rule are hidden in sentences (as determined by the LanguageTool tokenizer) that match the regular expression. [See the documentation for details.](advanced-usage.html#hiding-false-positives-with-regular-expressions)
 
 <!-- ltex-client-specific-begin -->
 
@@ -1562,18 +1568,41 @@ Changes require reloading the Visual Studio Code window to take effect.
 
 Severity of the diagnostics corresponding to the grammar and spelling errors.
 
-Controls how and where the diagnostics appear in Visual Studio Code. One of `"error"`, `"warning"`, `"information"`, and `"hint"`.
+Controls how and where the diagnostics appear in Visual Studio Code. The possible severities are `"error"`, `"warning"`, `"information"`, and `"hint"`.
 
-*Type:* `string`
+This setting can either be a string with the severity to use for all diagnostics, or an object with rule-dependent severities. If an object is used, each key is the ID of a LanguageTool rule and each value is one of the possible severities. In this case, the severity of other rules, which don't match any of the keys, has to be specified with the special key `"default"`.
 
-*Possible values:*
+*Type:* `string` or `object`
 
-- `"error"`: Error diagnostics are usually underlined with a red squiggly line and appear in editor, minimap, Problems tab, and Explorer.
-- `"warning"`: Warning diagnostics are usually underlined with a yellow squiggly line and appear in editor, minimap, Problems tab, and Explorer.
-- `"information"`: Information diagnostics are usually underlined with a blue squiggly line and appear in editor, minimap, and Problems tab, but not in the Explorer.
-- `"hint"`: Hint diagnostics are not underlined (only subtly marked) and only appear in the editor, not in minimap, Problems tab, or Explorer.
+*Examples:*
+
+- `"information"`
+- `{"PASSIVE_VOICE": "hint", "default": "information"}`
 
 *Default:* `"information"`
+
+*Full type description:* <button class='expandable-button btn btn-default'>Click to show/hide</button>
+
+<div markdown='1' style='display:none;'>
+
+One of the following types:
+
+- One of the following values:
+
+  - `"error"`: Error diagnostics are usually underlined with a red squiggly line and appear in editor, minimap, Problems tab, and Explorer.
+  - `"warning"`: Warning diagnostics are usually underlined with a yellow squiggly line and appear in editor, minimap, Problems tab, and Explorer.
+  - `"information"`: Information diagnostics are usually underlined with a blue squiggly line and appear in editor, minimap, and Problems tab, but not in the Explorer.
+  - `"hint"`: Hint diagnostics are not underlined (only subtly marked) and only appear in the editor, not in minimap, Problems tab, or Explorer.
+- Object with arbitrary property names, where the value of each property has the following type:
+
+  - One of the following values:
+
+    - `"error"`: Error diagnostics are usually underlined with a red squiggly line and appear in editor, minimap, Problems tab, and Explorer.
+    - `"warning"`: Warning diagnostics are usually underlined with a yellow squiggly line and appear in editor, minimap, Problems tab, and Explorer.
+    - `"information"`: Information diagnostics are usually underlined with a blue squiggly line and appear in editor, minimap, and Problems tab, but not in the Explorer.
+    - `"hint"`: Hint diagnostics are not underlined (only subtly marked) and only appear in the editor, not in minimap, Problems tab, or Explorer.
+
+</div>
 
 ## `ltex.checkFrequency`
 
