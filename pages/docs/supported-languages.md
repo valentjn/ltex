@@ -14,7 +14,7 @@ sidebar: "sidebar"
 
 ### Markup Languages
 
-LTeX supports can check grammar and spelling in the following markup languages. These markup languages are exactly those languages for which LTeX is enabled by default, so no further configuration is necessary. Change [`ltex.enabled`](settings.html#ltexenabled) to manually configure for which languages LTeX is enabled/disabled.
+LTeX supports checking grammar and spelling in the following markup languages. These markup languages are exactly those languages for which LTeX is enabled by default, so no further configuration is necessary. Change [`ltex.enabled`](settings.html#ltexenabled) to manually configure for which languages LTeX is enabled/disabled.
 
 | Language | Language ID | LTeX Support |
 | -------- | ----------- | ------------ |
@@ -84,7 +84,7 @@ Apart from code languages like markup and programming languages, there is also t
 
 By default, LTeX uses American English (`en-US`) when checking documents. If your documents are written in a different language, change [`ltex.language`](settings.html#ltexlanguage). In addition, there are ways to change the checking language in the middle of documents. For details, see the questions [“How can I check multiple languages at once?”](faq.html#how-can-i-check-multiple-languages-at-once) and [“Why does LTeX check in a different language than expected?”](faq.html#why-does-ltex-check-in-a-different-language-than-expected) in the FAQ.
 
-Use a specific variant like `en-US` or `"de-DE` instead of the generic language code like `en` or `de` to obtain spelling corrections (in addition to grammar corrections).
+Use a specific variant like `en-US` or `de-DE` instead of the generic language code like `en` or `de` to obtain spelling corrections (in addition to grammar corrections).
 
 The natural languages supported by LTeX are identical to those supported by [LanguageTool](https://languagetool.org/), which is LTeX's backend. Therefore, the supported languages (and how well they are supported) might change if a new LTeX version comes with an updated version of LanguageTool. The following languages are currently supported:
 
