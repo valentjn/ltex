@@ -176,6 +176,10 @@ def plotStats() -> None:
 
 
 def plotMap() -> None:
+  # workaround needed for Cartopy until https://github.com/SciTools/cartopy/pull/1833 is released
+  cartopy.config["downloaders"][("shapefiles", "natural_earth")].url_template = (
+      "https://naturalearth.s3.amazonaws.com/{resolution}_{category}/ne_{resolution}_{name}.zip")
+
   mapPath = repoDirPath.joinpath("_data", "stats", "map.json")
   with open(mapPath, "r") as f: map_ = json.load(f)
 
