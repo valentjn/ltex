@@ -17,9 +17,6 @@ from typing import Any, Callable, Dict, Optional, Sequence, Tuple, Union
 sys.path.append(str(pathlib.Path(__file__).parent))
 from linkSettingsAndCommands import linkSettingsAndCommands
 
-sys.path.append(str(pathlib.Path(__file__).parent.parent.parent.joinpath("vscode-ltex", "tools")))
-import convertChangelog
-
 
 
 licenseHeader = """
@@ -277,7 +274,7 @@ def updateSupportedLanguages(ltexRepoDirPath: pathlib.Path, pagesRepoDirPath: pa
     if regexMatch is None: continue
     languages[regexMatch.group(1)] = packageNlsJson[key]
 
-  languages = {x: y for x, y in sorted(languages.items(), key=lambda z: z[1])}
+  languages = {x: y for x, y in sorted(languages.items(), key=lambda z: z[1]) if x != "auto"}
   languagesMarkdown = ("<!-- ltex-natural-languages-begin -->\n\n"
       "{}\n\n<!-- ltex-natural-languages-end -->".format(
         ", ".join(f"{y}&nbsp;(`{x}`)" for x, y in languages.items())))
@@ -392,6 +389,9 @@ def copyMarkdown(srcPathOrMarkdown: Union[pathlib.Path, str], dstPath: pathlib.P
 
 def updateChangelog(ltexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
   changelogFilePath = ltexRepoDirPath.joinpath("changelog.xml")
+
+  sys.path.append(str(ltexRepoDirPath.joinpath("tools")))
+  import convertChangelog
   markdown = convertChangelog.convertChangelogFromXmlToMarkdown(changelogFilePath)
 
   copyMarkdown(markdown,
@@ -442,9 +442,8 @@ sidebar: "sidebar"
 
 def main() -> None:
   parser = argparse.ArgumentParser(description="update Markdown according to main repo")
-  parser.add_argument("--ltex-repo",
-      default=pathlib.Path(__file__).parent.parent.parent.joinpath("vscode-ltex"),
-      help="path to main repo")
+  parser.add_argument("--ltex-repo", default="/home/valentjn/repos/vscode-ltex",
+      type=pathlib.Path, help="path to main repo")
   args = parser.parse_args()
 
   ltexRepoDirPath = args.ltex_repo
