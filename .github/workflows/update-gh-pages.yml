@@ -31,7 +31,7 @@ jobs:
       - name: "Install Python Dependencies"
         # Cartopy from Ubuntu packages fails due to missing images, and build Shapely from
         # source due to assertion error (https://stackoverflow.com/a/60126085)
-        run: "sudo apt-get -y install libgeos-dev libproj-dev && python -m pip install --upgrade pip && pip install numpy==1.19.4 && pip install bokeh==2.2.3 cartopy==0.18.0 matplotlib==3.3.3 pyyaml==5.3.1 scipy==1.5.4 wheel==0.35.1 && pip uninstall -y shapely && pip install --no-binary shapely shapely==1.7.1"
+        run: "sudo apt -y install libgeos-dev libproj-dev && python -m pip install --upgrade pip && pip install numpy==1.19.4 && pip install bokeh==2.2.3 cartopy==0.18.0 matplotlib==3.3.3 pyyaml==5.3.1 scipy==1.5.4 wheel==0.35.1 && pip uninstall -y shapely && pip install --no-binary shapely shapely==1.7.1"
 
       - name: "Set up Ruby"
         uses: "ruby/setup-ruby@v1"
