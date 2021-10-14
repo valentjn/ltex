@@ -17,7 +17,7 @@ This is the changelog of vscode-ltex. If you use a different LTeX plugin for an 
 
 - New versions of LTeX released on or after January 14, 2022, will require VS Code 1.61.0 or later
 
-## 12.0.0 (upcoming)
+## 12.0.0 &#x2014; &#x201c;The Premium Emanation&#x201d; (October 14, 2021)
 
 - &#x1f527; *Change:* Bundle Java with LTeX LS; Java is not downloaded separately anymore and bundled Java is used if [`ltex.java.path`](settings.html#ltexjavapath) is not set
 - &#x1f5d1; *Removal:* Remove setting `ltex.java.forceTrySystemWide`
