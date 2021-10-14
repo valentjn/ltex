@@ -44,7 +44,7 @@ Es ist normalerweise nicht nötig, diesen Befehl auszuführen, da LTeX alle unte
 
 Löst eine Prüfung aller Markdown- und LaTeX-Dokumente im Arbeitsbereich aus.
 
-Dies führt eine Suche nach Dateien mit typischen Endungen der Dateitypen in allen Ordnern des Arbeitsbereiches durch, je nachdem, für welche Dateitypen LTeX aktiviert wurde (siehe [`ltex.enabled`](settings-de.html#ltexenabled)). Unbenannte und ungespeicherte Dokumente werden nicht überprüft. Die Dokumenttypen werden anhand der Dateinamen-Erweiterungen erkannt.
+Dies führt eine Suche nach Dateien mit typischen Endungen der Dateitypen in allen Ordnern des Arbeitsbereiches durch, je nachdem, für welche Dateitypen LTeX aktiviert wurde (siehe [`ltex.enabled`](settings-de.html#ltexenabled)). Unbenannte und ungespeicherte Dokumente werden nicht überprüft. Die Dokumenttypen werden anhand der Dateinamen-Erweiterungen erkannt. Um die Überprüfung von bestimmten Dateien oder Ordnern zu überspringen, fügen Sie sie zu `files.exclude` hinzu.
 
 Die Dokumente müssen in der UTF-8-Kodierung vorliegen. Dies funktioniert nicht, falls keine Ordner im Arbeitsbereich geöffnet sind.
 

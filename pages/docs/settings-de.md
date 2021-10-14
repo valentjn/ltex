@@ -57,10 +57,13 @@ Einer der folgenden Typen:
 
 Die Sprache (z. B. `"en-US"`), mit der LanguageTool auf Fehler suchen soll. Benutzen Sie eine bestimmte Variante wie `"en-US"` oder `"de-DE"` anstelle des generischen Sprachcodes wie `"en"` oder `"de"`, um Rechtschreibfehler zu finden (zusätzlich zu Grammatikfehlern).
 
+Wenn Sie den Sprachcode `"auto"` benutzen, dann wird LTeX versuchen, die Sprache des Dokuments zu erkennen. Dies wird nicht empfohlen, da nur generische Sprachen wie `"en"` oder `"de"` erkannt werden und daher keine Rechtschreibfehler gemeldet werden.
+
 *Typ:* `string`
 
 *Mögliche Werte:*
 
+- `"auto"`: Automatische Spracherkennung (nicht empfohlen)
 - `"ar"`: Arabic
 - `"ast-ES"`: Asturian
 - `"be-BY"`: Belarusian
@@ -1345,7 +1348,7 @@ Objekt mit folgenden Eigenschaften:
 
 ## `ltex.additionalRules.enablePickyRules`
 
-Aktiviere LanguageTool-Regeln, die als pedantisch ("picky") markiert und standardmäßig deaktiviert sind, z. B. Regeln bzgl. Passiv, Satzlänge etc.
+Aktiviere LanguageTool-Regeln, die als pedantisch ("picky") markiert und standardmäßig deaktiviert sind, z. B. Regeln bzgl. Passiv, Satzlänge etc., mit dem Nachteil von mehr falschen Fehlern.
 
 *Typ:* `boolean`
 
@@ -1456,11 +1459,27 @@ Nach Änderungen muss das Fenster von Visual Studio Code erneut geladen werden.
 
 Falls dies auf eine nicht-leere Zeichenfolge gesetzt ist, dann verwendet LTeX nicht die eingebaute Version von LanguageTool. Stattdessen verbindet sich LTeX zu einem externen [LanguageTool-HTTP-Server](http://wiki.languagetool.org/http-server). Setzen Sie diese Einstellung auf die Haupt-URI des Servers und hängen Sie kein `v2/check` oder Ähnliches an.
 
-Beachten Sie, dass in diesem Modus die Einstellungen [`ltex.dictionary`](settings-de.html#ltexdictionary), [`ltex.additionalRules.languageModel`](settings-de.html#ltexadditionalruleslanguagemodel), [`ltex.additionalRules.neuralNetworkModel`](settings-de.html#ltexadditionalrulesneuralnetworkmodel) und [`ltex.additionalRules.word2VecModel`](settings-de.html#ltexadditionalrulesword2vecmodel) ignoriert werden und dass die schnelle Problembehebung `Zum Wörterbuch hinzufügen` nicht erscheint.
+Beachten Sie, dass in diesem Modus die Einstellungen [`ltex.additionalRules.languageModel`](settings-de.html#ltexadditionalruleslanguagemodel), [`ltex.additionalRules.neuralNetworkModel`](settings-de.html#ltexadditionalrulesneuralnetworkmodel) und [`ltex.additionalRules.word2VecModel`](settings-de.html#ltexadditionalrulesword2vecmodel) ignoriert werden.
 
 *Typ:* `string`
 
 *Beispiel:* `"http://localhost:8081/"`
+
+*Voreinstellung:* `""`
+
+## `ltex.ltex-ls.languageToolOrgUsername`
+
+Benutzername/E-Mail-Adresse, wie zum Login auf languagetool.org benutzt, für Zugriff auf die Premium-API. Nur relevant, falls [`ltex.ltex-ls.languageToolHttpServerUri`](settings-de.html#ltexltex-lslanguagetoolhttpserveruri) gesetzt ist.
+
+*Typ:* `string`
+
+*Voreinstellung:* `""`
+
+## `ltex.ltex-ls.languageToolOrgApiKey`
+
+API-Schlüssel für Zugriff auf die Premium-API. Nur relevant, falls [`ltex.ltex-ls.languageToolHttpServerUri`](settings-de.html#ltexltex-lslanguagetoolhttpserveruri) gesetzt ist.
+
+*Typ:* `string`
 
 *Voreinstellung:* `""`
 
@@ -1490,7 +1509,7 @@ ltex-ls benutzt nicht alle Protokollierungslevel.
 
 <!-- ltex-client-specific-de-begin -->
 
-Falls dies auf eine leere Zeichenfolge gesetzt ist und LTeX auf Ihrem Rechner kein Java finden kann, dann lädt LTeX automatisch eine Java-Distribution herunter ([AdoptOpenJDK](https://adoptopenjdk.net/)), speichert sie im Erweiterungsordner und benutzt sie, um ltex-ls zu starten. Sie können diese Einstellung auf den Ort einer bereits bestehenden Java-Installation setzen, um stattdessen diese Java-Installation zu benutzen.
+Falls dies auf eine leere Zeichenfolge gesetzt ist, dann benutzt LTeX eine Java-Distribution, die in ltex-ls enthalten ist. Sie können diese Einstellung auf den Ort einer bereits bestehenden Java-Installation setzen, um stattdessen diese Java-Installation zu benutzen.
 
 Benutzen Sie denselben Pfad, den Sie für die Umgebungsvariable `JAVA_HOME` benutzen würden (dieser enthält üblicherweise neben anderen die Unterverzeichnisse `bin` und `lib`).
 
@@ -1501,22 +1520,6 @@ Nach Änderungen muss das Fenster von Visual Studio Code erneut geladen werden.
 *Typ:* `string`
 
 *Voreinstellung:* `""`
-
-## `ltex.java.forceTrySystemWide`
-
-<!-- ltex-client-specific-de-begin -->
-
-Falls dies auf `true` gesetzt ist, dann versucht LTeX immer zunächst eine systemweite Java-Installation zu benutzen, bevor LTeX versucht, eine automatisch heruntergeladene Java-Distribution zu benutzen.
-
-Dies ist das Standardverhalten auf allen Plattformen außer Mac (d. h., diese Einstellung hat keine Auswirkung auf diesen Plattformen). Auf Mac-Systemen kann der Versuch, eine systemweite Java-Installation zu benutzen, obwohl Java nicht installiert ist, einen Popup-Dialog verursachen, der dazu auffordert, Java zu installieren. Daher benutzt LTeX standardmäßig keine systemweite Java-Installation auf Mac-Systemen.
-
-Nach Änderungen muss das Fenster von Visual Studio Code erneut geladen werden.
-
-<!-- ltex-client-specific-end -->
-
-*Typ:* `boolean`
-
-*Voreinstellung:* `false`
 
 ## `ltex.java.initialHeapSize`
 
@@ -1606,7 +1609,9 @@ Einer der folgenden Typen:
 
 ## `ltex.checkFrequency`
 
-Steuert, wann Dokumente überprüft werden sollen. Eines von `"edit"`, `"save"` und `"manual"`.
+Steuert, wann Dokumente überprüft werden sollen.
+
+Eines von `"edit"`, `"save"` und `"manual"`.
 
 *Typ:* `string`
 

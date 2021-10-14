@@ -57,10 +57,13 @@ One of the following types:
 
 The language (e.g., `"en-US"`) LanguageTool should check against. Use a specific variant like `"en-US"` or `"de-DE"` instead of the generic language code like `"en"` or `"de"` to obtain spelling corrections (in addition to grammar corrections).
 
+When using the language code `"auto"`, LTeX will try to detect the language of the document. This is not recommended, as only generic languages like `"en"` or `"de"` will be detected and thus no spelling errors will be reported.
+
 *Type:* `string`
 
 *Possible values:*
 
+- `"auto"`: Automatic language detection (not recommended)
 - `"ar"`: Arabic
 - `"ast-ES"`: Asturian
 - `"be-BY"`: Belarusian
@@ -1345,7 +1348,7 @@ Object with the following properties:
 
 ## `ltex.additionalRules.enablePickyRules`
 
-Enable LanguageTool rules that are marked as picky and that are disabled by default, e.g., rules about passive voice, sentence length, etc.
+Enable LanguageTool rules that are marked as picky and that are disabled by default, e.g., rules about passive voice, sentence length, etc., at the cost of more false positives.
 
 *Type:* `boolean`
 
@@ -1456,11 +1459,27 @@ Changes require reloading the Visual Studio Code window to take effect.
 
 If set to a non-empty string, LTeX will not use the bundled, built-in version of LanguageTool. Instead, LTeX will connect to an external [LanguageTool HTTP server](http://wiki.languagetool.org/http-server). Set this setting to the root URI of the server, and do not append `v2/check` or similar.
 
-Note that in this mode, the settings [`ltex.dictionary`](settings.html#ltexdictionary), [`ltex.additionalRules.languageModel`](settings.html#ltexadditionalruleslanguagemodel), [`ltex.additionalRules.neuralNetworkModel`](settings.html#ltexadditionalrulesneuralnetworkmodel), and [`ltex.additionalRules.word2VecModel`](settings.html#ltexadditionalrulesword2vecmodel) will not take any effect, and the `Add to dictionary` quick fix will not appear.
+Note that in this mode, the settings [`ltex.additionalRules.languageModel`](settings.html#ltexadditionalruleslanguagemodel), [`ltex.additionalRules.neuralNetworkModel`](settings.html#ltexadditionalrulesneuralnetworkmodel), and [`ltex.additionalRules.word2VecModel`](settings.html#ltexadditionalrulesword2vecmodel) will not take any effect.
 
 *Type:* `string`
 
 *Example:* `"http://localhost:8081/"`
+
+*Default:* `""`
+
+## `ltex.ltex-ls.languageToolOrgUsername`
+
+Username/email as used to log in at languagetool.org for Premium API access. Only relevant if [`ltex.ltex-ls.languageToolHttpServerUri`](settings.html#ltexltex-lslanguagetoolhttpserveruri) is set.
+
+*Type:* `string`
+
+*Default:* `""`
+
+## `ltex.ltex-ls.languageToolOrgApiKey`
+
+API key for Premium API access. Only relevant if [`ltex.ltex-ls.languageToolHttpServerUri`](settings.html#ltexltex-lslanguagetoolhttpserveruri) is set.
+
+*Type:* `string`
 
 *Default:* `""`
 
@@ -1490,7 +1509,7 @@ ltex-ls does not use all log levels.
 
 <!-- ltex-client-specific-begin -->
 
-If set to an empty string and LTeX could not find Java on your computer, LTeX automatically downloads a Java distribution ([AdoptOpenJDK](https://adoptopenjdk.net/)), stores it in the folder of the extension, and uses it to run ltex-ls. You can point this setting to an existing Java installation on your computer to use that installation instead.
+If set to an empty string, LTeX uses a Java distribution that is bundled with ltex-ls. You can point this setting to an existing Java installation on your computer to use that installation instead.
 
 Use the same path as you would use for the `JAVA_HOME` environment variable (it usually contains `bin` and `lib` subdirectories, amongst others).
 
@@ -1501,22 +1520,6 @@ Changes require reloading the Visual Studio Code window to take effect.
 *Type:* `string`
 
 *Default:* `""`
-
-## `ltex.java.forceTrySystemWide`
-
-<!-- ltex-client-specific-begin -->
-
-If set to `true`, always try to use a system-wide Java installation before trying to use an automatically downloaded Java distribution.
-
-This is the default behavior on all platforms except Mac (i.e., this setting has no effect on these platforms). On Mac, trying to use a system-wide Java installation might result in a popup prompting to install Java if it's not installed. Therefore, LTeX does not use a system-wide Java installation on Mac by default.
-
-Changes require reloading the Visual Studio Code window to take effect.
-
-<!-- ltex-client-specific-end -->
-
-*Type:* `boolean`
-
-*Default:* `false`
 
 ## `ltex.java.initialHeapSize`
 

@@ -13,6 +13,32 @@ toc: false
 
 This is the changelog of vscode-ltex. If you use a different LTeX plugin for an editor other than VS Code, check the [changelog of LTeX LS](https://github.com/valentjn/ltex-ls/blob/release/CHANGELOG.md) (look up which version of LTeX LS your LTeX plugin uses).
 
+## Upcoming Fundamental Changes
+
+- New versions of LTeX released on or after January 14, 2022, will require VS Code 1.61.0 or later
+
+## 12.0.0 (upcoming)
+
+- &#x1f527; *Change:* Bundle Java with LTeX LS; Java is not downloaded separately anymore and bundled Java is used if [`ltex.java.path`](settings.html#ltexjavapath) is not set
+- &#x1f5d1; *Removal:* Remove setting `ltex.java.forceTrySystemWide`
+- &#x1f527; *Change:* Update LanguageTool to 5.5 (see [LT 5.5 release notes](https://github.com/languagetool-org/languagetool/blob/v5.5/languagetool-standalone/CHANGES.md#55-2021-10-02))
+- &#x2728; *New:* Add support for automatic language detection via language short code `auto`; language variants like `en-US` are not detected, only generic languages like `en`; this will result in spelling errors not being reported &#x2014; [ltex-ls#103](https://github.com/valentjn/ltex-ls/issues/103)
+- &#x2728; *New:* Provide ID of LanguageTool rule via diagnostics code, not as part of diagnostics message
+- &#x2728; *New:* Link diagnostics to LanguageTool website with more information
+- &#x2728; *New:* Add support for the `main` option of the babel package (LaTeX) &#x2014; [#391](https://github.com/valentjn/vscode-ltex/issues/391)
+- &#x2728; *New:* Add setting [`ltex.ltex-ls.languageToolOrgUsername`](settings.html#ltexltex-lslanguagetoolorgusername) to set username on languagetool.org for Premium API access &#x2014; [#398](https://github.com/valentjn/vscode-ltex/issues/398)
+- &#x2728; *New:* Add setting [`ltex.ltex-ls.languageToolOrgApiKey`](settings.html#ltexltex-lslanguagetoolorgapikey) to set API key on languagetool.org for Premium API access &#x2014; [#398](https://github.com/valentjn/vscode-ltex/issues/398)
+- &#x2728; *New:* Add support for [`ltex.dictionary`](settings.html#ltexdictionary) when using a LanguageTool HTTP server
+- &#x1f527; *Change:* Handle disabled rules ourselves to prevent reinitialization of LanguageTool when running the `Disable rule` quick fix &#x2014; [#390](https://github.com/valentjn/vscode-ltex/issues/390)
+- &#x1f41b; *Bug fix:* Fix LanguageTool reinitialized when running the `Add '...' to dictionary` quick fix &#x2014; [#390](https://github.com/valentjn/vscode-ltex/issues/390)
+- &#x1f41b; *Bug fix:* Fix wrong parsing of inline math formulas in Markdown when using dollar signs as delimiters and containing only one character (e.g., `$a$`)
+- &#x1f41b; *Bug fix:* Fix used i18n keys removed in LTeX LS
+- &#x1f41b; *Bug fix:* Fix fallback from German to English i18n in LTeX LS
+- &#x2728; *New:* Add support for coc.nvim (Vim/Neovim) &#x2014; [ltex-ls#103](https://github.com/valentjn/ltex-ls/issues/103)
+- &#x1f527; *Change:* Update bundled Java runtime to 11.0.12+7 (see [list of OpenJDK fixes](https://bugs.openjdk.java.net/browse/JDK-8269291?jql=project%20%3D%20JDK%20AND%20fixVersion%20%3D%2011.0.12))
+- &#x1f5d1; *Removal:* Remove transition code for upgrading from LTeX 4.x
+- &#x1f527; *Change:* Update LTeX LS to 14.0.0
+
 ## 11.0.0 &#x2014; &#x201c;The Kotlin Conundrum&#x201d; (August 11, 2021)
 
 - &#x1f527; *Change:* Migrate LTeX LS from Java to Kotlin
@@ -158,7 +184,7 @@ This is the changelog of vscode-ltex. If you use a different LTeX plugin for an 
 - &#x1f527; *Change:* Prepend messages of possible spelling mistakes with the respective unknown words &#x2014; [#161](https://github.com/valentjn/vscode-ltex/issues/161)
 - &#x2728; *New:* Add support for optional arguments of `\newtheorem`
 - &#x1f41b; *Bug fix:* Fix wrong position of diagnostics when using a recognized LaTeX command with a non-recognized set of arguments due to an infinite loop &#x2014; [#167](https://github.com/valentjn/vscode-ltex/issues/167)
-- &#x1f527; *Change:* Avoid misleading popup prompting to install Java on Mac, use [`ltex.java.forceTrySystemWide`](settings.html#ltexjavaforcetrysystemwide) to force trying a system-wide Java installation &#x2014; [#162](https://github.com/valentjn/vscode-ltex/issues/162)
+- &#x1f527; *Change:* Avoid misleading popup prompting to install Java on Mac, use `ltex.java.forceTrySystemWide` to force trying a system-wide Java installation &#x2014; [#162](https://github.com/valentjn/vscode-ltex/issues/162)
 - &#x1f527; *Change:* Update bundled AdoptOpenJDK JRE to 11.0.9+11 (see [list of OpenJDK fixes](https://bugs.openjdk.java.net/browse/JDK-8253813?jql=project%20%3D%20JDK%20AND%20fixVersion%20%3D%2011.0.9%20ORDER%20BY%20created%20DESC))
 - &#x1f527; *Change:* Update LSP4J to 0.10.0
 - &#x1f527; *Change:* Update LTeX LS to 8.1.0
