@@ -42,7 +42,7 @@ This page is specific to vscode-ltex. It does not apply if you use a different L
 
 The key component of LTeX, the LTeX Language Server (ltex-ls), which also includes LanguageTool itself, cannot be included in the LTeX version distributed on the Visual Studio Marketplace due to file size restrictions. In addition, ltex-ls requires Java due to its LanguageTool dependency.
 
-When activated for the first time, LTeX will automatically download and use a hard-coded ltex-ls release from GitHub and, in case no existing installation of Java has been found, a portable Java distribution ([AdoptOpenJDK](https://adoptopenjdk.net/)). Both will be stored in the extension folder. Note that after this initial installation, no connection to the Internet is necessary. Checking your documents is completely offline.
+When activated for the first time, LTeX will automatically download and use a hard-coded ltex-ls release from GitHub (which also includes a portable Java distribution). It will be stored in the extension folder. Note that after this initial installation, no connection to the Internet is necessary. Checking your documents is completely offline.
 
 If you don't have an Internet connection, or if you simply don't want this, there are two alternatives.
 
@@ -50,11 +50,13 @@ In case there are any problems, you will find additional debug info in `View` â†
 
 ### First Alternative: Download the Offline Version of LTeX
 
-Download the offline version of LTeX at the [Releases page on GitHub](https://github.com/valentjn/vscode-ltex/releases) and install it via `Extensions: Install from VSIX...` on the Command Palette. The offline version includes _everything_ (ltex-ls and a Java distribution). Reload the Visual Studio Code window after installing the offline version.
+Download the offline version of LTeX at the [Releases page on GitHub](https://github.com/valentjn/vscode-ltex/releases) and install it via `Extensions: Install from VSIX...` on the Command Palette. The offline version already includes ltex-ls (and the portable Java distribution). Reload the Visual Studio Code window after installing the offline version.
 
 ### Second Alternative: Download ltex-ls/Java Manually
 
-Download [ltex-ls](https://github.com/valentjn/ltex-ls/releases) and/or a Java distribution (for instance [AdoptOpenJDK](https://adoptopenjdk.net/)) individually and set [`ltex.ltex-ls.path`](settings.html#ltexltex-lspath) and/or [`ltex.java.path`](settings.html#ltexjavapath) to the respective locations. Note that the versions of ltex-ls and/or Java have to satisfy the following requirements:
+Download [ltex-ls](https://github.com/valentjn/ltex-ls/releases) and/or a Java distribution (e.g., [Eclipse Adoptium](https://adoptium.net/)) individually and set [`ltex.ltex-ls.path`](settings.html#ltexltex-lspath) and/or [`ltex.java.path`](settings.html#ltexjavapath) to the respective locations. If you download a binary release of ltex-ls (those include a platform in the archive file name), then that release already includes Java and you don't need to set [`ltex.java.path`](settings.html#ltexjavapath).
+
+Note that the versions of ltex-ls and/or Java have to satisfy the following requirements:
 
 - Each version of LTeX has been tested with exactly one version of ltex-ls, which is the version that LTeX automatically downloads. If you download ltex-ls manually, be sure to use this version of ltex-ls. An older or a newer version of ltex-ls might work, or it might not.
 
@@ -66,5 +68,3 @@ Download [ltex-ls](https://github.com/valentjn/ltex-ls/releases) and/or a Java d
 If you download Java, you can also decide to install it system-wide. In this case, LTeX should be able to automatically detect its location. If not, you can still set [`ltex.java.path`](settings.html#ltexjavapath) to the location of your system-wide installation.
 
 Reload the Visual Studio Code window after installing ltex-ls and/or Java.
-
-If ltex-ls fails to start for whatever reason after you downloaded ltex-ls and/or Java (and after you set [`ltex.ltex-ls.path`](settings.html#ltexltex-lspath) and/or [`ltex.java.path`](settings.html#ltexjavapath)), LTeX will fall back to downloading the respective dependency.
