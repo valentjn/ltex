@@ -8,10 +8,7 @@
 
 import shlex
 import subprocess
-from typing import Any, Callable, Dict, Sequence
-
-oldPrint = print
-print: Callable[[str], None] = (lambda *args, **kwargs: oldPrint(*args, **kwargs, flush=True))
+from typing import Any, Sequence
 
 
 
