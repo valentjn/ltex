@@ -5,29 +5,27 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-title: "Installation and Usage"
-permalink: "/docs/installation-and-usage.html"
-redirect_from: "/docs/installation-how-to-use.html"
+title: "Installation and Usage (vscode-ltex)"
+permalink: "/vscode-ltex/installation-usage-vscode-ltex.html"
 sidebar: "sidebar"
 ---
-
-This page is specific to vscode-ltex. It does not apply if you use a different LTeX plugin for an editor other than VS Code.
-
-## Requirements
-
-- 64-bit operating system
-- [VS Code 1.52.0 or later](https://code.visualstudio.com/)
-- Optional:
-  - If you want to check LaTeX documents: [LaTeX Workshop Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
-  - If you want to check Org documents: [Org Mode Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=tootone.org-mode)
-  - If you want to check reStructuredText documents: [reStructuredText Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext)
 
 ## Download Providers
 
 - Download from within VS Code: Open the *Extensions* panel and type `ltex`
 - [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex) (VS Code uses this for downloading)
 - [Open VSX](https://open-vsx.org/extension/valentjn/vscode-ltex)
-- [GitHub](https://github.com/valentjn/vscode-ltex/releases) (+ packages for offline installation)
+- [Releases on GitHub](https://github.com/valentjn/vscode-ltex/releases) (+ packages for offline installation)
+- [Source on GitHub](https://github.com/valentjn/vscode-ltex)
+
+## Requirements
+
+- 64-bit Linux, Mac, or Windows operating system
+- [VS Code 1.52.0 or later](https://code.visualstudio.com/) (new versions of LTeX released on or after January 14, 2022, will require VS Code 1.61.0 or later)
+- Optional:
+  - If you want to check LaTeX documents: [LaTeX Workshop Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
+  - If you want to check Org documents: [Org Mode Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=tootone.org-mode)
+  - If you want to check reStructuredText documents: [reStructuredText Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext)
 
 ## How to Install and Use
 
@@ -35,7 +33,7 @@ This page is specific to vscode-ltex. It does not apply if you use a different L
 2. Install this extension
 3. Reload the VS Code window if necessary
 4. Open a LaTeX or a Markdown document, or open a new file and change the language mode to `LaTeX` or `Markdown` (open the Command Palette and select `Change Language Mode`)
-5. Wait until [ltex-ls](faq.html#whats-the-difference-between-vscode-ltex-ltex-ls-and-languagetool) and Java have been found; if necessary, LTeX downloads both for you. Alternatively, you can choose [offline installation](#offline-installation).
+5. Wait until [ltex-ls](../faq.html#whats-the-difference-between-vscode-ltex-ltex-ls-and-languagetool) and Java have been found; if necessary, LTeX downloads both for you. Alternatively, you can choose [offline installation](#offline-installation).
 6. Grammar/spelling errors will be displayed! (if there are any)
 
 ## Offline Installation
@@ -54,7 +52,7 @@ Download the offline version of LTeX at the [Releases page on GitHub](https://gi
 
 ### Second Alternative: Download ltex-ls/Java Manually
 
-Download [ltex-ls](https://github.com/valentjn/ltex-ls/releases) and/or a Java distribution (e.g., [Eclipse Adoptium](https://adoptium.net/)) individually and set [`ltex.ltex-ls.path`](settings.html#ltexltex-lspath) and/or [`ltex.java.path`](settings.html#ltexjavapath) to the respective locations. If you download a binary release of ltex-ls (those include a platform in the archive file name), then that release already includes Java and you don't need to set [`ltex.java.path`](settings.html#ltexjavapath).
+Download [ltex-ls](https://github.com/valentjn/ltex-ls/releases) and/or a Java distribution (e.g., [Eclipse Adoptium](https://adoptium.net/)) individually and set [`ltex.ltex-ls.path`](../settings.html#ltexltex-lspath) and/or [`ltex.java.path`](../settings.html#ltexjavapath) to the respective locations. If you download a binary release of ltex-ls (those include a platform in the archive file name), then that release already includes Java and you don't need to set [`ltex.java.path`](../settings.html#ltexjavapath).
 
 Note that the versions of ltex-ls and/or Java have to satisfy the following requirements:
 
@@ -65,6 +63,6 @@ Note that the versions of ltex-ls and/or Java have to satisfy the following requ
   To find out which version a particular version of LTeX uses, check the [changelog](changelog.html) for `Update LTeX LS to X.Y.Z`. If there is no entry of this form in the changelog for the version of LTeX you want to use, use the entry of the first previous version of LTeX that has such an entry.
 - The version of Java must be at least 11. Some Java distributions offer a JRE (Java Runtime Environment) and a JDK (Java Development Kit); in this case, the JRE is sufficient.
 
-If you download Java, you can also decide to install it system-wide. In this case, LTeX should be able to automatically detect its location. If not, you can still set [`ltex.java.path`](settings.html#ltexjavapath) to the location of your system-wide installation.
+If you download Java, you can also decide to install it system-wide. In this case, LTeX should be able to automatically detect its location. If not, you can still set [`ltex.java.path`](../settings.html#ltexjavapath) to the location of your system-wide installation.
 
 Reload the Visual Studio Code window after installing ltex-ls and/or Java.

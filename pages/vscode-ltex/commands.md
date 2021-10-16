@@ -6,7 +6,7 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 title: "Commands"
-permalink: "/docs/commands.html"
+permalink: "/vscode-ltex/commands.html"
 sidebar: "sidebar"
 ---
 
@@ -14,15 +14,13 @@ Change language of this page: [English](commands.html), [German](commands-de.htm
 
 <!-- ltex: language=en-US -->
 
-This page is specific to vscode-ltex. It does not apply if you use a different LTeX plugin for an editor other than VS Code.
-
 To run a command, open the Command Palette (`Ctrl+Shift+P`) and start typing the name of the command.
 
 ## `LTeX: Activate Extension`
 
 Activates the extension; does nothing if the extension is already activated.
 
-The extension is automatically activated when files with supported code language modes (= default value of [`ltex.enabled`](settings.html#ltexenabled)) are opened in the editor. Use this command if you want to use LTeX on files with unsupported code language modes.
+The extension is automatically activated when files with supported code language modes (= default value of [`ltex.enabled`](../settings.html#ltexenabled)) are opened in the editor. Use this command if you want to use LTeX on files with unsupported code language modes.
 
 ## `LTeX: Check Selection`
 
@@ -44,7 +42,7 @@ It is usually not necessary to run this command as LTeX automatically checks sup
 
 Triggers a check of all Markdown and LaTeX documents in the workspace.
 
-This does a search for files with typical file extensions of supported file types in all folders of the workspace, depending on for which file types LTeX has been enabled (see [`ltex.enabled`](settings.html#ltexenabled)). Untitled and unsaved documents are not checked. The types of the documents are recognized by their file extensions. To skip checking some files or folders, add them to `files.exclude`.
+This does a search for files with typical file extensions of supported file types in all folders of the workspace, depending on for which file types LTeX has been enabled (see [`ltex.enabled`](../settings.html#ltexenabled)). Untitled and unsaved documents are not checked. The types of the documents are recognized by their file extensions. To skip checking some files or folders, add them to `files.exclude`.
 
 The documents must be in UTF-8 encoding. This does not work if no folders are opened in the workspace.
 

@@ -5,7 +5,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-title: "LTeX – Grammar/Spell Checker for VS Code Using LanguageTool with Support for LaTeX, Markdown, and Others"
+title: "LTeX – Grammar/Spell Checker Using LanguageTool with Support for LaTeX, Markdown, and Others"
 permalink: "/index.html"
 sidebar: "sidebar"
 toc: false
@@ -25,7 +25,9 @@ toc: false
 <a href="https://github.com/valentjn/ltex-ls" class="no-external">![stars](https://badgen.net/github/stars/valentjn/ltex-ls)</a>&nbsp;
 <a href="https://github.com/valentjn/ltex-ls/issues" class="no-external">![open issues](https://badgen.net/github/open-issues/valentjn/ltex-ls?label=open/closed%20issues&color=blue)</a>&nbsp;<a href="https://github.com/valentjn/ltex-ls/issues" class="no-external">![closed issues](https://badgen.net/github/closed-issues/valentjn/ltex-ls?label=)</a>
 
-**LTeX** provides offline grammar checking of various markup languages in Visual Studio Code using [LanguageTool&nbsp;(LT)](https://languagetool.org/). LTeX currently supports BibTeX, LaTeX, Markdown, Org, reStructuredText, R Sweave, and XHTML documents.
+**LTeX** provides offline grammar checking of various markup languages using [LanguageTool&nbsp;(LT)](https://languagetool.org/). LTeX can be used standalone as a command-line tool, as a language server using the Language Server Protocol (LSP), or directly in various editors using extensions.
+
+LTeX currently supports BibTeX, LaTeX, Markdown, Org, reStructuredText, R Sweave, and XHTML documents.
 
 The difference to regular spell checkers is that LTeX not only detects spelling errors, but also many grammar and stylistic errors such as:
 
@@ -34,9 +36,9 @@ The difference to regular spell checkers is that LTeX not only detects spelling 
 - `We look forward to welcome you.`
 - `Are human beings any different than animals?`
 
-A classic use case of LTeX is checking scientific LaTeX papers in VS Code, but why not check your next blog post, book chapter, or long e-mail before you send it to someone else?
+A classic use case of LTeX is checking scientific LaTeX papers, but why not check your next blog post, book chapter, or long e-mail before you send it to someone else?
 
-LTeX is a successor (since it's a fork) of the abandoned [LanguageTool for Visual Studio Code extension](https://github.com/adamvoss/vscode-languagetool) by Adam Voss<sup>†</sup>.
+LTeX is a successor/fork of the abandoned [LanguageTool for Visual Studio Code extension](https://github.com/adamvoss/vscode-languagetool) by Adam Voss<sup>†</sup>.
 
 <div style="margin-bottom:30px;"></div>
 

@@ -12,7 +12,11 @@ import json
 import os
 import pathlib
 import re
-from typing import Dict, Sequence
+import sys
+from typing import Callable, Dict, Sequence
+
+sys.path.append(str(pathlib.Path(__file__).parent))
+import common
 
 
 
@@ -33,19 +37,18 @@ def replaceSettingsCommandsMatch(markdownPath: pathlib.Path, pagesDirPath: pathl
   else:
     key = text
 
+  getRelativePath: Callable[[str], str] = lambda pageName: os.path.relpath(
+      pagesDirPath.joinpath(pageName), start=markdownPath.parent).replace("\\", "/")
+
   if key in settingNames:
-    url = "{}#{}".format(pagesDirPath.joinpath(
-        "docs", f"settings{pageNameSuffix}.html").relative_to(markdownPath.parent), getSlug(key))
+    url = "{}#{}".format(getRelativePath(f"settings{pageNameSuffix}.html"), common.getSlug(key))
     return f"[`{text}`]({url})"
   elif key in commandNames:
-    url = "{}#{}".format(pagesDirPath.joinpath(
-        "docs", f"commands{pageNameSuffix}.html").relative_to(markdownPath.parent), getSlug(key))
+    url = "{}#{}".format(getRelativePath(f"vscode-ltex/commands{pageNameSuffix}.html"),
+        common.getSlug(key))
     return f"[`{text}`]({url})"
   else:
     return f"`{text}`"
-
-def getSlug(markdown: str) -> str:
-  return re.sub(r"[^a-z0-9\-]", "", re.sub(r"[ ]", "-", markdown.lower()))
 
 def replaceNlsKey(packageNlsJson: Dict[str, str], match: re.Match[str]) -> str:
   key = match.group(1)
@@ -57,16 +60,16 @@ def formatTitle(description: str, packageNlsJson: Dict[str, str]) -> str:
       description)
 
 def linkSettingsAndCommands(markdownPath: pathlib.Path, pagesDirPath: pathlib.Path,
-      ltexRepoDirPath: pathlib.Path) -> None:
+      vscodeLtexRepoDirPath: pathlib.Path) -> None:
   markdownName = markdownPath.name
   pageNameMatch = re.match(r"^.*-([a-z]{2})\.md$", markdownName)
   packageNlsJsonSuffix = (f".{pageNameMatch.group(1)}" if pageNameMatch is not None else "")
 
-  packageJsonPath = ltexRepoDirPath.joinpath("package.json")
-  with open(packageJsonPath, "r") as f: packageJson = json.load(f)
+  packageJsonPath = vscodeLtexRepoDirPath.joinpath("package.json")
+  packageJson = json.loads(common.readFile(packageJsonPath))
 
-  packageNlsJsonPath = ltexRepoDirPath.joinpath(f"package.nls{packageNlsJsonSuffix}.json")
-  with open(packageNlsJsonPath, "r") as f: packageNlsJson = json.load(f)
+  packageNlsJsonPath = vscodeLtexRepoDirPath.joinpath(f"package.nls{packageNlsJsonSuffix}.json")
+  packageNlsJson = json.loads(common.readFile(packageNlsJsonPath))
 
   settingsJson = packageJson["contributes"]["configuration"]["properties"]
   settingNames = [x for x in settingsJson.keys() if "markdownDescription" in settingsJson[x]]
@@ -75,23 +78,22 @@ def linkSettingsAndCommands(markdownPath: pathlib.Path, pagesDirPath: pathlib.Pa
   commandNames = {"{}: {}".format(x["category"], formatTitle(x["title"], packageNlsJson)) :
       x["command"] for x in commandsJson}
 
-  with open(markdownPath, "r") as f: markdown = f.read()
+  markdown = common.readFile(markdownPath)
   markdown = re.sub(r"`(ltex\.[^`]+|LTeX: [^`]+)`|\[`(ltex\.[^`]+|LTeX: [^`]+)`\]\([^\)]*?\)",
       functools.partial(replaceSettingsCommandsMatch, markdownPath, pagesDirPath, markdown,
         settingNames, commandNames), markdown)
-  with open(markdownPath, "w") as f: f.write(markdown)
+  common.writeFile(markdownPath, markdown)
 
 
 
 def main() -> None:
   parser = argparse.ArgumentParser(description="link settings in all pages")
-  parser.add_argument("--ltex-repo",
-      default=pathlib.Path(__file__).parent.parent.parent.joinpath("vscode-ltex"),
-      help="path to main repo")
+  parser.add_argument("--vscode-ltex-repo", default="eowyn:/home/valentjn/repos/vscode-ltex",
+      type=pathlib.Path, help="path to vscode-ltex repo")
   args = parser.parse_args()
 
   pagesDirPath = pathlib.Path(__file__).parent.parent.joinpath("pages")
-  ltexRepoDirPath = args.ltex_repo
+  vscodeLtexRepoDirPath = args.vscode_ltex_repo
 
   for root, dirNames, fileNames in os.walk(pagesDirPath):
     dirNames.sort()
@@ -99,7 +101,7 @@ def main() -> None:
     for fileName in fileNames:
       if fileName.endswith(".md"):
         linkSettingsAndCommands(
-            pathlib.Path(root).joinpath(fileName), pagesDirPath, ltexRepoDirPath)
+            pathlib.Path(root).joinpath(fileName), pagesDirPath, vscodeLtexRepoDirPath)
 
 if __name__ == "__main__":
   main()

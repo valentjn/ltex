@@ -52,7 +52,7 @@ code + a > code { margin-left:0; }
 
 /* links */
 a.no-external::after,
-a[href^="https://valentjn.github.io/vscode-ltex"]::after {
+a[href^="https://valentjn.github.io/ltex"]::after {
   content:none;
 }
 a[href^="http://"]:not(.btn, .no-external)::after,

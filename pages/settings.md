@@ -6,7 +6,7 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 title: "Settings"
-permalink: "/docs/settings.html"
+permalink: "/settings.html"
 sidebar: "sidebar"
 ---
 
@@ -24,9 +24,9 @@ All supported markup languages are listed in the default value of this setting. 
 
 <!-- ltex-client-specific-begin -->
 
-The activation events are unaffected by this setting. This means that the extension will be activated whenever a file with a supported code language mode is opened. For unsupported code language modes, you may need to activate the extension explicitly by executing the [`LTeX: Activate Extension`](commands.html#ltex-activate-extension) command.
+The activation events are unaffected by this setting. This means that the extension will be activated whenever a file with a supported code language mode is opened. For unsupported code language modes, you may need to activate the extension explicitly by executing the [`LTeX: Activate Extension`](vscode-ltex/commands.html#ltex-activate-extension) command.
 
-Changes require reloading the Visual Studio Code window to take effect.
+Changes require restarting LTeX to take effect.
 
 <!-- ltex-client-specific-end -->
 
@@ -122,9 +122,9 @@ This setting is language-specific, so use an object of the format `{"<LANGUAGE1>
 
 <!-- ltex-client-specific-begin -->
 
-This setting is a multi-scope setting. [See the documentation for details.](advanced-usage.html#multi-scope-settings)
+This setting is a multi-scope setting. [See the documentation for details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#multi-scope-settings)
 
-This setting supports external files. [See the documentation for details.](advanced-usage.html#external-setting-files)
+This setting supports external files. [See the documentation for details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#external-setting-files)
 
 <!-- ltex-client-specific-end -->
 
@@ -388,9 +388,9 @@ This setting is language-specific, so use an object of the format `{"<LANGUAGE1>
 
 <!-- ltex-client-specific-begin -->
 
-This setting is a multi-scope setting. [See the documentation for details.](advanced-usage.html#multi-scope-settings)
+This setting is a multi-scope setting. [See the documentation for details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#multi-scope-settings)
 
-This setting supports external files. [See the documentation for details.](advanced-usage.html#external-setting-files)
+This setting supports external files. [See the documentation for details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#external-setting-files)
 
 <!-- ltex-client-specific-end -->
 
@@ -654,9 +654,9 @@ This setting is language-specific, so use an object of the format `{"<LANGUAGE1>
 
 <!-- ltex-client-specific-begin -->
 
-This setting is a multi-scope setting. [See the documentation for details.](advanced-usage.html#multi-scope-settings)
+This setting is a multi-scope setting. [See the documentation for details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#multi-scope-settings)
 
-This setting supports external files. [See the documentation for details.](advanced-usage.html#external-setting-files)
+This setting supports external files. [See the documentation for details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#external-setting-files)
 
 <!-- ltex-client-specific-end -->
 
@@ -920,13 +920,13 @@ This setting is language-specific, so use an object of the format `{"<LANGUAGE1>
 
 Although it is possible to manually edit this setting, the intended way is the `Hide false positive` quick fix.
 
-The JSON string currently has the form `{"rule": "<RULE>", "sentence": "<SENTENCE>"}`, where `<RULE>` is the ID of the LanguageTool rule and `<SENTENCE>` is a Java-compatible regular expression. All occurrences of the given rule are hidden in sentences (as determined by the LanguageTool tokenizer) that match the regular expression. [See the documentation for details.](advanced-usage.html#hiding-false-positives-with-regular-expressions)
+The JSON string currently has the form `{"rule": "<RULE>", "sentence": "<SENTENCE>"}`, where `<RULE>` is the ID of the LanguageTool rule and `<SENTENCE>` is a Java-compatible regular expression. All occurrences of the given rule are hidden in sentences (as determined by the LanguageTool tokenizer) that match the regular expression. [See the documentation for details.](https://valentjn.github.io/ltex/advanced-usage.html#hiding-false-positives-with-regular-expressions)
 
 <!-- ltex-client-specific-begin -->
 
-This setting is a multi-scope setting. [See the documentation for details.](advanced-usage.html#multi-scope-settings)
+This setting is a multi-scope setting. [See the documentation for details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#multi-scope-settings)
 
-This setting supports external files. [See the documentation for details.](advanced-usage.html#external-setting-files)
+This setting supports external files. [See the documentation for details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#external-setting-files)
 
 <!-- ltex-client-specific-end -->
 
@@ -1305,7 +1305,7 @@ Object with arbitrary property names, where the value of each property has the f
 
 <!-- ltex-client-specific-begin -->
 
-Controls which `settings.json` or external setting file ([see documentation](advanced-usage.html#external-setting-files)) to update when using one of the quick fixes.
+Controls which `settings.json` or external setting file ([see documentation](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#external-setting-files)) to update when using one of the quick fixes.
 
 <!-- ltex-client-specific-end -->
 
@@ -1447,7 +1447,7 @@ If set to an empty string, LTeX automatically downloads [ltex-ls from GitHub](ht
 
 Use the path to the root directory of ltex-ls (it contains `bin` and `lib` subdirectories).
 
-Changes require reloading the Visual Studio Code window to take effect.
+Changes require restarting LTeX to take effect.
 
 <!-- ltex-client-specific-end -->
 
@@ -1513,7 +1513,7 @@ If set to an empty string, LTeX uses a Java distribution that is bundled with lt
 
 Use the same path as you would use for the `JAVA_HOME` environment variable (it usually contains `bin` and `lib` subdirectories, amongst others).
 
-Changes require reloading the Visual Studio Code window to take effect.
+Changes require restarting LTeX to take effect.
 
 <!-- ltex-client-specific-end -->
 
@@ -1529,7 +1529,7 @@ Initial size of the Java heap memory in megabytes (corresponds to Java's `-Xms` 
 
 Decreasing this might decrease RAM usage of the Java process.
 
-Changes require reloading the Visual Studio Code window to take effect.
+Changes require restarting LTeX to take effect.
 
 <!-- ltex-client-specific-end -->
 
@@ -1545,7 +1545,7 @@ Maximum size of the Java heap memory in megabytes (corresponds to Java's `-Xmx` 
 
 Decreasing this might decrease RAM usage of the Java process. If you set this too small, the Java process may exceed the heap size, in which case an `OutOfMemoryError` is thrown.
 
-Changes require reloading the Visual Studio Code window to take effect.
+Changes require restarting LTeX to take effect.
 
 <!-- ltex-client-specific-end -->
 
@@ -1561,7 +1561,7 @@ If only a small portion of the text changed (e.g., a single key press in the edi
 
 Decreasing this might decrease RAM usage of the Java process. If you set this too small, checking time may increase significantly.
 
-Changes require reloading the Visual Studio Code window to take effect.
+Changes require restarting LTeX to take effect.
 
 *Type:* `integer`
 
@@ -1619,7 +1619,7 @@ One of `"edit"`, `"save"`, and `"manual"`.
 
 - `"edit"`: Documents are checked when they are opened or edited (on every keystroke), or when the settings change.
 - `"save"`: Documents are checked when they are opened or saved, or when the settings change.
-- `"manual"`: Documents are not checked automatically, except when the settings change. Use commands such as [`LTeX: Check Current Document`](commands.html#ltex-check-current-document) to manually trigger checks.
+- `"manual"`: Documents are not checked automatically, except when the settings change. Use commands such as [`LTeX: Check Current Document`](vscode-ltex/commands.html#ltex-check-current-document) to manually trigger checks.
 
 *Default:* `"edit"`
 
@@ -1651,7 +1651,7 @@ Debug setting to log the communication between language client and server.
 
 When reporting issues, set this to `"verbose"` and open the `LTeX Language Client` log in `View` › `Output`. Append the relevant part to the GitHub issue.
 
-Changes require reloading the Visual Studio Code window to take effect.
+Changes require restarting LTeX to take effect.
 
 <!-- ltex-client-specific-end -->
 

@@ -1,6 +1,6 @@
 ---
 title: "Code of Conduct"
-permalink: "/docs/code-of-conduct.html"
+permalink: "/code-of-conduct.html"
 sidebar: "sidebar"
 ---
 

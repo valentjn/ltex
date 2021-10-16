@@ -9,7 +9,9 @@ name: "Update gh-pages"
 on:
   push:
     branches:
-      - "gh-pages-release"
+      - "release"
+  schedule:
+    - cron: "30 18 * * *"
   workflow_dispatch:
 
 jobs:
@@ -21,7 +23,7 @@ jobs:
       - name: "Checkout Repository"
         uses: "actions/checkout@v2"
         with:
-          ref: "gh-pages-release"
+          ref: "release"
 
       - name: "Set up Python"
         uses: "actions/setup-python@v2"
@@ -36,22 +38,22 @@ jobs:
       - name: "Set up Ruby"
         uses: "ruby/setup-ruby@v1"
         with:
-          ruby-version: "2.7.2"
+          ruby-version: "2.7.3"
 
       - name: "Install Ruby Dependencies"
         run: "bundle install --jobs=2"
 
       - name: "Set Git Identity"
-        run: "git config user.name github-actions && git config user.email github-actions@github.com"
+        run: "git config user.name \"Julian Valentin\" && git config user.email julian.valentin@bsplines.org"
 
       - name: "Rebase gh-pages"
-        run: "git remote set-branches --add origin gh-pages && git fetch origin gh-pages:gh-pages && git checkout gh-pages && git reset --hard gh-pages-release"
+        run: "git remote set-branches --add origin gh-pages && git fetch origin gh-pages:gh-pages && git checkout gh-pages && git reset --hard release"
 
       - name: "Fetch stats.json"
-        run: "curl -u 'valentjn:${{ secrets.VSCODE_LTEX_FETCH_PRIVATE_STATS_REPO_TOKEN }}' -H 'Accept: application/vnd.github.v3.raw' -o _data/stats/stats.json https://api.github.com/repos/valentjn/vscode-ltex-stats/contents/data/stats.json?ref=stats"
+        run: "curl -u 'valentjn:${{ secrets.LTEX_FETCH_PRIVATE_STATS_REPO_TOKEN }}' -H 'Accept: application/vnd.github.v3.raw' -o _data/stats/stats.json https://api.github.com/repos/valentjn/vscode-ltex-stats/contents/data/stats.json?ref=stats"
 
       - name: "Fetch map.json"
-        run: "curl -u 'valentjn:${{ secrets.VSCODE_LTEX_FETCH_PRIVATE_STATS_REPO_TOKEN }}' -H 'Accept: application/vnd.github.v3.raw' -o _data/stats/map.json https://api.github.com/repos/valentjn/vscode-ltex-stats/contents/data/map.json?ref=stats"
+        run: "curl -u 'valentjn:${{ secrets.LTEX_FETCH_PRIVATE_STATS_REPO_TOKEN }}' -H 'Accept: application/vnd.github.v3.raw' -o _data/stats/map.json https://api.github.com/repos/valentjn/vscode-ltex-stats/contents/data/map.json?ref=stats"
 
       - name: "Plot Stats"
         run: "python -u tools/plotStats.py"

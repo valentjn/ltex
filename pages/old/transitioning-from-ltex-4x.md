@@ -6,7 +6,7 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 title: "Transitioning from LTeX 4.x"
-permalink: "/docs/transitioning-from-ltex-4x.html"
+permalink: "/old/transitioning-from-ltex-4x.html"
 sidebar: "sidebar"
 ---
 
@@ -17,4 +17,4 @@ LTeX has undergone a major rewrite in version 5.0. The most important change is 
 - A separate Java installation is not necessary anymore. LTeX will automatically download a Java distribution and store it in the extension folder if no suitable Java installation (Java 8 or later) has been found on your computer.
 - A few settings have been renamed. Check your `settings.json` for deprecated entries.
 
-Find more information in the [changelog](changelog.html).
+Find more information in the [changelog](../vscode-ltex/changelog.html).

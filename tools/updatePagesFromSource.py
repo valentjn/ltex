@@ -11,10 +11,12 @@ import functools
 import json
 import pathlib
 import re
+import subprocess
 import sys
 from typing import Any, Callable, Dict, Optional, Sequence, Tuple, Union
 
 sys.path.append(str(pathlib.Path(__file__).parent))
+import common
 from linkSettingsAndCommands import linkSettingsAndCommands
 
 
@@ -32,9 +34,7 @@ i18nStrings = {
         "arrayWhereEachEntryHasTheFollowingType" : "Array where each entry has the following type",
         "arrayWithTheFollowingEntries" : "Array with the following entries",
         "clickToShowHide" : "Click to show/hide",
-        "commandIntroduction" : "This page is specific to vscode-ltex. It does not apply "
-          "if you use a different LTeX plugin for an editor other than VS Code.\n\n"
-          "To run a command, open the Command Palette (`Ctrl+Shift+P`) and "
+        "commandIntroduction" : "To run a command, open the Command Palette (`Ctrl+Shift+P`) and "
           "start typing the name of the command.",
         "default" : "Default",
         "example" : "Example",
@@ -56,9 +56,7 @@ i18nStrings = {
         "arrayWhereEachEntryHasTheFollowingType" : "Array, bei dem jeder Eintrag folgenden Typ hat",
         "arrayWithTheFollowingEntries" : "Array mit folgenden Einträgen",
         "clickToShowHide" : "Klick zum Zeigen/Verbergen",
-        "commandIntroduction" : "Diese Seite gilt nur für vscode-ltex. Sie gilt nicht, falls Sie "
-          "ein anderes LTeX-Plugin für einen anderen Editor als VS Code verwenden.\n\n"
-          "Um einen Befehl auszuführen, öffnen Sie die Befehlspalette "
+        "commandIntroduction" : "Um einen Befehl auszuführen, öffnen Sie die Befehlspalette "
           "(`Ctrl+Shift+P`) und beginnen Sie mit der Eingabe des Befehlsnamens.",
         "default" : "Voreinstellung",
         "example" : "Beispiel",
@@ -234,24 +232,11 @@ def formatCommand(commandJson: Dict[str, Any], packageNlsJson: Dict[str, str]) -
 
 
 
-def getNlsLanguages(ltexRepoDirPath: pathlib.Path) -> Sequence[Tuple[str, str, pathlib.Path]]:
-  languages = []
-  languageNames = {
-        "en" : "English",
-        "de" : "German",
-      }
-
-  for childPath in ltexRepoDirPath.iterdir():
-    fileName = childPath.name
-
-    if (match := re.match(r"^package\.nls(?:\.([^\.]+))?\.json$", fileName)) is not None:
-      languageCode = (match.group(1) if match.group(1) is not None else "en")
-      packageNlsJsonPath = ltexRepoDirPath.joinpath(fileName)
-      languages.append((languageCode, languageNames[languageCode], packageNlsJsonPath))
-
-  languages.sort(key=lambda x: (x[0] if x[0] != "en" else ""))
-
-  return languages
+def getNlsLanguages(vscodeLtexRepoDirPath: pathlib.Path) -> Sequence[Tuple[str, str, pathlib.Path]]:
+  return [
+        ("en", "English", vscodeLtexRepoDirPath.joinpath("package.nls.json")),
+        ("de", "German", vscodeLtexRepoDirPath.joinpath("package.nls.de.json")),
+      ]
 
 
 
@@ -263,9 +248,10 @@ def getLtLanguageCode(languageCode: str) -> str:
 
 
 
-def updateSupportedLanguages(ltexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
-  packageNlsJsonPath = ltexRepoDirPath.joinpath("package.nls.json")
-  with open(packageNlsJsonPath, "r") as f: packageNlsJson = json.load(f)
+def updateSupportedLanguages(vscodeLtexRepoDirPath: pathlib.Path,
+      pagesRepoDirPath: pathlib.Path) -> None:
+  packageNlsJsonPath = vscodeLtexRepoDirPath.joinpath("package.nls.json")
+  packageNlsJson = json.loads(common.readFile(packageNlsJsonPath))
   languages: Dict[str, str] = {}
 
   for key in packageNlsJson:
@@ -279,22 +265,22 @@ def updateSupportedLanguages(ltexRepoDirPath: pathlib.Path, pagesRepoDirPath: pa
       "{}\n\n<!-- ltex-natural-languages-end -->".format(
         ", ".join(f"{y}&nbsp;(`{x}`)" for x, y in languages.items())))
 
-  dstPath = pagesRepoDirPath.joinpath("pages", "docs", "supported-languages.md")
-  with open(dstPath, "r") as f: markdown = f.read()
+  dstPath = pagesRepoDirPath.joinpath("pages", "supported-languages.md")
+  markdown = common.readFile(dstPath)
 
   markdown = re.sub(
       r"<!-- ltex-natural-languages-begin -->(.|\n)*?<!-- ltex-natural-languages-end -->",
       languagesMarkdown, markdown)
 
-  with open(dstPath, "w") as f: f.write(markdown)
+  common.writeFile(dstPath, markdown)
 
 
 
-def updateSettings(ltexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
-  packageJsonPath = ltexRepoDirPath.joinpath("package.json")
-  with open(packageJsonPath, "r") as f: packageJson = json.load(f)
+def updateSettings(vscodeLtexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
+  packageJsonPath = vscodeLtexRepoDirPath.joinpath("package.json")
+  packageJson = json.loads(common.readFile(packageJsonPath))
 
-  nlsLanguages = getNlsLanguages(ltexRepoDirPath)
+  nlsLanguages = getNlsLanguages(vscodeLtexRepoDirPath)
   languageLinks = ", ".join((f"[{languageName}](settings-{languageCode}.html)"
         if languageCode != "en" else "[English](settings.html)")
       for languageCode, languageName, _ in nlsLanguages)
@@ -302,14 +288,14 @@ def updateSettings(ltexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path
   for languageCode, _, packageNlsJsonPath in nlsLanguages:
     pageNameSuffix = (f"-{languageCode}" if languageCode != "en" else "")
 
-    with open(packageNlsJsonPath, "r") as f: packageNlsJson = json.load(f)
+    packageNlsJson = json.loads(common.readFile(packageNlsJsonPath))
     packageNlsJson.update(i18nStrings[languageCode])
 
     settingsJson = packageJson["contributes"]["configuration"]["properties"]
     settingsMarkdown = [formatSetting(x, y, packageNlsJson) for x, y in settingsJson.items()]
     markdown = """---{}
 title: "Settings"
-permalink: "/docs/settings{}.html"
+permalink: "/settings{}.html"
 sidebar: "sidebar"
 ---
 
@@ -320,19 +306,18 @@ Change language of this page: {}
 """.format(licenseHeader, pageNameSuffix, languageLinks, getLtLanguageCode(languageCode))
     markdown += "\n".join(x for x in settingsMarkdown if x is not None)
     markdown = re.sub("\n\n+", "\n\n", markdown)
-    markdown = markdown.replace("https://valentjn.github.io/vscode-ltex/docs/", "")
 
-    dstPath = pagesRepoDirPath.joinpath("pages", "docs", f"settings{pageNameSuffix}.md")
-    with open(dstPath, "w") as f: f.write(markdown)
-    linkSettingsAndCommands(dstPath, pagesRepoDirPath.joinpath("pages"), ltexRepoDirPath)
-
+    dstPath = pagesRepoDirPath.joinpath("pages", f"settings{pageNameSuffix}.md")
+    common.writeFile(dstPath, markdown)
+    linkSettingsAndCommands(dstPath, pagesRepoDirPath.joinpath("pages"), vscodeLtexRepoDirPath)
 
 
-def updateCommands(ltexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
-  packageJsonPath = ltexRepoDirPath.joinpath("package.json")
-  with open(packageJsonPath, "r") as f: packageJson = json.load(f)
 
-  nlsLanguages = getNlsLanguages(ltexRepoDirPath)
+def updateCommands(vscodeLtexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
+  packageJsonPath = vscodeLtexRepoDirPath.joinpath("package.json")
+  packageJson = json.loads(common.readFile(packageJsonPath))
+
+  nlsLanguages = getNlsLanguages(vscodeLtexRepoDirPath)
   languageLinks = ", ".join((f"[{languageName}](commands-{languageCode}.html)"
         if languageCode != "en" else "[English](commands.html)")
       for languageCode, languageName, _ in nlsLanguages)
@@ -340,14 +325,14 @@ def updateCommands(ltexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path
   for languageCode, _, packageNlsJsonPath in nlsLanguages:
     pageNameSuffix = (f"-{languageCode}" if languageCode != "en" else "")
 
-    with open(packageNlsJsonPath, "r") as f: packageNlsJson = json.load(f)
+    packageNlsJson = json.loads(common.readFile(packageNlsJsonPath))
     packageNlsJson.update(i18nStrings[languageCode])
 
     commandsJson = packageJson["contributes"]["commands"]
     commandsMarkdown = [formatCommand(x, packageNlsJson) for x in commandsJson]
     markdown = """---{}
 title: "Commands"
-permalink: "/docs/commands{}.html"
+permalink: "/vscode-ltex/commands{}.html"
 sidebar: "sidebar"
 ---
 
@@ -361,100 +346,105 @@ Change language of this page: {}
         packageNlsJson["commandIntroduction"],)
     markdown += "\n".join(x for x in commandsMarkdown if x is not None)
     markdown = re.sub("\n\n+", "\n\n", markdown)
-    markdown = markdown.replace("https://valentjn.github.io/vscode-ltex/docs/", "")
 
-    dstPath = pagesRepoDirPath.joinpath("pages", "docs", f"commands{pageNameSuffix}.md")
-    with open(dstPath, "w") as f: f.write(markdown)
-    linkSettingsAndCommands(dstPath, pagesRepoDirPath.joinpath("pages"), ltexRepoDirPath)
+    dstPath = pagesRepoDirPath.joinpath("pages", "vscode-ltex", f"commands{pageNameSuffix}.md")
+    common.writeFile(dstPath, markdown)
+    linkSettingsAndCommands(dstPath, pagesRepoDirPath.joinpath("pages"), vscodeLtexRepoDirPath)
 
 
 
 def copyMarkdown(srcPathOrMarkdown: Union[pathlib.Path, str], dstPath: pathlib.Path, metaData: str,
-      ltexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
+      vscodeLtexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
   if isinstance(srcPathOrMarkdown, str):
     markdown = srcPathOrMarkdown
   else:
-    with open(srcPathOrMarkdown, "r") as f: markdown = f.read()
+    markdown = common.readFile(srcPathOrMarkdown)
 
   lines = markdown.split("\n")
   i = next(i for i, line in enumerate(lines) if line.startswith("#"))
   markdown = metaData + "\n".join(lines[i+1:])
   markdown = markdown.replace("L<sup>A</sup>T<sub>E</sub>X", "LaTeX").replace(
       "T<sub>E</sub>X", "TeX")
-  markdown = markdown.replace("https://valentjn.github.io/vscode-ltex/docs/", "")
-  with open(dstPath, "w") as f: f.write(markdown)
-  linkSettingsAndCommands(dstPath, pagesRepoDirPath.joinpath("pages"), ltexRepoDirPath)
+  common.writeFile(dstPath, markdown)
+  linkSettingsAndCommands(dstPath, pagesRepoDirPath.joinpath("pages"), vscodeLtexRepoDirPath)
 
 
 
-def updateChangelog(ltexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
-  changelogFilePath = ltexRepoDirPath.joinpath("changelog.xml")
+def updateCodeOfConduct(vscodeRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
+  copyMarkdown(vscodeRepoDirPath.joinpath("CODE_OF_CONDUCT.md"),
+      pagesRepoDirPath.joinpath("pages", "code-of-conduct.md"), """---
+title: "Code of Conduct"
+permalink: "/code-of-conduct.html"
+sidebar: "sidebar"
+---
+""", vscodeRepoDirPath, pagesRepoDirPath)
 
-  sys.path.append(str(ltexRepoDirPath.joinpath("tools")))
-  import convertChangelog
-  markdown = convertChangelog.convertChangelogFromXmlToMarkdown(changelogFilePath)
+
+
+def updateChangelog(sourceRepoDirPath: pathlib.Path, sourceRepoName: str,
+      vscodeRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
+  changelogFilePath = sourceRepoDirPath.joinpath("changelog.xml")
+
+  if common.isRemotePath(sourceRepoDirPath):
+    remoteHostName, remoteSourceRepoDirPath = common.getRemotePathParts(sourceRepoDirPath)
+    convertChangelogArguments = ["ssh", remoteHostName, "python",
+        str(remoteSourceRepoDirPath.joinpath("tools", "convertChangelog.py")),
+        "--xml-file", str(common.getRemotePathParts(changelogFilePath)[1])]
+  else:
+    convertPath: Callable[[pathlib.Path], str] = (
+        lambda path: re.sub(r"^\\([a-z])\\", r"\1:\\", str(path)))
+    convertChangelogArguments = ["python",
+        convertPath(sourceRepoDirPath.joinpath("tools", "convertChangelog.py")),
+        "--xml-file", convertPath(changelogFilePath)]
+
+  process = subprocess.run(convertChangelogArguments, stdout=subprocess.PIPE)
+  markdown = process.stdout.decode().replace("\r\n", "\n")
 
   copyMarkdown(markdown,
-      pagesRepoDirPath.joinpath("pages", "docs", "changelog.md"), """---{}
+      pagesRepoDirPath.joinpath("pages", sourceRepoName, "changelog.md"), """---{}
 title: "Changelog"
-permalink: "/docs/changelog.html"
+permalink: "/{}/changelog.html"
 sidebar: "sidebar"
 toc: false
 ---
-
-This is the changelog of vscode-ltex. If you use a different LTeX plugin for an editor other than VS Code, check the [changelog of LTeX LS](https://github.com/valentjn/ltex-ls/blob/release/CHANGELOG.md) (look up which version of LTeX LS your LTeX plugin uses).
-""".format(licenseHeader), ltexRepoDirPath, pagesRepoDirPath)
+""".format(licenseHeader, sourceRepoName), vscodeRepoDirPath, pagesRepoDirPath)
 
 
 
-def updateContributing(ltexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
-  copyMarkdown(ltexRepoDirPath.joinpath("CONTRIBUTING.md"),
-      pagesRepoDirPath.joinpath("pages", "docs", "contributing-code-issues.md"), """---{}
-title: "Contributing Code/Issues"
-permalink: "/docs/contributing-code-issues.html"
+def updateContributing(sourceRepoDirPath: pathlib.Path, sourceRepoName: str,
+      vscodeRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
+  copyMarkdown(sourceRepoDirPath.joinpath("CONTRIBUTING.md"),
+      pagesRepoDirPath.joinpath("pages", sourceRepoName, "contributing.md"), """---{}
+title: "Contributing"
+permalink: "/{}/contributing.html"
 sidebar: "sidebar"
 ---
-""".format(licenseHeader), ltexRepoDirPath, pagesRepoDirPath)
-
-
-
-def updateCodeOfConduct(ltexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
-  copyMarkdown(ltexRepoDirPath.joinpath("CODE_OF_CONDUCT.md"),
-      pagesRepoDirPath.joinpath("pages", "docs", "code-of-conduct.md"), """---
-title: "Code of Conduct"
-permalink: "/docs/code-of-conduct.html"
-sidebar: "sidebar"
----
-""", ltexRepoDirPath, pagesRepoDirPath)
-
-
-
-def updateAcknowledgments(ltexRepoDirPath: pathlib.Path, pagesRepoDirPath: pathlib.Path) -> None:
-  copyMarkdown(ltexRepoDirPath.joinpath("ACKNOWLEDGMENTS.md"),
-      pagesRepoDirPath.joinpath("pages", "docs", "acknowledgments.md"), """---{}
-title: "Acknowledgments"
-permalink: "/docs/acknowledgments.html"
-sidebar: "sidebar"
----
-""".format(licenseHeader), ltexRepoDirPath, pagesRepoDirPath)
+""".format(licenseHeader, sourceRepoName), vscodeRepoDirPath, pagesRepoDirPath)
 
 
 
 def main() -> None:
-  parser = argparse.ArgumentParser(description="update Markdown according to main repo")
-  parser.add_argument("--ltex-repo", default="/home/valentjn/repos/vscode-ltex",
-      type=pathlib.Path, help="path to main repo")
+  parser = argparse.ArgumentParser(description="Update Markdown according to vscode-ltex repo")
+  parser.add_argument("--vscode-ltex-repo", default="eowyn:/home/valentjn/repos/vscode-ltex",
+      type=pathlib.Path, help="Path to vscode-ltex repo")
+  parser.add_argument("--ltex-ls-repo", default="D:\\repos\\ltex-ls",
+      type=pathlib.Path, help="Path to ltex-ls repo")
   args = parser.parse_args()
 
-  ltexRepoDirPath = args.ltex_repo
+  vscodeLtexRepoDirPath = args.vscode_ltex_repo
+  ltexLsRepoDirPath = args.ltex_ls_repo
+
   pagesRepoDirPath = pathlib.Path(__file__).parent.parent
-  updateSupportedLanguages(ltexRepoDirPath, pagesRepoDirPath)
-  updateSettings(ltexRepoDirPath, pagesRepoDirPath)
-  updateCommands(ltexRepoDirPath, pagesRepoDirPath)
-  updateChangelog(ltexRepoDirPath, pagesRepoDirPath)
-  updateContributing(ltexRepoDirPath, pagesRepoDirPath)
-  updateCodeOfConduct(ltexRepoDirPath, pagesRepoDirPath)
-  updateAcknowledgments(ltexRepoDirPath, pagesRepoDirPath)
+  updateSupportedLanguages(vscodeLtexRepoDirPath, pagesRepoDirPath)
+  updateSettings(vscodeLtexRepoDirPath, pagesRepoDirPath)
+  updateCommands(vscodeLtexRepoDirPath, pagesRepoDirPath)
+  updateCodeOfConduct(vscodeLtexRepoDirPath, pagesRepoDirPath)
+
+  for sourceRepoName in ["vscode-ltex", "ltex-ls"]:
+    sourceRepoDirPath = (vscodeLtexRepoDirPath if sourceRepoName == "vscode-ltex" else
+        ltexLsRepoDirPath)
+    updateChangelog(sourceRepoDirPath, sourceRepoName, vscodeLtexRepoDirPath, pagesRepoDirPath)
+    updateContributing(sourceRepoDirPath, sourceRepoName, vscodeLtexRepoDirPath, pagesRepoDirPath)
 
 
 

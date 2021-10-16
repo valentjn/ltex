@@ -6,7 +6,7 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 title: "Settings"
-permalink: "/docs/settings-de.html"
+permalink: "/settings-de.html"
 sidebar: "sidebar"
 ---
 
@@ -24,9 +24,9 @@ Alle unterstützten Auszeichnungssprachen sind in der Voreinstellung dieser Eins
 
 <!-- ltex-client-specific-de-begin -->
 
-Die Aktivierungsereignisse werden von dieser Einstellung nicht berührt. Das heißt, dass die Erweiterung aktiviert wird, sobald eine Datei mit einem unterstützten Code-Sprachmodus geöffnet wird. Falls Sie Dateien mit nicht-unterstützten Codi-Sprachmodi überprüfen wollen, müssen Sie eventuell die Erweiterung explizit mithilfe des Befehls [`LTeX: Aktiviere Erweiterung`](commands-de.html#ltex-aktiviere-erweiterung) aktivieren.
+Die Aktivierungsereignisse werden von dieser Einstellung nicht berührt. Das heißt, dass die Erweiterung aktiviert wird, sobald eine Datei mit einem unterstützten Code-Sprachmodus geöffnet wird. Falls Sie Dateien mit nicht-unterstützten Codi-Sprachmodi überprüfen wollen, müssen Sie eventuell die Erweiterung explizit mithilfe des Befehls [`LTeX: Aktiviere Erweiterung`](vscode-ltex/commands-de.html#ltex-aktiviere-erweiterung) aktivieren.
 
-Nach Änderungen muss das Fenster von Visual Studio Code erneut geladen werden.
+Nach Änderungen muss LTeX neugestartet werden.
 
 <!-- ltex-client-specific-end -->
 
@@ -122,9 +122,9 @@ Diese Einstellung ist sprachabhängig. Benutzen Sie daher ein Objekt der Form `{
 
 <!-- ltex-client-specific-de-begin -->
 
-Diese Einstellung ist eine Multi-Scope-Einstellung. [Siehe die Dokumentation für Details.](advanced-usage.html#multi-scope-settings)
+Diese Einstellung ist eine Multi-Scope-Einstellung. [Siehe die Dokumentation für Details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#multi-scope-settings)
 
-Diese Einstellung unterstützt externe Dateien. [Siehe die Dokumentation für Details.](advanced-usage.html#external-setting-files)
+Diese Einstellung unterstützt externe Dateien. [Siehe die Dokumentation für Details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#external-setting-files)
 
 <!-- ltex-client-specific-end -->
 
@@ -388,9 +388,9 @@ Diese Einstellung ist sprachabhängig. Benutzen Sie daher ein Objekt der Form `{
 
 <!-- ltex-client-specific-de-begin -->
 
-Diese Einstellung ist eine Multi-Scope-Einstellung. [Siehe die Dokumentation für Details.](advanced-usage.html#multi-scope-settings)
+Diese Einstellung ist eine Multi-Scope-Einstellung. [Siehe die Dokumentation für Details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#multi-scope-settings)
 
-Diese Einstellung unterstützt externe Dateien. [Siehe die Dokumentation für Details.](advanced-usage.html#external-setting-files)
+Diese Einstellung unterstützt externe Dateien. [Siehe die Dokumentation für Details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#external-setting-files)
 
 <!-- ltex-client-specific-end -->
 
@@ -654,9 +654,9 @@ Diese Einstellung ist sprachabhängig. Benutzen Sie daher ein Objekt der Form `{
 
 <!-- ltex-client-specific-de-begin -->
 
-Diese Einstellung ist eine Multi-Scope-Einstellung. [Siehe die Dokumentation für Details.](advanced-usage.html#multi-scope-settings)
+Diese Einstellung ist eine Multi-Scope-Einstellung. [Siehe die Dokumentation für Details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#multi-scope-settings)
 
-Diese Einstellung unterstützt externe Dateien. [Siehe die Dokumentation für Details.](advanced-usage.html#external-setting-files)
+Diese Einstellung unterstützt externe Dateien. [Siehe die Dokumentation für Details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#external-setting-files)
 
 <!-- ltex-client-specific-end -->
 
@@ -920,13 +920,13 @@ Diese Einstellung ist sprachabhängig. Benutzen Sie daher ein Objekt der Form `{
 
 Obwohl es möglich ist, diese Einstellung manuell zu ändern, ist der bevorzugte Weg, Einträge zu dieser Einstellung hinzuzufügen, die schnelle Problembehebung `Falschen Fehler verbergen`.
 
-Die JSON-Zeichenfolge hat momentan die Form `{"rule": "<REGEL>", "sentence": "<SATZ>"}`, wobei `<REGEL>` die ID der LanguageTool-Regel und `<SATZ>` einen Java-kompatiblen regulären Ausdruck bezeichnet. Alle Vorkommen der gegebenen Regel werden in allen Sätzen (die durch den LanguageTool-Tokenizer bestimmt werden) verborgen, die zum regulären Ausdruck passen. [Siehe die Dokumentation für Details.](advanced-usage.html#hiding-false-positives-with-regular-expressions)
+Die JSON-Zeichenfolge hat momentan die Form `{"rule": "<REGEL>", "sentence": "<SATZ>"}`, wobei `<REGEL>` die ID der LanguageTool-Regel und `<SATZ>` einen Java-kompatiblen regulären Ausdruck bezeichnet. Alle Vorkommen der gegebenen Regel werden in allen Sätzen (die durch den LanguageTool-Tokenizer bestimmt werden) verborgen, die zum regulären Ausdruck passen. [Siehe die Dokumentation für Details.](https://valentjn.github.io/ltex/advanced-usage.html#hiding-false-positives-with-regular-expressions)
 
 <!-- ltex-client-specific-de-begin -->
 
-Diese Einstellung ist eine Multi-Scope-Einstellung. [Siehe die Dokumentation für Details.](advanced-usage.html#multi-scope-settings)
+Diese Einstellung ist eine Multi-Scope-Einstellung. [Siehe die Dokumentation für Details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#multi-scope-settings)
 
-Diese Einstellung unterstützt externe Dateien. [Siehe die Dokumentation für Details.](advanced-usage.html#external-setting-files)
+Diese Einstellung unterstützt externe Dateien. [Siehe die Dokumentation für Details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#external-setting-files)
 
 <!-- ltex-client-specific-end -->
 
@@ -1305,7 +1305,7 @@ Objekt mit beliebigen Eigenschaftsnamen, wobei die Werte jeder Eigenschaft folge
 
 <!-- ltex-client-specific-de-begin -->
 
-Steuert, welche `settings.json` oder externe Einstellungsdatei ([siehe die Dokumentation](advanced-usage.html#external-setting-files)) geändert wird, wenn eine der schnellen Problembehebungen verwendet wird.
+Steuert, welche `settings.json` oder externe Einstellungsdatei ([siehe die Dokumentation](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#external-setting-files)) geändert wird, wenn eine der schnellen Problembehebungen verwendet wird.
 
 <!-- ltex-client-specific-end -->
 
@@ -1447,7 +1447,7 @@ Falls dies auf eine leere Zeichenfolge gesetzt ist, dann lädt LTeX automatisch 
 
 Benutzen Sie dafür den Pfad zum Hauptverzeichnis von ltex-ls (dieses enthält die Unterverzeichnisse `bin` und `lib`).
 
-Nach Änderungen muss das Fenster von Visual Studio Code erneut geladen werden.
+Nach Änderungen muss LTeX neugestartet werden.
 
 <!-- ltex-client-specific-end -->
 
@@ -1513,7 +1513,7 @@ Falls dies auf eine leere Zeichenfolge gesetzt ist, dann benutzt LTeX eine Java-
 
 Benutzen Sie denselben Pfad, den Sie für die Umgebungsvariable `JAVA_HOME` benutzen würden (dieser enthält üblicherweise neben anderen die Unterverzeichnisse `bin` und `lib`).
 
-Nach Änderungen muss das Fenster von Visual Studio Code erneut geladen werden.
+Nach Änderungen muss LTeX neugestartet werden.
 
 <!-- ltex-client-specific-end -->
 
@@ -1529,7 +1529,7 @@ Anfängliche Größe des Java-Heap-Speichers in Megabytes (korrespondiert zur Ja
 
 Eine Verkleinerung kann dazu führen, dass der Java-Prozess weniger RAM-Speicher benötigt.
 
-Nach Änderungen muss das Fenster von Visual Studio Code erneut geladen werden.
+Nach Änderungen muss LTeX neugestartet werden.
 
 <!-- ltex-client-specific-end -->
 
@@ -1545,7 +1545,7 @@ Maximale Größe des Java-Heap-Speichers in Megabytes (korrespondiert zur Java-O
 
 Eine Verkleinerung kann dazu führen, dass der Java-Prozess weniger RAM-Speicher benötigt. Wenn Sie diese Einstellung zu klein setzen, kann dies dazu führen, dass der Java-Prozess die Heap-Größe überschreitet, sodass der Fehler `OutOfMemoryError` angezeigt wird.
 
-Nach Änderungen muss das Fenster von Visual Studio Code erneut geladen werden.
+Nach Änderungen muss LTeX neugestartet werden.
 
 <!-- ltex-client-specific-end -->
 
@@ -1561,7 +1561,7 @@ Falls nur ein kleiner Teil des Textes geändert wird (z. B. ein einziger Tastend
 
 Eine Verkleinerung kann dazu führen, dass der Java-Prozess weniger RAM-Speicher benötigt. Wenn Sie diese Einstellung auf einen zu kleinen Wert setzen, dann kann sich die Zeit, die LanguageTool zur Überprüfung benötigt, deutlich erhöhen.
 
-Nach Änderungen muss das Fenster von Visual Studio Code erneut geladen werden.
+Nach Änderungen muss LTeX neugestartet werden.
 
 *Typ:* `integer`
 
@@ -1619,7 +1619,7 @@ Eines von `"edit"`, `"save"` und `"manual"`.
 
 - `"edit"`: Dokumente werden überprüft, wenn sie geöffnet oder bearbeitet werden (bei jedem Tastendruck), oder wenn sich die Einstellungen ändern.
 - `"save"`: Dokumente werden überprüft, wenn sie geöffnet oder gespeichert werden, oder wenn sich die Einstellungen ändern.
-- `"manual"`: Dokumente werden nicht automatisch überprüft, außer wenn sich die Einstellungen ändern. Verwenden Sie Befehle wie [`LTeX: Aktuelles Dokument prüfen`](commands-de.html#ltex-aktuelles-dokument-prfen), um manuell Überprüfungen zu veranlassen.
+- `"manual"`: Dokumente werden nicht automatisch überprüft, außer wenn sich die Einstellungen ändern. Verwenden Sie Befehle wie [`LTeX: Aktuelles Dokument prüfen`](vscode-ltex/commands-de.html#ltex-aktuelles-dokument-prüfen), um manuell Überprüfungen zu veranlassen.
 
 *Voreinstellung:* `"edit"`
 
@@ -1651,7 +1651,7 @@ Debugging-Einstellung, um die Kommunikation zwischen Language Client und Languag
 
 Wenn Sie einen Bug melden, setzen Sie diese Einstellung auf `"verbose"` und öffnen Sie das Protokoll `LTeX Language Client` unter `Anzeigen` › `Ausgabe`. Hängen Sie den relevanten Teil an das GitHub-Problem an.
 
-Nach Änderungen muss das Fenster von Visual Studio Code erneut geladen werden.
+Nach Änderungen muss LTeX neugestartet werden.
 
 <!-- ltex-client-specific-end -->
 

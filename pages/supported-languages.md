@@ -6,7 +6,7 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 title: "Supported Languages"
-permalink: "/docs/supported-languages.html"
+permalink: "/supported-languages.html"
 sidebar: "sidebar"
 ---
 
@@ -16,7 +16,7 @@ sidebar: "sidebar"
 
 LTeX supports checking grammar and spelling in the following markup languages. These markup languages are exactly those languages for which LTeX is enabled by default, so no further configuration is necessary. Change [`ltex.enabled`](settings.html#ltexenabled) to manually configure for which languages LTeX is enabled/disabled.
 
-| Language | Language ID | LTeX Support |
+| Language | Language ID | LTeX support |
 | -------- | ----------- | ------------ |
 | BibT<sub>E</sub>X | `bibtex`&nbsp;∗ | Basic |
 | L<sup>A</sup>T<sub>E</sub>X | `latex`&nbsp;∗ | Extensive |
@@ -26,7 +26,7 @@ LTeX supports checking grammar and spelling in the following markup languages. T
 | R Sweave | `rsweave`&nbsp;∗ | Good |
 | XHTML | `html` | Basic |
 
-“Language ID” denotes the code language identifier that has to be used when changing [`ltex.enabled`](settings.html#ltexenabled). An asterisk (∗) indicates that the language is not supported by VS Code out-of-the-box, and an additional extension that adds support for the language has to be installed in order for LTeX to work (e.g., [LaTeX Workshop Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) for LaTeX).
+“Language ID” denotes the code language identifier that has to be used when changing [`ltex.enabled`](settings.html#ltexenabled). An asterisk (∗) indicates that the language is not supported by VS Code out-of-the-box, and an additional extension that adds support for the language has to be installed in order for vscode-ltex to work (e.g., [LaTeX Workshop Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) for LaTeX).
 
 ### Programming Languages
 
@@ -36,7 +36,7 @@ A line comment is only checked if its start delimiter is only preceded by whites
 
 LTeX assumes comments are written in Markdown, except for Python, where reStructuredText is used.
 
-There is a list of all supported programming languages below. Again, an asterisk (∗) indicates that the language is not supported by VS Code out-of-the-box, and an additional extension that adds support for the language has to be installed in order for LTeX to work (e.g., [MATLAB Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=Gimly81.matlab) for MATLAB).
+There is a list of all supported programming languages below. Again, an asterisk (∗) indicates that the language is not supported by VS Code out-of-the-box, and an additional extension that adds support for the language has to be installed in order for vscode-ltex to work (e.g., [MATLAB Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=Gimly81.matlab) for MATLAB).
 
 Bash/Shell&nbsp;Script&nbsp;(`shellscript`),
 C&nbsp;(`c`),
