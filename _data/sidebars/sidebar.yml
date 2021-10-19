@@ -1,7 +1,5 @@
 entries:
-  - title: "sidebar"
-    product: "LT<sub>E</sub>X"
-    version: "12.1.0"
+  - title: "LT<sub>E</sub>X 12.2.0 / 14.1.0"
     folders:
       - title: "General Information"
         output: "web"

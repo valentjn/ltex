@@ -1439,23 +1439,7 @@ Optionaler Pfad zu einem Verzeichnis mit Regeln eines word2vec-Sprachmodells.
 
 *Voreinstellung:* `""`
 
-## `ltex.ltex-ls.path`
-
-<!-- ltex-client-specific-de-begin -->
-
-Falls dies auf eine leere Zeichenfolge gesetzt ist, dann lädt LTeX automatisch [ltex-ls von GitHub](https://github.com/valentjn/ltex-ls/releases) herunter, speichert es im Erweiterungsordner, und benutzt es für die Textüberprüfung. Sie können diese Einstellung auf den Ort eines ltex-ls-Releases setzen, das Sie selbst heruntergeladen haben.
-
-Benutzen Sie dafür den Pfad zum Hauptverzeichnis von ltex-ls (dieses enthält die Unterverzeichnisse `bin` und `lib`).
-
-Nach Änderungen muss LTeX neugestartet werden.
-
-<!-- ltex-client-specific-end -->
-
-*Typ:* `string`
-
-*Voreinstellung:* `""`
-
-## `ltex.ltex-ls.languageToolHttpServerUri`
+## `ltex.languageToolHttpServerUri`
 
 Falls dies auf eine nicht-leere Zeichenfolge gesetzt ist, dann verwendet LTeX nicht die eingebaute Version von LanguageTool. Stattdessen verbindet sich LTeX zu einem externen [LanguageTool-HTTP-Server](http://wiki.languagetool.org/http-server). Setzen Sie diese Einstellung auf die Haupt-URI des Servers und hängen Sie kein `v2/check` oder Ähnliches an.
 
@@ -1467,17 +1451,33 @@ Beachten Sie, dass in diesem Modus die Einstellungen [`ltex.additionalRules.lang
 
 *Voreinstellung:* `""`
 
-## `ltex.ltex-ls.languageToolOrgUsername`
+## `ltex.languageToolOrg.username`
 
-Benutzername/E-Mail-Adresse, wie zum Login auf languagetool.org benutzt, für Zugriff auf die Premium-API. Nur relevant, falls [`ltex.ltex-ls.languageToolHttpServerUri`](settings-de.html#ltexltex-lslanguagetoolhttpserveruri) gesetzt ist.
+Benutzername/E-Mail-Adresse, wie zum Login auf languagetool.org benutzt, für Zugriff auf die Premium-API. Nur relevant, falls [`ltex.languageToolHttpServerUri`](settings-de.html#ltexlanguagetoolhttpserveruri) gesetzt ist.
 
 *Typ:* `string`
 
 *Voreinstellung:* `""`
 
-## `ltex.ltex-ls.languageToolOrgApiKey`
+## `ltex.languageToolOrg.apiKey`
 
-API-Schlüssel für Zugriff auf die Premium-API. Nur relevant, falls [`ltex.ltex-ls.languageToolHttpServerUri`](settings-de.html#ltexltex-lslanguagetoolhttpserveruri) gesetzt ist.
+API-Schlüssel für Zugriff auf die Premium-API. Nur relevant, falls [`ltex.languageToolHttpServerUri`](settings-de.html#ltexlanguagetoolhttpserveruri) gesetzt ist.
+
+*Typ:* `string`
+
+*Voreinstellung:* `""`
+
+## `ltex.ltex-ls.path`
+
+<!-- ltex-client-specific-de-begin -->
+
+Falls dies auf eine leere Zeichenfolge gesetzt ist, dann lädt LTeX automatisch [ltex-ls von GitHub](https://github.com/valentjn/ltex-ls/releases) herunter, speichert es im Erweiterungsordner, und benutzt es für die Textüberprüfung. Sie können diese Einstellung auf den Ort eines ltex-ls-Releases setzen, das Sie selbst heruntergeladen haben.
+
+Benutzen Sie dafür den Pfad zum Hauptverzeichnis von ltex-ls (dieses enthält die Unterverzeichnisse `bin` und `lib`).
+
+Nach Änderungen muss LTeX neugestartet werden.
+
+<!-- ltex-client-specific-end -->
 
 *Typ:* `string`
 

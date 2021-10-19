@@ -11,6 +11,15 @@ sidebar: "sidebar"
 toc: false
 ---
 
+## 14.1.0 (October 19, 2021)
+
+- &#x1f527; *Change:* Rename `ltex.ltex-ls.languageToolHttpServerUri` &#x2192; [`ltex.languageToolHttpServerUri`](../settings.html#ltexlanguagetoolhttpserveruri); the previous name is deprecated
+- &#x1f527; *Change:* Rename `ltex.ltex-ls.languageToolOrgUsername` &#x2192; [`ltex.languageToolOrg.username`](../settings.html#ltexlanguagetoolorgusername); the previous name is deprecated
+- &#x1f527; *Change:* Rename `ltex.ltex-ls.languageToolOrgApiKey` &#x2192; [`ltex.languageToolOrg.apiKey`](../settings.html#ltexlanguagetoolorgapikey); the previous name is deprecated
+- &#x2728; *New:* Add support for completion requests for English and German &#x2014; [vscode-ltex#409](https://github.com/valentjn/vscode-ltex/issues/409)
+- &#x1f41b; *Bug fix:* Fix `Add '...' to dictionary` quick fix missing for Austrian and Swiss German &#x2014; [vscode-ltex#431](https://github.com/valentjn/vscode-ltex/issues/431)
+- &#x1f527; *Change:* Move documentation to <https://valentjn.github.io/ltex>
+
 ## 14.0.0 (October 14, 2021)
 
 - &#x1f527; *Change:* Update LanguageTool to 5.5 (see [LT 5.5 release notes](https://github.com/languagetool-org/languagetool/blob/v5.5/languagetool-standalone/CHANGES.md#55-2021-10-02))
@@ -19,8 +28,8 @@ toc: false
 - &#x2728; *New:* Provide ID of LanguageTool rule via diagnostics code, not as part of diagnostics message
 - &#x2728; *New:* Link diagnostics to LanguageTool website with more information
 - &#x2728; *New:* Add support for the `main` option of the babel package (LaTeX) &#x2014; [vscode-ltex#391](https://github.com/valentjn/vscode-ltex/issues/391)
-- &#x2728; *New:* Add setting [`ltex.ltex-ls.languageToolOrgUsername`](../settings.html#ltexltex-lslanguagetoolorgusername) to set username on languagetool.org for Premium API access &#x2014; [vscode-ltex#398](https://github.com/valentjn/vscode-ltex/issues/398)
-- &#x2728; *New:* Add setting [`ltex.ltex-ls.languageToolOrgApiKey`](../settings.html#ltexltex-lslanguagetoolorgapikey) to set API key on languagetool.org for Premium API access &#x2014; [vscode-ltex#398](https://github.com/valentjn/vscode-ltex/issues/398)
+- &#x2728; *New:* Add setting `ltex.ltex-ls.languageToolOrgUsername` to set username on languagetool.org for Premium API access &#x2014; [vscode-ltex#398](https://github.com/valentjn/vscode-ltex/issues/398)
+- &#x2728; *New:* Add setting `ltex.ltex-ls.languageToolOrgApiKey` to set API key on languagetool.org for Premium API access &#x2014; [vscode-ltex#398](https://github.com/valentjn/vscode-ltex/issues/398)
 - &#x2728; *New:* Add support for [`ltex.dictionary`](../settings.html#ltexdictionary) when using a LanguageTool HTTP server
 - &#x1f527; *Change:* Handle disabled rules ourselves to prevent reinitialization of LanguageTool when running the `Disable rule` quick fix &#x2014; [vscode-ltex#390](https://github.com/valentjn/vscode-ltex/issues/390)
 - &#x1f41b; *Bug fix:* Fix LanguageTool reinitialized when running the `Add '...' to dictionary` quick fix &#x2014; [vscode-ltex#390](https://github.com/valentjn/vscode-ltex/issues/390)

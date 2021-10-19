@@ -1439,23 +1439,7 @@ Optional path to a directory with rules of a word2vec language model.
 
 *Default:* `""`
 
-## `ltex.ltex-ls.path`
-
-<!-- ltex-client-specific-begin -->
-
-If set to an empty string, LTeX automatically downloads [ltex-ls from GitHub](https://github.com/valentjn/ltex-ls/releases), stores it in the folder of the extension, and uses it for the checking process. You can point this setting to an ltex-ls release you downloaded by yourself.
-
-Use the path to the root directory of ltex-ls (it contains `bin` and `lib` subdirectories).
-
-Changes require restarting LTeX to take effect.
-
-<!-- ltex-client-specific-end -->
-
-*Type:* `string`
-
-*Default:* `""`
-
-## `ltex.ltex-ls.languageToolHttpServerUri`
+## `ltex.languageToolHttpServerUri`
 
 If set to a non-empty string, LTeX will not use the bundled, built-in version of LanguageTool. Instead, LTeX will connect to an external [LanguageTool HTTP server](http://wiki.languagetool.org/http-server). Set this setting to the root URI of the server, and do not append `v2/check` or similar.
 
@@ -1467,17 +1451,33 @@ Note that in this mode, the settings [`ltex.additionalRules.languageModel`](sett
 
 *Default:* `""`
 
-## `ltex.ltex-ls.languageToolOrgUsername`
+## `ltex.languageToolOrg.username`
 
-Username/email as used to log in at languagetool.org for Premium API access. Only relevant if [`ltex.ltex-ls.languageToolHttpServerUri`](settings.html#ltexltex-lslanguagetoolhttpserveruri) is set.
+Username/email as used to log in at languagetool.org for Premium API access. Only relevant if [`ltex.languageToolHttpServerUri`](settings.html#ltexlanguagetoolhttpserveruri) is set.
 
 *Type:* `string`
 
 *Default:* `""`
 
-## `ltex.ltex-ls.languageToolOrgApiKey`
+## `ltex.languageToolOrg.apiKey`
 
-API key for Premium API access. Only relevant if [`ltex.ltex-ls.languageToolHttpServerUri`](settings.html#ltexltex-lslanguagetoolhttpserveruri) is set.
+API key for Premium API access. Only relevant if [`ltex.languageToolHttpServerUri`](settings.html#ltexlanguagetoolhttpserveruri) is set.
+
+*Type:* `string`
+
+*Default:* `""`
+
+## `ltex.ltex-ls.path`
+
+<!-- ltex-client-specific-begin -->
+
+If set to an empty string, LTeX automatically downloads [ltex-ls from GitHub](https://github.com/valentjn/ltex-ls/releases), stores it in the folder of the extension, and uses it for the checking process. You can point this setting to an ltex-ls release you downloaded by yourself.
+
+Use the path to the root directory of ltex-ls (it contains `bin` and `lib` subdirectories).
+
+Changes require restarting LTeX to take effect.
+
+<!-- ltex-client-specific-end -->
 
 *Type:* `string`
 
