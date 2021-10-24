@@ -13,7 +13,7 @@ sidebar: "sidebar"
 ## Download Providers
 
 - Download from within coc.nvim: Run `:CocInstall coc-ltex`
-- [npm](https://www.npmjs.com/package/coc-ltex)
+- [npm](https://www.npmjs.com/package/coc-ltex) (coc.nvim uses this for downloading)
 - [Source on GitHub](https://github.com/valentjn/vscode-ltex)
 
 ## Requirements
