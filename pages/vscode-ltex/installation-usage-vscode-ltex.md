@@ -33,14 +33,14 @@ sidebar: "sidebar"
 2. Install this extension
 3. Reload the VS Code window if necessary
 4. Open a LaTeX or a Markdown document, or open a new file and change the language mode to `LaTeX` or `Markdown` (open the Command Palette and select `Change Language Mode`)
-5. Wait until [ltex-ls](../faq.html#whats-the-difference-between-vscode-ltex-ltex-ls-and-languagetool) and Java have been found; if necessary, LTeX downloads both for you. Alternatively, you can choose [offline installation](#offline-installation).
+5. Wait until [ltex-ls](../faq.html#whats-the-difference-between-vscode-ltex-ltex-ls-and-languagetool) has been found; if necessary, LTeX downloads it for you. Alternatively, you can choose [offline installation](#offline-installation).
 6. Grammar/spelling errors will be displayed! (if there are any)
 
 ## Offline Installation
 
-The key component of LTeX, the LTeX Language Server (ltex-ls), which also includes LanguageTool itself, cannot be included in the LTeX version distributed on the Visual Studio Marketplace due to file size restrictions. In addition, ltex-ls requires Java due to its LanguageTool dependency.
+The key component of LTeX, the LTeX Language Server (ltex-ls), which also includes Java and LanguageTool, cannot be included in the LTeX version distributed on the Visual Studio Marketplace due to file size restrictions.
 
-When activated for the first time, LTeX will automatically download and use a hard-coded ltex-ls release from GitHub (which also includes a portable Java distribution). It will be stored in the extension folder. Note that after this initial installation, no connection to the Internet is necessary. Checking your documents is completely offline.
+When activated for the first time, LTeX will automatically download and use a hard-coded ltex-ls release from GitHub. It will be stored in the extension folder. Note that after this initial installation, no connection to the Internet is necessary. Checking your documents is completely offline.
 
 If you don't have an Internet connection, or if you simply don't want this, there are two alternatives.
 
