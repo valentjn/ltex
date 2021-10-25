@@ -64,7 +64,7 @@ If you like LTeX, but are not able to contribute in any of these ways, there are
 2. Fork vscode-ltex on GitHub.
 3. Clone the fork: `git clone https://github.com/<YOUR_USERNAME>/vscode-ltex.git`
 4. Open the cloned folder in VS Code.
-5. Install the npm dependencies: `cd vscode-ltex && npm install`
+5. Install the npm dependencies: `cd vscode-ltex && npm ci`
 6. Run the `Launch extension` task to launch and debug the extension.
 
 ## How to Contribute Code

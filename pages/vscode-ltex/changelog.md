@@ -23,6 +23,7 @@ toc: false
 - &#x2728; *New:* Add completion support for English and German (begin typing a word and press `Ctrl+Space`) &#x2014; [#409](https://github.com/valentjn/vscode-ltex/issues/409)
 - &#x1f41b; *Bug fix:* Fix `Add '...' to dictionary` quick fix missing for Austrian and Swiss German &#x2014; [#431](https://github.com/valentjn/vscode-ltex/issues/431)
 - &#x1f527; *Change:* Move documentation to <https://valentjn.github.io/ltex>
+- &#x1f527; *Change:* Update LTeX LS to 14.1.0
 
 ## 12.1.0 &#x2014; &#x201c;The coc.nvim Diffusion&#x201d; (October 16, 2021)
 
