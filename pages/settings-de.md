@@ -1417,7 +1417,7 @@ Falls diese Einstellung gesetzt ist, werden zusätzliche Regeln verwendet, um fa
 
 ## `ltex.additionalRules.languageModel`
 
-Optionaler Pfad zu einem Verzeichnis mit Regeln eines Sprachmodells mit *n*-Gramm-Vorkommniszahlen.
+Optionaler Pfad zu einem Verzeichnis mit Regeln eines Sprachmodells mit *n*-Gramm-Vorkommniszahlen. Setzen Sie diese Einstellung auf das Elternverzeichnis, das Verzeichnisse für Sprachen enthält (z. B. `en`).
 
 *Typ:* `string`
 
@@ -1566,6 +1566,22 @@ Nach Änderungen muss LTeX neugestartet werden.
 *Typ:* `integer`
 
 *Voreinstellung:* `2000`
+
+## `ltex.completionEnabled`
+
+Steuert, ob Vervollständigung aktiviert ist (auch bekannt als Auto-Vervollständigung, Schnellvorschläge und IntelliSense).
+
+Falls diese Einstellung aktiviert ist, dann wird eine Liste von Wörtern angezeigt, die das aktuelle Wort ergänzen (jedes Mal, wenn der Editor eine Vervollständigungs-Anfrage sendet).
+
+<!-- ltex-client-specific-begin -->
+
+In VS Code ist Vervollständigung während des Tippens standardmäßig aktiviert (via `editor.quickSuggestions`). Daher ist diese Einstellung standardmäßig deaktiviert, weil ständig angezeigte Vervollständigungs-Listen den Benutzer stören könnten. Es wird empfohlen, diese Einstellung zu aktivieren, aber `editor.quickSuggestions` zu deaktivieren. Dann können LTeX-Vervollständigungen durch Drücken von `Strg+Leertaste` angefordert werden.
+
+<!-- ltex-client-specific-end -->
+
+*Typ:* `boolean`
+
+*Voreinstellung:* `false`
 
 ## `ltex.diagnosticSeverity`
 

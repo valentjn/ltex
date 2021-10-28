@@ -15,6 +15,13 @@ toc: false
 
 - New versions of LTeX released on or after January 14, 2022, will require VS Code 1.61.0 or later
 
+## 13.0.0 &#x2014; &#x201c;The Completion Setting Excitation&#x201d; (October 30, 2021)
+
+- &#x1f527; *Change:* Add [`ltex.completionEnabled`](../settings.html#ltexcompletionenabled) to disable completion by default &#x2014; [#443](https://github.com/valentjn/vscode-ltex/issues/443)
+- &#x1f41b; *Bug fix:* Fix `StringIndexOutOfBoundsException` in `AnnotatedTextFragment.getSubstringOfPlainText` &#x2014; [#442](https://github.com/valentjn/vscode-ltex/issues/442)
+- &#x1f41b; *Bug fix:* Fix handling of multiple subsequent whitespace characters in XHTML (e.g., CRLF)
+- &#x1f527; *Change:* Update LTeX LS to 15.0.0
+
 ## 12.2.0 &#x2014; &#x201c;The Completion Hypothesis&#x201d; (October 19, 2021)
 
 - &#x1f527; *Change:* Rename `ltex.ltex-ls.languageToolHttpServerUri` &#x2192; [`ltex.languageToolHttpServerUri`](../settings.html#ltexlanguagetoolhttpserveruri); the previous name is deprecated

@@ -1417,7 +1417,7 @@ If set, additional rules will be checked to detect false friends. Picky rules ma
 
 ## `ltex.additionalRules.languageModel`
 
-Optional path to a directory with rules of a language model with *n*-gram occurrence counts.
+Optional path to a directory with rules of a language model with *n*-gram occurrence counts. Set this setting to the parent directory that contains subdirectories for languages (e.g., `en`).
 
 *Type:* `string`
 
@@ -1566,6 +1566,22 @@ Changes require restarting LTeX to take effect.
 *Type:* `integer`
 
 *Default:* `2000`
+
+## `ltex.completionEnabled`
+
+Controls whether completion is enabled (also known as auto-completion, quick suggestions, and IntelliSense).
+
+If this setting is enabled, then a list of words is displayed that complete the currently typed word (whenever the editor sends a completion request).
+
+<!-- ltex-client-specific-begin -->
+
+In VS Code, completion is enabled by default while typing (via `editor.quickSuggestions`). Therefore, this setting is disabled by default, as constantly displaying completion lists might annoy the user. It is recommended to enable this setting, but disable `editor.quickSuggestions`. Then, LTeX completions can be requested by pressing `Ctrl+Space`.
+
+<!-- ltex-client-specific-end -->
+
+*Type:* `boolean`
+
+*Default:* `false`
 
 ## `ltex.diagnosticSeverity`
 

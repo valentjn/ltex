@@ -11,6 +11,12 @@ sidebar: "sidebar"
 toc: false
 ---
 
+## 15.0.0 (October 30, 2021)
+
+- &#x1f527; *Change:* Add [`ltex.completionEnabled`](../settings.html#ltexcompletionenabled) to disable completion by default &#x2014; [vscode-ltex#443](https://github.com/valentjn/vscode-ltex/issues/443)
+- &#x1f41b; *Bug fix:* Fix `StringIndexOutOfBoundsException` in `AnnotatedTextFragment.getSubstringOfPlainText` &#x2014; [vscode-ltex#442](https://github.com/valentjn/vscode-ltex/issues/442)
+- &#x1f41b; *Bug fix:* Fix handling of multiple subsequent whitespace characters in XHTML (e.g., CRLF)
+
 ## 14.1.0 (October 19, 2021)
 
 - &#x1f527; *Change:* Rename `ltex.ltex-ls.languageToolHttpServerUri` &#x2192; [`ltex.languageToolHttpServerUri`](../settings.html#ltexlanguagetoolhttpserveruri); the previous name is deprecated
