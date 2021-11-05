@@ -11,6 +11,12 @@ sidebar: "sidebar"
 toc: false
 ---
 
+## 15.1.0 (November 05, 2021)
+
+- &#x2728; *New:* Add support for some aliases of LSP language IDs: `bib` for `bibtex`, `plaintex` for `latex`, `xhtml` for `html`
+- &#x1f41b; *Bug fix:* Fix LTeX LS sometimes not properly terminated when using LTeX CLI &#x2014; [#117](https://github.com/valentjn/ltex/issues/117)
+- &#x1f41b; *Bug fix:* Fix error when running `ltex-cli` from a different directory than `bin/`
+
 ## 15.0.0 (October 30, 2021)
 
 - &#x1f527; *Change:* Add [`ltex.completionEnabled`](../settings.html#ltexcompletionenabled) to disable completion by default &#x2014; [vscode-ltex#443](https://github.com/valentjn/vscode-ltex/issues/443)
