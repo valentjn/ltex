@@ -44,7 +44,7 @@ jobs:
         run: "bundle install --jobs=2"
 
       - name: "Set Git Identity"
-        run: "git config user.name \"Julian Valentin\" && git config user.email julian.valentin@bsplines.org"
+        run: "git config user.name github-actions && git config user.email github-actions@github.com"
 
       - name: "Rebase gh-pages"
         run: "git remote set-branches --add origin gh-pages && git fetch origin gh-pages:gh-pages && git checkout gh-pages && git reset --hard release"
