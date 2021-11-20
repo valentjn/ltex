@@ -19,7 +19,8 @@ sidebar: "sidebar"
 ## Requirements
 
 - 64-bit Linux, Mac, or Windows operating system
-- [Vim](https://www.vim.org/) or [Neovim](https://neovim.io/) with [coc.nvim 0.0.80 or newer](https://github.com/neoclide/coc.nvim)
+- [Node.js 14.16.0 or later](https://nodejs.org/)
+- [Vim](https://www.vim.org/) or [Neovim](https://neovim.io/) with [coc.nvim 0.0.80 or later](https://github.com/neoclide/coc.nvim)
 
 ## How to Install and Use
 
