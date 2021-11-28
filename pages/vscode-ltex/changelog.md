@@ -98,14 +98,14 @@ toc: false
 - &#x1f527; *Change:* Enable LTeX in untrusted workspaces (introduced in VS Code 1.57.0)
 - &#x2728; *New:* Add walkthrough for VS Code's *Getting Started* page (introduced in VS Code 1.57.0)
 
-## 10.3.0 &#x2014; &#x201c;The Orphan Disintegration&#x201d; (June 05, 2021)
+## 10.3.0 &#x2014; &#x201c;The Orphan Disintegration&#x201d; (June 5, 2021)
 
 - &#x1f527; *Change:* Enable LTeX in Jupyter notebooks in VS Code Insiders (as soon as the native notebooks are released by VS Code, this will automatically work in regular VS Code)
 - &#x2728; *New:* Add support for `\setplength` (LaTeX)
 - &#x1f41b; *Bug fix:* Fix LTeX LS not closed when VS Code or workspace is closed &#x2014; [#325](https://github.com/valentjn/vscode-ltex/issues/325)
 - &#x1f527; *Change:* Update LTeX LS to 12.2.0
 
-## 10.2.0 &#x2014; &#x201c;The Long Document Reverberation&#x201d; (May 01, 2021)
+## 10.2.0 &#x2014; &#x201c;The Long Document Reverberation&#x201d; (May 1, 2021)
 
 - &#x1f527; *Change:* Show `Use ...` quick fixes before other quick fixes &#x2014; [#297](https://github.com/valentjn/vscode-ltex/issues/297)
 - &#x1f527; *Change:* Limit number of `Use ...` quick fixes to 5 &#x2014; [#297](https://github.com/valentjn/vscode-ltex/issues/297)
@@ -127,7 +127,7 @@ toc: false
 - &#x1f527; *Change:* Engineering: A running instance of LTeX LS, if it has been started with `--server-type=tcpSocket`, will be chosen over starting a new instance; this enables simultaneous debugging of vscode-ltex and ltex-ls
 - &#x1f527; *Change:* Update LTeX LS to 12.0.0
 
-## 10.0.0 &#x2014; &#x201c;The Unicode Simulation&#x201d; (April 05, 2021)
+## 10.0.0 &#x2014; &#x201c;The Unicode Simulation&#x201d; (April 5, 2021)
 
 - &#x1f527; *Change:* Update required version of VS Code (now 1.52.0 or newer)
 - &#x1f527; *Change:* Update LanguageTool to 5.3 (see [LT 5.3 release notes](https://github.com/languagetool-org/languagetool/blob/v5.3/languagetool-standalone/CHANGES.md#53-2021-03-29))
@@ -192,7 +192,7 @@ toc: false
 - &#x1f527; *Change:* Update issue labels when reporting bugs or requesting features
 - &#x1f527; *Change:* Update LTeX LS to 9.0.1
 
-## 8.2.0 &#x2014; &#x201c;The Separation Displacement&#x201d; (January 03, 2021)
+## 8.2.0 &#x2014; &#x201c;The Separation Displacement&#x201d; (January 3, 2021)
 
 - &#x1f527; *Change:* Make versioning of LTeX LS independent of vscode-ltex; see the changelog of vscode-ltex to find out which version of LTeX LS a particular version of vscode-ltex uses
 - &#x1f527; *Change:* Update LanguageTool to 5.2 (see [LT 5.2 release notes](https://github.com/languagetool-org/languagetool/blob/v5.2/languagetool-standalone/CHANGES.md#52-released-2020-12-29))
@@ -217,7 +217,7 @@ toc: false
 - &#x1f527; *Change:* Update LSP4J to 0.10.0
 - &#x1f527; *Change:* Update LTeX LS to 8.1.0
 
-## 8.0.0 &#x2014; &#x201c;The Setting Transformation&#x201d; (November 01, 2020)
+## 8.0.0 &#x2014; &#x201c;The Setting Transformation&#x201d; (November 1, 2020)
 
 - &#x1f527; *Change:* Upgrade from Java 8 to Java 11 (see [announcement](https://valentjn.github.io/ltex/old/deprecation-of-java-8.html)) &#x2014; [#39](https://github.com/valentjn/vscode-ltex/issues/39)
 - &#x2728; *New:* Add workaround to eliminate the need for workspace-specific setting names; [`ltex.dictionary`](../settings.html#ltexdictionary), [`ltex.disabledRules`](../settings.html#ltexdisabledrules), and [`ltex.enabledRules`](../settings.html#ltexenabledrules) can now be used in multiple setting scopes (user settings, workspace settings, and workspace folder settings) at the same time without overriding each other; instead, the settings of the different scopes will be properly merged (see [documentation](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#multi-scope-settings))
@@ -318,7 +318,7 @@ toc: false
 - &#x1f41b; *Bug fix:* Fix links to documentation in various places (readme, changelog, error messages, etc.)
 - &#x1f527; *Change:* Update LTeX LS to 6.3.0
 
-## 6.2.0 &#x2014; &#x201c;The Command Isotope&#x201d; (August 07, 2020)
+## 6.2.0 &#x2014; &#x201c;The Command Isotope&#x201d; (August 7, 2020)
 
 - &#x2728; *New:* Add commands [`LTeX: Check Current Document`](commands.html#ltex-check-current-document) and [`LTeX: Check All Documents in Workspace`](commands.html#ltex-check-all-documents-in-workspace) &#x2014; [#84](https://github.com/valentjn/vscode-ltex/issues/84)
 - &#x2728; *New:* Add commands [`LTeX: Clear Diagnostics in Current Document`](commands.html#ltex-clear-diagnostics-in-current-document) and [`LTeX: Clear All Diagnostics`](commands.html#ltex-clear-all-diagnostics)
@@ -350,7 +350,7 @@ toc: false
 - &#x1f527; *Change:* Update some NPM dependencies
 - &#x1f527; *Change:* Update LTeX LS to 6.0.2
 
-## 6.0.1 &#x2014; &#x201c;The Freeze Paradox&#x201d; (July 02, 2020)
+## 6.0.1 &#x2014; &#x201c;The Freeze Paradox&#x201d; (July 2, 2020)
 
 - &#x1f41b; *Bug fix:* Fix freezes when checking German text by working around [languagetool-org/languagetool#3181](https://github.com/languagetool-org/languagetool/issues/3181) introduced by LanguageTool 5.0 &#x2014; [#68](https://github.com/valentjn/vscode-ltex/issues/68)
 - &#x1f527; *Change:* Update LTeX LS to 6.0.1
@@ -377,12 +377,12 @@ toc: false
 
 - &#x1f41b; *Bug fix:* Fix `Disable rule` quick fix using wrong setting structure &#x2014; [#61](https://github.com/valentjn/vscode-ltex/issues/61)
 
-## 5.0.1 &#x2014; &#x201c;The Acceptance Incursion&#x201d; (June 07, 2020)
+## 5.0.1 &#x2014; &#x201c;The Acceptance Incursion&#x201d; (June 7, 2020)
 
 - &#x1f41b; *Bug fix:* Fix `Value is not accepted` warning when using [`ltex.disabledRules`](../settings.html#ltexdisabledrules) or [`ltex.enabledRules`](../settings.html#ltexenabledrules) &#x2014; [#44](https://github.com/valentjn/vscode-ltex/issues/44)
 - &#x1f527; *Change:* Change badges in readme
 
-## 5.0.0 &#x2014; &#x201c;The Rewrite Materialization&#x201d; (June 01, 2020)
+## 5.0.0 &#x2014; &#x201c;The Rewrite Materialization&#x201d; (June 1, 2020)
 
 - &#x2728; *New:* Download LTeX LS on demand with all languages already included; this removes the need for language support extensions &#x2014; [#6](https://github.com/valentjn/vscode-ltex/issues/6)
 - &#x1f527; *Change:* Download Java distribution on demand if no suitable Java installation has been found &#x2014; [#5](https://github.com/valentjn/vscode-ltex/issues/5)
@@ -404,20 +404,20 @@ toc: false
 - &#x1f527; *Change:* Make documentation more extensive, put it on own [website](https://valentjn.github.io/ltex)
 - &#x1f527; *Change:* Update LTeX LS to 5.0.0
 
-## 4.9.3 &#x2014; &#x201c;The Java Collapse&#x201d; (May 07, 2020)
+## 4.9.3 &#x2014; &#x201c;The Java Collapse&#x201d; (May 7, 2020)
 
 - &#x1f527; *Change:* Revert to Java 8
 - &#x1f5d1; *Removal:* Remove support for external LanguageTool HTTP servers
 - &#x1f527; *Change:* Update LTeX LS to 4.9.3
 
-## 4.9.2 &#x2014; &#x201c;The Server Renormalization&#x201d; (May 06, 2020)
+## 4.9.2 &#x2014; &#x201c;The Server Renormalization&#x201d; (May 6, 2020)
 
 - &#x1f527; *Change:* Update required version of Java (now 11 or newer)
 - &#x2728; *New:* Add support for external LanguageTool HTTP servers &#x2014; [#36](https://github.com/valentjn/vscode-ltex/issues/36)
 - &#x2728; *New:* Add support for `\autoref`, `\pageref`, `\autopageref` &#x2014; [#37](https://github.com/valentjn/vscode-ltex/issues/37)
 - &#x1f527; *Change:* Update LTeX LS to 4.9.2
 
-## 4.9.1 &#x2014; &#x201c;The Sentence Cache Acceleration&#x201d; (May 01, 2020)
+## 4.9.1 &#x2014; &#x201c;The Sentence Cache Acceleration&#x201d; (May 1, 2020)
 
 - &#x1f41b; *Bug fix:* Fix sentence cache was invalidated when a single ignore sentence rule was present &#x2014; [#29](https://github.com/valentjn/vscode-ltex/issues/29)
 - &#x1f527; *Change:* Use thin non-breaking space for `\,` &#x2014; [#35](https://github.com/valentjn/vscode-ltex/issues/35)
@@ -488,23 +488,23 @@ toc: false
 - &#x1f41b; *Bug fix:* Fix another `NullPointerException` for word2vec
 - &#x1f527; *Change:* Update LTeX LS to 4.7.4
 
-## 4.7.3 &#x2014; &#x201c;The word2vec Erosion&#x201d; (October 07, 2019)
+## 4.7.3 &#x2014; &#x201c;The word2vec Erosion&#x201d; (October 7, 2019)
 
 - &#x1f41b; *Bug fix:* Fix null pointer error for word2vec quick fixes &#x2014; [#12](https://github.com/valentjn/vscode-ltex/issues/12)
 - &#x1f527; *Change:* Update LTeX LS to 4.7.3
 
-## 4.7.2 &#x2014; &#x201c;The Message Dissection&#x201d; (October 02, 2019)
+## 4.7.2 &#x2014; &#x201c;The Message Dissection&#x201d; (October 2, 2019)
 
 - &#x2728; *New:* Add missing error message if legacy false friends could not be loaded
 - &#x1f527; *Change:* Update LTeX LS to 4.7.2
 
-## 4.7.1 &#x2014; &#x201c;The Mother Tongue Factor&#x201d; (October 02, 2019)
+## 4.7.1 &#x2014; &#x201c;The Mother Tongue Factor&#x201d; (October 2, 2019)
 
 - &#x2728; *New:* Add [`ltex.additionalRules.motherTongue`](../settings.html#ltexadditionalrulesmothertongue) setting to enable detection of false friends &#x2014; [#11](https://github.com/valentjn/vscode-ltex/issues/11)
 - &#x1f527; *Change:* Change defaults for `ltex.additionalRules` settings from `""` to `null`
 - &#x1f527; *Change:* Update LTeX LS to 4.7.1
 
-## 4.7.0 &#x2014; &#x201c;The Multi-Root Observation&#x201d; (October 01, 2019)
+## 4.7.0 &#x2014; &#x201c;The Multi-Root Observation&#x201d; (October 1, 2019)
 
 - &#x1f527; *Change:* Update LanguageTool to 4.7 (see [LT 4.7 release notes](https://github.com/languagetool-org/languagetool/blob/v4.7/languagetool-standalone/CHANGES.md#47-2019-09-28))
 - &#x2728; *New:* Support multi-root workspaces, all configuration settings except [`ltex.enabled`](../settings.html#ltexenabled) are now resource-specific &#x2014; [#7](https://github.com/valentjn/vscode-ltex/issues/7)
@@ -546,12 +546,12 @@ toc: false
 - &#x1f41b; *Bug fix:* Fix `NullPointerException` if LanguageTool has not been initialized &#x2014; [ltex-ls#1](https://github.com/valentjn/ltex-ls/issues/1)
 - &#x1f527; *Change:* Update LTeX LS to 4.6.10
 
-## 4.6.9 &#x2014; &#x201c;The Bundle Valuation&#x201d; (September 08, 2019)
+## 4.6.9 &#x2014; &#x201c;The Bundle Valuation&#x201d; (September 8, 2019)
 
 - &#x1f527; *Change:* Bundle Node.js modules to decrease number of files in the extension (this means a slight performance gain)
 - &#x1f527; *Change:* Update LTeX LS to 4.6.9
 
-## 4.6.8 &#x2014; &#x201c;The Severity Manifestation&#x201d; (September 07, 2019)
+## 4.6.8 &#x2014; &#x201c;The Severity Manifestation&#x201d; (September 7, 2019)
 
 - &#x2728; *New:* Add setting [`ltex.diagnosticSeverity`](../settings.html#ltexdiagnosticseverity) to control where and how the diagnostics appear
 - &#x1f41b; *Bug fix:* Change default severity from `warning` to `info`
@@ -564,12 +564,12 @@ toc: false
 - &#x1f527; *Change:* Ignore alignment argument of tabular environment
 - &#x1f527; *Change:* Update LTeX LS to 4.6.8
 
-## 4.6.7 &#x2014; &#x201c;The Model Combustion&#x201d; (September 02, 2019)
+## 4.6.7 &#x2014; &#x201c;The Model Combustion&#x201d; (September 2, 2019)
 
 - &#x2728; *New:* Add possibility to use language model *n*-gram data, neural network model data, or word2vec model data
 - &#x1f527; *Change:* `Add to dictionary` now always modifies global settings
 
-## 4.6.6 &#x2014; &#x201c;The Timeout Theorem&#x201d; (September 02, 2019)
+## 4.6.6 &#x2014; &#x201c;The Timeout Theorem&#x201d; (September 2, 2019)
 
 - &#x1f41b; *Bug fix:* Fix `fromPos must be less than toPos` LT errors
 - &#x2728; *New:* Localization of diagnostics, initially support of English and German
@@ -577,36 +577,36 @@ toc: false
 - &#x2728; *New:* Add support for `\(`, `\)`, `\[`, `\]`
 - &#x1f527; *Change:* Don't insert spaces before `\text` in display math
 
-## 4.6.5 &#x2014; &#x201c;The Consistency Integration&#x201d; (September 02, 2019)
+## 4.6.5 &#x2014; &#x201c;The Consistency Integration&#x201d; (September 2, 2019)
 
 - &#x1f527; *Change:* Make readme and `package.json` consistent
 - &#x1f41b; *Bug fix:* Fix second arguments of `\(re)newcommand` not ignored
 
-## 4.6.4 &#x2014; &#x201c;The Umlaut Expansion&#x201d; (September 01, 2019)
+## 4.6.4 &#x2014; &#x201c;The Umlaut Expansion&#x201d; (September 1, 2019)
 
 - &#x1f527; *Change:* Ignore some commands often found in LaTeX preambles
 - &#x2728; *New:* Support umlauts and eszett
 
-## 4.6.3 &#x2014; &#x201c;The Version Interruption&#x201d; (September 01, 2019)
+## 4.6.3 &#x2014; &#x201c;The Version Interruption&#x201d; (September 1, 2019)
 
 - &#x1f41b; *Bug fix:* Fix deployed `*.vsix` needed Java 11, not 8
 
-## 4.6.2 &#x2014; &#x201c;The vsce Minimization&#x201d; (September 01, 2019)
+## 4.6.2 &#x2014; &#x201c;The vsce Minimization&#x201d; (September 1, 2019)
 
 - &#x1f527; *Change:* Don't include vsce in extension
 
-## 4.6.1 &#x2014; &#x201c;The Badges Vortex&#x201d; (September 01, 2019)
+## 4.6.1 &#x2014; &#x201c;The Badges Vortex&#x201d; (September 1, 2019)
 
 - &#x1f527; *Change:* Link badges in readme
 
-## 4.6.0 &#x2014; &#x201c;The LTeX Resurgence&#x201d; (September 01, 2019)
+## 4.6.0 &#x2014; &#x201c;The LTeX Resurgence&#x201d; (September 1, 2019)
 
 - &#x1f527; *Change:* Forked abandoned repository, rename to vscode-ltex
 - &#x1f527; *Change:* Update LanguageTool to 4.6 (see [LT 4.6 release notes](https://github.com/languagetool-org/languagetool/blob/v4.6/languagetool-standalone/CHANGES.md#46-2019-06-26))
 - &#x1f527; *Change:* Update other dependencies (vscode, vscode-languageclient, LSP, JUnit, Gradle)
 - &#x1f527; *Change:* Implement simple LaTeX parser
 
-## 3.8.0 (July 08, 2017)
+## 3.8.0 (July 8, 2017)
 
 - &#x1f527; *Change:* Update LanguageTool to 3.8 (see [LT 3.8 release notes](https://github.com/languagetool-org/languagetool/blob/v3.8/languagetool-standalone/CHANGES.md#38-2017-06-27))
 - &#x1f527; *Change:* Update versioning to reflect LanguageTool versioning
@@ -627,6 +627,6 @@ toc: false
 - &#x2728; *New:* Allow any LanguageTool supported language to be used through the use of supplemental extensions
 - &#x1f5d1; *Removal:* Remove built-in English support
 
-## 0.0.1 (June 03, 2017)
+## 0.0.1 (June 3, 2017)
 
 - &#x2728; *New:* Initial release

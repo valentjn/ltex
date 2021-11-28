@@ -19,7 +19,7 @@ toc: false
 - &#x2728; *New:* Add support for the `minted` package (LaTeX) &#x2014; [vscode-ltex#463](https://github.com/valentjn/vscode-ltex/issues/463)
 - &#x2728; *New:* Add support for the Pandoc language variable `lang` in YAML front matter (Markdown) &#x2014; [vscode-ltex#465](https://github.com/valentjn/vscode-ltex/issues/465)
 
-## 15.1.0 (November 05, 2021)
+## 15.1.0 (November 5, 2021)
 
 - &#x2728; *New:* Add support for some aliases of LSP language IDs: `bib` for `bibtex`, `plaintex` for `latex`, `xhtml` for `html`
 - &#x1f41b; *Bug fix:* Fix LTeX LS sometimes not properly terminated when using LTeX CLI &#x2014; [#117](https://github.com/valentjn/ltex/issues/117)
@@ -81,14 +81,14 @@ toc: false
 - &#x1f41b; *Bug fix:* Fix error when checking LaTeX documents ending with specific commands &#x2014; [vscode-ltex#341](https://github.com/valentjn/vscode-ltex/issues/341)
 - &#x2728; *New:* Fix name of Portuguese babel language names, add support for Brazilian Portuguese babel language names &#x2014; [#72](https://github.com/valentjn/ltex/issues/72)
 
-## 12.2.0 (June 05, 2021)
+## 12.2.0 (June 5, 2021)
 
 - &#x2728; *New:* Add support for `\setplength` (LaTeX)
 - &#x2728; *New:* Add `--log-file` option to tee server/client communication and server log to a file
 - &#x1f41b; *Bug fix:* Fix LTeX LS not terminating if input stream is end-of-file &#x2014; [vscode-ltex#325](https://github.com/valentjn/vscode-ltex/issues/325)
 - &#x1f527; *Change:* Bundle Java for platform-dependent, standalone archives &#x2014; [#70](https://github.com/valentjn/ltex/issues/70)
 
-## 12.1.0 (May 01, 2021)
+## 12.1.0 (May 1, 2021)
 
 - &#x2728; *New:* Add support for cancellation of checking requests &#x2014; [vscode-ltex#253](https://github.com/valentjn/vscode-ltex/issues/253)
 - &#x1f527; *Change:* Show `Use ...` quick fixes before other quick fixes &#x2014; [vscode-ltex#297](https://github.com/valentjn/vscode-ltex/issues/297)
@@ -117,7 +117,7 @@ toc: false
 - &#x1f41b; *Bug fix:* Fix newlines accepted as whitespace in magic comments
 - &#x1f527; *Change:* Use picocli for parsing of command-line arguments
 
-## 11.0.0 (April 05, 2021)
+## 11.0.0 (April 5, 2021)
 
 - &#x1f527; *Change:* Update LanguageTool to 5.3 (see [LT 5.3 release notes](https://github.com/languagetool-org/languagetool/blob/v5.3/languagetool-standalone/CHANGES.md#53-2021-03-29))
 - &#x1f527; *Change:* Update LSP4J to 0.12.0
@@ -172,7 +172,7 @@ toc: false
 - &#x1f527; *Change:* Ignore `\pgfmathsetmacro`, `\setmainfont`, and `\theoremstyle`
 - &#x1f41b; *Bug fix:* Fix accent commands such as `\O` in math mode resulting in diagnostics &#x2014; [vscode-ltex#216](https://github.com/valentjn/vscode-ltex/issues/216)
 
-## 9.0.0 (January 03, 2021)
+## 9.0.0 (January 3, 2021)
 
 - &#x1f527; *Change:* Make versioning independent of vscode-ltex; LTeX LS now adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html)
 - &#x2728; *New:* Require support of LSP 3.15
@@ -195,7 +195,7 @@ toc: false
 - &#x1f41b; *Bug fix:* Fix wrong position of diagnostics when using a recognized LaTeX command with a non-recognized set of arguments due to an infinite loop &#x2014; [vscode-ltex#167](https://github.com/valentjn/vscode-ltex/issues/167)
 - &#x1f527; *Change:* Update LSP4J to 0.10.0
 
-## 8.0.0 (November 01, 2020)
+## 8.0.0 (November 1, 2020)
 
 - &#x1f527; *Change:* Upgrade from Java 8 to Java 11 (see [announcement](https://valentjn.github.io/ltex/old/deprecation-of-java-8.html)) &#x2014; [vscode-ltex#39](https://github.com/valentjn/vscode-ltex/issues/39)
 - &#x2728; *New:* Add workaround to eliminate the need for workspace-specific setting names; [`ltex.dictionary`](../settings.html#ltexdictionary), [`ltex.disabledRules`](../settings.html#ltexdisabledrules), and [`ltex.enabledRules`](../settings.html#ltexenabledrules) can now be used in multiple setting scopes (user settings, workspace settings, and workspace folder settings) at the same time without overriding each other; instead, the settings of the different scopes will be properly merged (see [documentation](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#multi-scope-settings))
@@ -276,7 +276,7 @@ toc: false
 - &#x2728; *New:* Add support for `an` article when before a formula starting with a vowel (e.g., `an $n$-dimensional problem`) &#x2014; [vscode-ltex#92](https://github.com/valentjn/vscode-ltex/issues/92)
 - &#x2728; *New:* Add support for `~/` and `~\` in settings &#x2014; [vscode-ltex#99](https://github.com/valentjn/vscode-ltex/issues/99)
 
-## 6.2.0 (August 07, 2020)
+## 6.2.0 (August 7, 2020)
 
 - &#x2728; *New:* Add commands [`LTeX: Check Current Document`](../vscode-ltex/commands.html#ltex-check-current-document) and [`LTeX: Check All Documents in Workspace`](../vscode-ltex/commands.html#ltex-check-all-documents-in-workspace) &#x2014; [vscode-ltex#84](https://github.com/valentjn/vscode-ltex/issues/84)
 - &#x2728; *New:* Add setting [`ltex.clearDiagnosticsWhenClosingFile`](../settings.html#ltexcleardiagnosticswhenclosingfile)
@@ -299,7 +299,7 @@ toc: false
 
 - &#x1f527; *Change:* Make Windows startup script (`ltex-ls.bat`) honor `JAVA_HOME` &#x2014; [vscode-ltex#75](https://github.com/valentjn/vscode-ltex/issues/75)
 
-## 6.0.1 (July 02, 2020)
+## 6.0.1 (July 2, 2020)
 
 - &#x1f41b; *Bug fix:* Fix freezes when checking German text by working around [languagetool-org/languagetool#3181](https://github.com/languagetool-org/languagetool/issues/3181) introduced by LanguageTool 5.0 &#x2014; [vscode-ltex#68](https://github.com/valentjn/vscode-ltex/issues/68)
 
@@ -315,7 +315,7 @@ toc: false
 - &#x1f527; *Change:* Migrate from Gradle to Maven
 - &#x1f527; *Change:* Update Maven dependencies
 
-## 5.0.0 (June 01, 2020)
+## 5.0.0 (June 1, 2020)
 
 - &#x2728; *New:* Include all languages in LTeX LS; this removes the need for language support extensions &#x2014; [vscode-ltex#6](https://github.com/valentjn/vscode-ltex/issues/6)
 - &#x1f527; *Change:* Adhere to [semantic versioning](https://semver.org/). This means that the version of LTeX LS is not tied to the version of LanguageTool anymore, as the version of LanguageTool is not a semantic version. LTeX LS 5.0.0 uses LanguageTool 4.9.
@@ -335,18 +335,18 @@ toc: false
 - &#x1f527; *Change:* Use proper server/client model for language server/client
 - &#x1f527; *Change:* Make documentation of vscode-ltex more extensive, put it on own [website](https://valentjn.github.io/ltex)
 
-## 4.9.3 (May 07, 2020)
+## 4.9.3 (May 7, 2020)
 
 - &#x1f527; *Change:* Revert to Java 8
 - &#x1f5d1; *Removal:* Remove support for external LanguageTool HTTP servers
 
-## 4.9.2 (May 06, 2020)
+## 4.9.2 (May 6, 2020)
 
 - &#x1f527; *Change:* Update required version of Java (now 11 or newer)
 - &#x2728; *New:* Add support for external LanguageTool HTTP servers &#x2014; [vscode-ltex#36](https://github.com/valentjn/vscode-ltex/issues/36)
 - &#x2728; *New:* Add support for `\autoref`, `\pageref`, `\autopageref` &#x2014; [vscode-ltex#37](https://github.com/valentjn/vscode-ltex/issues/37)
 
-## 4.9.1 (May 01, 2020)
+## 4.9.1 (May 1, 2020)
 
 - &#x1f41b; *Bug fix:* Fix sentence cache was invalidated when a single ignore sentence rule was present &#x2014; [vscode-ltex#29](https://github.com/valentjn/vscode-ltex/issues/29)
 - &#x1f527; *Change:* Use thin non-breaking space for `\,` &#x2014; [vscode-ltex#35](https://github.com/valentjn/vscode-ltex/issues/35)
@@ -400,20 +400,20 @@ toc: false
 - &#x1f41b; *Bug fix:* Fix a bug where the `codeAction` request gets stuck in infinite loop
 - &#x1f41b; *Bug fix:* Fix another `NullPointerException` for word2vec
 
-## 4.7.3 (October 07, 2019)
+## 4.7.3 (October 7, 2019)
 
 - &#x1f41b; *Bug fix:* Fix null pointer error for word2vec quick fixes &#x2014; [vscode-ltex#12](https://github.com/valentjn/vscode-ltex/issues/12)
 
-## 4.7.2 (October 02, 2019)
+## 4.7.2 (October 2, 2019)
 
 - &#x2728; *New:* Add missing error message if legacy false friends could not be loaded
 
-## 4.7.1 (October 02, 2019)
+## 4.7.1 (October 2, 2019)
 
 - &#x2728; *New:* Add [`ltex.additionalRules.motherTongue`](../settings.html#ltexadditionalrulesmothertongue) setting to enable detection of false friends &#x2014; [vscode-ltex#11](https://github.com/valentjn/vscode-ltex/issues/11)
 - &#x1f527; *Change:* Change defaults for `ltex.additionalRules` settings from `""` to `null`
 
-## 4.7.0 (October 01, 2019)
+## 4.7.0 (October 1, 2019)
 
 - &#x1f527; *Change:* Update LanguageTool to 4.7 (see [LT 4.7 release notes](https://github.com/languagetool-org/languagetool/blob/v4.7/languagetool-standalone/CHANGES.md#47-2019-09-28))
 - &#x2728; *New:* Support multi-root workspaces, all configuration settings except [`ltex.enabled`](../settings.html#ltexenabled) are now resource-specific &#x2014; [vscode-ltex#7](https://github.com/valentjn/vscode-ltex/issues/7)
@@ -448,10 +448,10 @@ toc: false
 
 - &#x1f41b; *Bug fix:* Fix `NullPointerException` if LanguageTool has not been initialized &#x2014; [#1](https://github.com/valentjn/ltex/issues/1)
 
-## 4.6.9 (September 08, 2019)
+## 4.6.9 (September 8, 2019)
 
 - &#x1f41b; *Bug fix:* Fix `NullPointerException` in `main`
 
-## 4.6.8 (September 07, 2019)
+## 4.6.8 (September 7, 2019)
 
 - &#x2728; *New:* Initial release
