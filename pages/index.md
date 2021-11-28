@@ -46,7 +46,7 @@ LTeX is a successor/fork of the abandoned [LanguageTool for Visual Studio Code e
 
 ![Grammar/Spell Checker for VS Code with LanguageTool and LaTeX Support](https://github.com/valentjn/vscode-ltex/raw/release/img/banner-ltex.png)
 
-- **Supported markup languages:** BibTeX, LaTeX, Markdown, Org, reStructuredText, R Sweave, XHTML
+- **Supported markup languages:** BibTeX, ConTeXt, LaTeX, Markdown, Org, reStructuredText, R Sweave, XHTML
 - Comes with **everything included,** no need to install Java or LanguageTool
 - **Offline checking:** Does not upload anything to the internet
 - Supports **over 20 languages:** English, French, German, Dutch, Chinese, Russian, etc.
