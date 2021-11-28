@@ -43,5 +43,5 @@ def writeFile(filePath: pathlib.Path, text: str) -> None:
 
 
 def getSlug(markdown: str) -> str:
-  return re.sub(r"[^a-z\xe4\xf6\xfc\xdf0-9\-]", "",
+  return re.sub(r"[^a-z\xe4\xf6\xfc\xdf0-9\-_]", "",
       re.sub(r"&#x?[0-9A-Za-z]+?;", "", re.sub(r"[ ]", "-", markdown.lower())))
