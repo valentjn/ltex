@@ -18,8 +18,9 @@ LTeX supports checking grammar and spelling in the following markup languages. T
 
 | Language | Language ID | LTeX support |
 | -------- | ----------- | ------------ |
-| BibT<sub>E</sub>X | `bibtex`&nbsp;∗ | Basic |
-| L<sup>A</sup>T<sub>E</sub>X | `latex`&nbsp;∗ | Extensive |
+| BibTeX | `bibtex`&nbsp;∗ | Basic |
+| ConTeXt | `context`&nbsp;∗ | Advanced |
+| LaTeX | `latex`&nbsp;∗ | Extensive |
 | Markdown | `markdown` | Advanced |
 | Org | `org`&nbsp;∗ | Good |
 | reStructuredText | `restructuredtext`&nbsp;∗ | Good |
