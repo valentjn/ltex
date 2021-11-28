@@ -49,7 +49,7 @@ Elixir&nbsp;(`elixier`&nbsp;∗)
 Elm&nbsp;(`elm`&nbsp;∗),
 Erlang&nbsp;(`erlang`&nbsp;∗),
 F#&nbsp;(`fsharp`),
-Fortran&nbsp;(`fortran-modern`&nbsp;∗),
+FORTRAN&nbsp;(`fortran-modern`&nbsp;∗),
 Go&nbsp;(`go`),
 Groovy&nbsp;(`groovy`),
 Haskell&nbsp;(`haskell`&nbsp;∗),
