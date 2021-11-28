@@ -11,6 +11,14 @@ sidebar: "sidebar"
 toc: false
 ---
 
+## 15.2.0 (upcoming)
+
+- &#x2728; *New:* Add support for ConTeXt &#x2014; [#120](https://github.com/valentjn/ltex/issues/120)
+- &#x2728; *New:* Add support for strikethrough as in [GitHub Flavored Markdown](https://github.github.com/gfm/#strikethrough-extension-) &#x2014; [#123](https://github.com/valentjn/ltex/issues/123)
+- &#x2728; *New:* Always check selected text when running [`_ltex.checkDocument`](https://valentjn.github.io/ltex/ltex-ls/server-usage.html#_ltexcheckdocument-server), even non-comment parts of programs &#x2014; [vscode-ltex#457](https://github.com/valentjn/vscode-ltex/issues/457)
+- &#x2728; *New:* Add support for the `minted` package (LaTeX) &#x2014; [vscode-ltex#463](https://github.com/valentjn/vscode-ltex/issues/463)
+- &#x2728; *New:* Add support for the Pandoc language variable `lang` in YAML front matter (Markdown) &#x2014; [vscode-ltex#465](https://github.com/valentjn/vscode-ltex/issues/465)
+
 ## 15.1.0 (November 05, 2021)
 
 - &#x2728; *New:* Add support for some aliases of LSP language IDs: `bib` for `bibtex`, `plaintex` for `latex`, `xhtml` for `html`
@@ -205,7 +213,7 @@ toc: false
 - &#x2728; *New:* Add `userExternalFile`, `workspaceExternalFile`, and `workspaceFolderExternalFile` enumeration values to [`ltex.configurationTarget`](../settings.html#ltexconfigurationtarget), which enables saving settings to external files (see [documentation](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#external-setting-files)) &#x2014; [vscode-ltex#144](https://github.com/valentjn/vscode-ltex/issues/144), [vscode-ltex#145](https://github.com/valentjn/vscode-ltex/issues/145)
 - &#x1f527; *Change:* Change default of [`ltex.configurationTarget`](../settings.html#ltexconfigurationtarget) for `dictionary`, `disabledRules`, and `hiddenFalsePositives` to `workspaceFolderExternalFile`
 - &#x2728; *New:* Add [`ltex.checkFrequency`](../settings.html#ltexcheckfrequency) to control when LTeX checks documents &#x2014; [vscode-ltex#142](https://github.com/valentjn/vscode-ltex/issues/142)
-- &#x2728; *New:* Add `LTeX: Show status information` command to show information about the status of LTeX
+- &#x2728; *New:* Add [`LTeX: Show Status Information`](../vscode-ltex/commands.html#ltex-show-status-information) command to show information about the status of LTeX
 - &#x2728; *New:* Add support for `\usepackage[LANGUAGE]{babel}` if in the same file as the text to be checked &#x2014; [vscode-ltex#140](https://github.com/valentjn/vscode-ltex/issues/140)
 - &#x2728; *New:* Add support for more BibLaTeX commands such as `\autocite`, `\citeauthor`, etc. &#x2014; [vscode-ltex#143](https://github.com/valentjn/vscode-ltex/issues/143)
 - &#x2728; *New:* Add support for overriding hard-coded command signatures &#x2014; [#27](https://github.com/valentjn/ltex/issues/27)
@@ -270,7 +278,7 @@ toc: false
 
 ## 6.2.0 (August 07, 2020)
 
-- &#x2728; *New:* Add commands `LTeX: Check current document` and `LTeX: Check all documents in workspace` &#x2014; [vscode-ltex#84](https://github.com/valentjn/vscode-ltex/issues/84)
+- &#x2728; *New:* Add commands [`LTeX: Check Current Document`](../vscode-ltex/commands.html#ltex-check-current-document) and [`LTeX: Check All Documents in Workspace`](../vscode-ltex/commands.html#ltex-check-all-documents-in-workspace) &#x2014; [vscode-ltex#84](https://github.com/valentjn/vscode-ltex/issues/84)
 - &#x2728; *New:* Add setting [`ltex.clearDiagnosticsWhenClosingFile`](../settings.html#ltexcleardiagnosticswhenclosingfile)
 - &#x1f527; *Change:* Skip front matter in Markdown
 - &#x1f527; *Change:* Ignore more LaTeX preamble commands (e.g., `\automark`, `\color`, `\DeclareSIUnit`, `\directlua`, `\setuptoc`)

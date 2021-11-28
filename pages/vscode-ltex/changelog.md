@@ -15,6 +15,15 @@ toc: false
 
 - New versions of LTeX released on or after January 14, 2022, will require VS Code 1.61.0 or later
 
+## 13.1.0 (upcoming)
+
+- &#x2728; *New:* Add support for ConTeXt &#x2014; [ltex-ls#120](https://github.com/valentjn/ltex-ls/issues/120)
+- &#x2728; *New:* Add support for strikethrough as in [GitHub Flavored Markdown](https://github.github.com/gfm/#strikethrough-extension-) &#x2014; [ltex-ls#123](https://github.com/valentjn/ltex-ls/issues/123)
+- &#x2728; *New:* Always check selected text when running [`LTeX: Check Selection`](commands.html#ltex-check-selection), even non-comment parts of programs &#x2014; [#457](https://github.com/valentjn/vscode-ltex/issues/457)
+- &#x2728; *New:* Add support for the `minted` package (LaTeX) &#x2014; [#463](https://github.com/valentjn/vscode-ltex/issues/463)
+- &#x2728; *New:* Add support for the Pandoc language variable `lang` in YAML front matter (Markdown) &#x2014; [#465](https://github.com/valentjn/vscode-ltex/issues/465)
+- &#x1f527; *Change:* Update LTeX LS to 15.2.0
+
 ## 13.0.0 &#x2014; &#x201c;The Completion Setting Excitation&#x201d; (October 30, 2021)
 
 - &#x1f527; *Change:* Add [`ltex.completionEnabled`](../settings.html#ltexcompletionenabled) to disable completion by default &#x2014; [#443](https://github.com/valentjn/vscode-ltex/issues/443)

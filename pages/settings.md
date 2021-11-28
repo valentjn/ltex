@@ -38,7 +38,7 @@ Changes require restarting LTeX to take effect.
 - `false`
 - `["latex", "markdown"]`
 
-*Default:* `["bibtex", "html", "latex", "markdown", "org", "restructuredtext", "rsweave"]`
+*Default:* `["bibtex", "context", "context.tex", "html", "latex", "markdown", "org", "restructuredtext", "rsweave"]`
 
 *Full type description:* <button class='expandable-button btn btn-default'>Click to show/hide</button>
 

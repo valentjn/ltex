@@ -38,7 +38,7 @@ Nach Änderungen muss LTeX neugestartet werden.
 - `false`
 - `["latex", "markdown"]`
 
-*Voreinstellung:* `["bibtex", "html", "latex", "markdown", "org", "restructuredtext", "rsweave"]`
+*Voreinstellung:* `["bibtex", "context", "context.tex", "html", "latex", "markdown", "org", "restructuredtext", "rsweave"]`
 
 *Vollständige Beschreibung des Typs:* <button class='expandable-button btn btn-default'>Klick zum Zeigen/Verbergen</button>
 
