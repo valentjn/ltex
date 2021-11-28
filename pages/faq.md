@@ -40,7 +40,11 @@ This depends on whether the multiple languages only occur in different files (i.
 
 ### Why does LTeX check in a different language than expected?
 
-[`ltex.language`](settings.html#ltexlanguage) is not the only source that LTeX uses to decide in which language to check a document. If your document is a LaTeX document, then it might contain a command of the babel package, [which is interpreted by LTeX](advanced-usage.html#multilingual-latex-documents-with-the-babel-package) (note that LTeX is not a LaTeX compiler, e.g., it won't detect if the babel command is inside a `\newcommand` definition). The other possibility, which holds for all supported languages, is that you have a [magic comment](advanced-usage.html#magic-comments) somewhere in your document.
+[`ltex.language`](settings.html#ltexlanguage) is not the only source that LTeX uses to decide in which language to check a document:
+
+- For LaTeX documents: [Commands or environments of the babel package](advanced-usage.html#multilingual-latex-documents-with-the-babel-package) (note that LTeX is not a LaTeX compiler, e.g., it won't detect if the babel command is inside a `\newcommand` definition)
+- For Markdown documents: [`lang` variable in YAML front matter](advanced-usage.html#set-language-in-markdown-with-yaml-front-matter)
+- For all supported document types: [Magic comments](advanced-usage.html#magic-comments)
 
 ### How can I fix multiple spelling errors at the same time?
 

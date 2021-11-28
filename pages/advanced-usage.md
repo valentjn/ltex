@@ -71,6 +71,20 @@ As `it` (Italian) and `sl` (Slovene) would lead to `\textit` and `\textsl`, whic
 
 Please note the following caveat: Similarly to magic comments, LTeX only switches languages for the rest of the file that contains the babel commands. There is no inheritance for files that are included, e.g., via `\input` or `\include`. This is because LTeX is a file-based checker and has no notion of “LaTeX projects” that comprise multiple TeX files. In particular, `\usepackage[LANGUAGE]{babel}` will not switch languages if your preamble is in a different file than your text. In this case, use one of the other supported babel commands.
 
+## Set Language in Markdown with YAML Front Matter
+
+In Markdown, LTeX supports setting its [`ltex.language`](settings.html#ltexlanguage) setting with [Pandoc's language variable `lang`](https://pandoc.org/MANUAL.html#language-variables) in YAML front matter.
+
+To use this, start your Markdown document with YAML front matter and include a variable named `lang`:
+
+```markdown
+---
+lang: LANGUAGE
+---
+```
+
+`LANGUAGE` is a language short code supported by [`ltex.language`](settings.html#ltexlanguage).
+
 ## Hiding False Positives with Regular Expressions
 
 It's possible to use [`ltex.hiddenFalsePositives`](settings.html#ltexhiddenfalsepositives) to make LTeX hide false positives based on regular expressions.
