@@ -11,7 +11,7 @@ sidebar: "sidebar"
 toc: false
 ---
 
-## 15.2.0 (upcoming)
+## 15.2.0 (November 28, 2021)
 
 - &#x2728; *New:* Add support for ConTeXt &#x2014; [#120](https://github.com/valentjn/ltex/issues/120)
 - &#x2728; *New:* Add support for strikethrough as in [GitHub Flavored Markdown](https://github.github.com/gfm/#strikethrough-extension-) &#x2014; [#123](https://github.com/valentjn/ltex/issues/123)

@@ -15,7 +15,7 @@ toc: false
 
 - New versions of LTeX released on or after January 14, 2022, will require VS Code 1.61.0 or later
 
-## 13.1.0 (upcoming)
+## 13.1.0 &#x2014; &#x201c;The ConTeXt Paradigm&#x201d; (November 28, 2021)
 
 - &#x2728; *New:* Add support for ConTeXt &#x2014; [ltex-ls#120](https://github.com/valentjn/ltex-ls/issues/120)
 - &#x2728; *New:* Add support for strikethrough as in [GitHub Flavored Markdown](https://github.github.com/gfm/#strikethrough-extension-) &#x2014; [ltex-ls#123](https://github.com/valentjn/ltex-ls/issues/123)
