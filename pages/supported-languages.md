@@ -79,6 +79,11 @@ TypeScript&nbsp;React&nbsp;(`typescriptreact`),
 Verilog&nbsp;(`verilog`&nbsp;∗),
 Visual&nbsp;Basic&nbsp;(`vb`)
 
+### strings and inline comments after code
+
+Because of too many false-positives there is no option to "check everywhere". To check specific parts like string content or inline comments after code you can always select those and use `ltex.checkSelection` command.
+
+
 ## Natural Languages
 
 Apart from code languages like markup and programming languages, there is also the notion of natural languages. Natural languages are the languages in which the contents of documents can be written, like English or German.
