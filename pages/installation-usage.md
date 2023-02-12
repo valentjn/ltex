@@ -39,6 +39,7 @@ LTeX is not responsible for the quality of third-party extensions. The list and 
 | [Neovim](https://neovim.io/) | Grammar Guard | [Instructions](https://github.com/brymer-meneses/grammar-guard.nvim) |
 | [Neovim](https://neovim.io/) | nvim-lsp-installer | [Instructions](https://github.com/williamboman/nvim-lsp-installer) |
 | [Neovim](https://neovim.io/) + [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) | lbiaggi/ltex.lua | [Instructions](https://gist.github.com/lbiaggi/a3eb761ac2fdbff774b29c88844355b8) |
+| [Neovim](https://neovim.io/) + [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) | LTeX_extra.nvim | [Instructions](https://github.com/barreiroleo/ltex_extra.nvim) |
 | [Sublime Text](https://www.sublimetext.com/) | LSP-ltex-ls | [Instructions](https://github.com/LDAP/LSP-ltex-ls) |
 
 ## Via Language Clients
