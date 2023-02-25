@@ -124,7 +124,7 @@ This setting is language-specific, so use an object of the format `{"<LANGUAGE1>
 
 This setting is a multi-scope setting. [See the documentation for details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#multi-scope-settings)
 
-This setting supports external files. [See the documentation for details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#external-setting-files)
+This setting supports external files (when used in VSCode, the language server does not support them). [See the documentation for details.](https://valentjn.github.io/ltex/vscode-ltex/setting-scopes-files.html#external-setting-files)
 
 <!-- ltex-client-specific-end -->
 
