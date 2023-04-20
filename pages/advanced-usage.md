@@ -102,11 +102,11 @@ Hiding false positives with [`ltex.hiddenFalsePositives`](settings.html#ltexhidd
 - Checking whether a match returned by LanguageTool is a false positive happens after the document has been converted from LaTeX, Markdown, etc. to plain text by LTeX. LanguageTool only returns the plain text sentence, but not the corresponding sentence in the original code. Therefore, the regular expression is matched against the plain text, not the original code. For instance, it's not possible to have a regular expression that matches all sentences that contain a specific LaTeX command.
 - Checking whether a match returned by LanguageTool is a false positive happens after the document has been split into sentences. Therefore, it's not possible to have regular expressions that span multiple sentences.
 
-## LanguageTool HTTP Servers
+## LanguageTool HTTP Servers and Using LanguageTool Premium
 
 Although LTeX ships with its own version of LanguageTool (LT), it's possible to run LT independently of LTeX and have LTeX communicate with [LT via HTTP](https://dev.languagetool.org/http-server). There are multiple scenarios in which this might be useful:
 
 - You want to run your own LT HTTP server, usually on `localhost`. This might be because the version of LT that comes with LTeX does not work, because you want to use an older or newer version of LT than LTeX's LT, or because you use other programs that use LT as well and you only want one instance of LT running.
-- You want to use [LanguageTool Plus](https://languagetoolplus.com/), the paid version of LT. In this case, you need a Developer API plan, since the Premium plan does not include API access.
+- You want to use [LanguageTool Premium](https://languagetool.com/premium), the paid version of LT. In this case, you need to set [`ltex.languageToolHttpServerUri`](settings.html#ltexlanguagetoolhttpserveruri) to `https://api.languagetoolplus.com/`, [`ltex.languageToolOrg.username`](settings.html#ltexlanguagetoolusername) to your username/email, and [`ltex.languageToolOrg.apiKey`](settings.html#ltexlanguagetoolapikey) to your [API key](https://languagetool.org/editor/settings/access-tokens).
 
 To connect to an LT HTTP server, set the setting [`ltex.languageToolHttpServerUri`](settings.html#ltexlanguagetoolhttpserveruri) to the root URI of the server, for instance, `http://localhost:8081/`. Note that in this mode, LTeX will still depend on ltex-ls and Java, as the interface for communicating with LT over HTTP is in ltex-ls.
